@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find tuition information for Philo Academy, a classical great books school in the Twin Cities.">
+    <meta name="keywords" content="Philo Academy, tuition, classical education, Twin Cities">
+    <meta name="author" content="Philo Academy">
+    <title>Philo Academy | Tuition</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: rgb(75, 0, 130);
+            --accent-color: rgb(252, 194, 0);
+            --tertiary-color: rgb(255, 255, 255);
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-color);
+        }
+        .accent-text {
+            color: var(--accent-color);
+        }
+        .banner {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 2rem 0;
+            position: relative;
+        }
+        .sub-banner {
+            background-color: var(--accent-color);
+            position: relative;
+            z-index: 10;
+            padding: 1rem 0;
+        }
+        .divider {
+            background-color: var(--tertiary-color);
+            height: 2px;
+        }
+        .footer-divider {
+            background-color: var(--accent-color);
+            height: 2px;
+        }
+        .motto {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--tertiary-color);
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu {
+            display: none;
+            background-color: var(--primary-color);
+            z-index: 20;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .dropdown-menu a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--tertiary-color);
+            padding: 0.5rem 1rem;
+            display: block;
+        }
+        .dropdown-menu a:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 2rem 0;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+        }
+        .nav-link {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--tertiary-color);
+        }
+        .search-bar {
+            background-color: var(--tertiary-color);
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            width: 100px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.8rem;
+        }
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        .search-button {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .search-button:hover {
+            background-color: var(--tertiary-color);
+            color: var(--primary-color);
+        }
+        section {
+            padding: 3rem 0;
+        }
+        .container {
+            max-width: 1200px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="banner">
+        <div class="container mx-auto flex items-center justify-between px-4">
+            <div class="flex items-center">
+                <img src="philo-academy-pegasus.jpg" alt="Philo Academy Pegasus Logo" class="logo mr-4">
+                <div>
+                    <h1 class="text-5xl font-bold accent-text">Philo Academy</h1>
+                    <p class="motto mt-2">Virtute ad Veritatem</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+    </header>
+    <div class="divider"></div>
+    <nav class="sub-banner">
+        <div class="container mx-auto flex justify-center items-center px-4">
+            <div class="flex space-x-8">
+                <div class="dropdown relative">
+                    <a href="index.html" class="nav-link">Home</a>
+                </div>
+                <div class="dropdown relative">
+                    <a href="index.html#about" class="nav-link">About Us</a>
+                    <div class="dropdown-menu absolute top-full left-0 w-48">
+                        <a href="mission.html" target="_blank" class="block">Our Mission</a>
+                        <a href="history.html" target="_blank" class="block">History</a>
+                        <a href="faculty.html" target="_blank" class="block">Faculty</a>
+                    </div>
+                </div>
+                <div class="dropdown relative">
+                    <a href="index.html#academics" class="nav-link">Academics</a>
+                    <div class="dropdown-menu absolute top-full left-0 w-48">
+                        <a href="k5-program.html" target="_blank" class="block">K-5 Program</a>
+                        <a href="6-9-program.html" target="_blank" class="block">6-9 Program</a>
+                        <a href="10-12-program.html" target="_blank" class="block">10-12 Program</a>
+                    </div>
+                </div>
+                <div class="dropdown relative">
+                    <a href="index.html#admissions" class="nav-link">Admissions</a>
+                    <div class="dropdown-menu absolute top-full left-0 w-48">
+                        <a href="process.html" target="_blank" class="block">Process</a>
+                        <a href="tuition.html" target="_blank" class="block">Tuition</a>
+                        <a href="financial-aid.html" target="_blank" class="block">Financial Aid</a>
+                    </div>
+                </div>
+                <div class="dropdown relative">
+                    <a href="index.html#news" class="nav-link">News</a>
+                </div>
+                <div class="dropdown relative">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Tuition</h2>
+            <p class="text-lg mb-4">Philo Academy strives to make classical education accessible while maintaining the highest standards of academic excellence. Below is the tuition structure for the 2025-2026 academic year:</p>
+            <ul class="list-disc pl-6 text-lg mb-4">
+                <li class="mb-2"><strong>K-5 Program</strong>: $12,000 per year</li>
+                <li class="mb-2"><strong>6-9 Program</strong>: $14,000 per year</li>
+                <li class="mb-2"><strong>10-12 Program</strong>: $16,000 per year</li>
+            </ul>
+            <p class="text-lg mb-4">Tuition includes all academic materials, access to extracurricular activities, and martial training programs. Additional fees may apply for uniforms, field trips, and optional programs.</p>
+            <p class="text-lg">We offer flexible payment plans, including monthly, quarterly, and annual options. For families needing assistance, please explore our financial aid opportunities by visiting the Financial Aid page or contacting our admissions office at admissions@philoacademy.org.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div class="footer-divider"></div>
+    <footer class="footer text-center">
+        <p>Philo Academy | 608-799-7686 | info@philoacademy.org</p>
+        <p>Website: philoacademy.org</p>
+        <p>© 2025 Philo Academy. All rights reserved.</p>
+    </footer>
