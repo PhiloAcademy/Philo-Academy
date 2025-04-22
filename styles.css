@@ -1,0 +1,345 @@
+:root {
+    --primary-color: rgb(75, 0, 130);
+    --accent-color: rgb(252, 194, 0);
+    --tertiary-color: rgb(255, 255, 255);
+    --text-color: #333;
+    --background-color: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--primary-color);
+}
+
+.accent-text {
+    color: var(--accent-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Banner */
+.banner {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    padding: 2rem 0;
+    position: relative;
+}
+
+.banner .logo {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.banner .logo:hover {
+    transform: scale(1.05);
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.motto {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--tertiary-color);
+}
+
+.divider {
+    background-color: var(--tertiary-color);
+    height: 2px;
+}
+
+/* Navigation */
+.sub-banner {
+    background-color: var(--accent-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-link {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--tertiary-color);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+    z-index: 20;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 12rem;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: var(--tertiary-color);
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Search Bar */
+.search-bar {
+    background-color: var(--tertiary-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    width: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    transition: border-color 0.3s ease, width 0.3s ease;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    width: 150px;
+}
+
+.search-button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-button:hover,
+.search-button:focus {
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+}
+
+/* Sections */
+section {
+    padding: 3rem 0;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+section p,
+section li {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section {
+    position: relative;
+    height: 24rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--tertiary-color);
+}
+
+.hero-overlay h2 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+.hero-overlay p {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+/* Info Cards */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.info-card {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.info-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.learn-more {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.learn-more:hover,
+.learn-more:focus {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Footer */
+.footer-divider {
+    background-color: var(--accent-color);
+    height: 2px;
+}
+
+.footer {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .sub-banner .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background-color: var(--primary-color);
+    }
+
+    section h2 {
+        font-size: 1.75rem;
+    }
+
+    section p,
+    section li {
+        font-size: 1rem;
+    }
+
+    .hero-overlay h2 {
+        font-size: 2rem;
+    }
+
+    .hero-overlay p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 1.5rem;
+    }
+
+    .motto {
+        font-size: 0.875rem;
+    }
+
+    .search-bar {
+        width: 80px;
+    }
+
+    .search-bar:focus {
+        width: 120px;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Accessibility */
+:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
