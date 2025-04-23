@@ -17,7 +17,7 @@
     <header class="banner">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
             <div class="flex flex-col items-center md:flex-row">
-                <img src="philo-academy-pegasus.jpg" alt="Philo Classical Academy Pegasus Logo" class="logo">
+                <img src="Headings.html" alt="Philo Classical Academy Pegasus Logo" class="logo">
                 <div class="text-container">
                     <h1 class="text-4xl md:text-5xl accent-text">Philo Classical Academy</h1>
                     <p class="motto mt-2">Virtute ad Veritatem</p>
@@ -30,19 +30,36 @@
         </div>
     </header>
     <div class="divider"></div>
+    <!-- Navigation -->
     <nav class="sub-banner">
         <div class="container mx-auto flex flex-col md:flex-row justify-center items-center px-4 space-y-4 md:space-y-0 md:space-x-8">
-            <div class="dropdown relative">
-                <a href="#home" class="nav-link">Home</a>
-            </div>
+            <a href="#home" class="nav-link">Home</a>
             <div class="dropdown relative">
                 <a href="#about" class="nav-link">About Us</a>
                 <div class="dropdown-menu hidden">
                     <a href="mission.html" target="_blank" class="block">Our Mission</a>
                     <a href="history.html" target="_blank" class="block">History</a>
-                    <a href="faculty.html" target="_blank" class="block">Faculty</a>
+                    <a href="faculty.html" target="_blank" class="block">Faculty/Staff</a>
                 </div>
             </div>
+            <div class="dropdown relative">
+                <a href="#academics" class="nav-link">Academics</a>
+                <div class="dropdown-menu hidden">
+                    <a href="k5-program.html" target="_blank" class="block">K-5 Program</a>
+                    <a href="6-9-program.html" target="_blank" class="block">6-9 Program</a>
+                    <a href="10-12-program.html" target="_blank" class="block">10-12 Program</a>
+                </div>
+            </div>
+            <div class="dropdown relative">
+                <a href="#admissions" class="nav-link">Admissions</a>
+                <div class="dropdown-menu hidden">
+                    <a href="process.html" target="_blank" class="block">Process</a>
+                    <a href="tuition.html" target="_blank" class="block">Tuition</a>
+                    <a href="financial-aid.html" target="_blank" class="block">Financial Aid</a>
+                </div>
+            </div>
+            <a href="#news" class="nav-link">News</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
     </nav>
 
@@ -59,126 +76,74 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="container mx-auto py-8">
+        <section id="about" class="container mx-auto">
             <h2 class="font-bold">About Philo Classical Academy</h2>
-            <div class="space-y-6">
-                <!-- History -->
-                <div>
-                    <h3 class="text-xl font-semibold accent-text">History</h3>
-                    <p>Founded in 2010, Philo Classical Academy began as a small community of educators and families passionate about classical education. Over the years, we’ve grown into a leading great books school in the Twin Cities, committed to preserving the Western intellectual tradition.</p>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 p-4">
+                    <img src="headings.jpeg" alt="Philo Classical Academy Campus" class="rounded-lg shadow-lg" loading="lazy">
                 </div>
-                <!-- Mission & Vision -->
-                <div>
-                    <h3 class="text-xl font-semibold accent-text">Mission & Vision</h3>
-                    <p>Our mission is to cultivate virtuous scholars who pursue truth, goodness, and beauty through a rigorous classical curriculum. We envision a future where our graduates lead lives of wisdom, integrity, and service, impacting their communities for the better.</p>
-                </div>
-                <!-- Location -->
-                <div>
-                    <h3 class="text-xl font-semibold accent-text">Location</h3>
-                    <p>Located in the heart of the Twin Cities, Minnesota, our campus offers a serene environment for learning, surrounded by cultural and educational resources that enrich our students’ experiences.</p>
-                </div>
-                <!-- Employment -->
-                <div>
-                    <h3 class="text-xl font-semibold accent-text">Employment</h3>
-                    <p>We are always seeking passionate educators and staff who share our commitment to classical education. Visit our careers page to explore current openings and join our mission to shape the next generation of thinkers.</p>
-                </div>
-                <!-- Faculty & Staff -->
-                <div>
-                    <h3 class="text-xl font-semibold accent-text">Faculty & Staff</h3>
-                    <p>Our dedicated faculty comprises experts in classical studies, literature, philosophy, and more. With a low student-to-teacher ratio, our staff provides personalized guidance, fostering intellectual and moral growth in every student.</p>
+                <div class="md:w-1/2 p-4">
+                    <p>Located in the vibrant Twin Cities, Philo Classical Academy is a classical, great books school dedicated to the pursuit of truth, goodness, and beauty. Our rigorous curriculum, grounded in the Western intellectual tradition, fosters nobility, virtue, and intellectual excellence. With a unique emphasis on traditional Western martial training, we cultivate both mind and body.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Faculty Grid -->
-        <section class="container mx-auto py-8">
-            <h2 class="font-bold mb-6">Meet Our Faculty</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <!-- Faculty Member 1 -->
-                <div class="text-center">
-                    <img src="faculty1.jpg" alt="Dr. John Smith" class="rounded-lg shadow-lg mb-4 mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="font-semibold">Dr. John Smith</h4>
-                    <p class="text-sm text-gray-600">Head of Classics</p>
-                    <p class="text-sm mt-2">Dr. Smith has over 20 years of experience in classical studies, specializing in ancient Greek literature.</p>
+        <!-- Info Sections -->
+        <section class="bg-white">
+            <div class="container mx-auto info-grid">
+                <!-- School Overview -->
+                <div class="info-card">
+                    <h3 class="font-bold">Our School</h3>
+                    <p>Philo Classical Academy is a beacon of classical education, fostering a serious and academic environment where students engage with the great books and timeless ideas.</p>
+                    <a href="#about" class="learn-more inline-block mt-4">Learn More</a>
                 </div>
-                <!-- Faculty Member 2 -->
-                <div class="text-center">
-                    <img src="faculty2.jpg" alt="Prof. Emily Johnson" class="rounded-lg shadow-lg mb-4 mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="font-semibold">Prof. Emily Johnson</h4>
-                    <p class="text-sm text-gray-600">Literature Instructor</p>
-                    <p class="text-sm mt-2">Prof. Johnson teaches great books and has a passion for medieval poetry.</p>
+                <!-- Mission -->
+                <div class="info-card">
+                    <h3 class="font-bold">Our Mission</h3>
+                    <p>Guided by our motto, "Virtute ad Veritatem," we aim to cultivate virtuous scholars who seek truth through rigorous study and noble character.</p>
+                    <a href="mission.html" target="_blank" class="learn-more inline-block mt-4">Learn More</a>
                 </div>
-                <!-- Faculty Member 3 -->
-                <div class="text-center">
-                    <img src="faculty3.jpg" alt="Mr. Robert Lee" class="rounded-lg shadow-lg mb-4 mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="font-semibold">Mr. Robert Lee</h4>
-                    <p class="text-sm text-gray-600">Philosophy Teacher</p>
-                    <p class="text-sm mt-2">Mr. Lee specializes in Socratic dialogue and ethical philosophy.</p>
+                <!-- Academics -->
+                <div class="info-card">
+                    <h3 class="font-bold">Academics</h3>
+                    <p>Our curriculum emphasizes the great books, classical languages, and the appreciation of beauty alongside truth and goodness, preparing students for a life of wisdom.</p>
+                    <a href="#academics" class="learn-more inline-block mt-4">Learn More</a>
                 </div>
-                <!-- Faculty Member 4 -->
-                <div class="text-center">
-                    <img src="faculty4.jpg" alt="Ms. Sarah Brown" class="rounded-lg shadow-lg mb-4 mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="font-semibold">Ms. Sarah Brown</h4>
-                    <p class="text-sm text-gray-600">History Instructor</p>
-                    <p class="text-sm mt-2">Ms. Brown focuses on Western civilization and classical history.</p>
-                </div>
-                <!-- Faculty Member 5 -->
-                <div class="text-center">
-                    <img src="faculty5.jpg" alt="Dr. Michael Chen" class="rounded-lg shadow-lg mb-4 mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="font-semibold">Dr. Michael Chen</h4>
-                    <p class="text-sm text-gray-600">Mathematics Professor</p>
-                    <p class="text-sm mt-2">Dr. Chen teaches geometry and advanced mathematics with a classical approach.</p>
-                </div>
-                <!-- Faculty Member 6 -->
-                <div class="text-center">
-                    <img src="faculty6.jpg" alt="Prof. Laura Davis" class="rounded-lg shadow-lg mb-4 mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="font-semibold">Prof. Laura Davis</h4>
-                    <p class="text-sm text-gray-600">Latin Instructor</p>
-                    <p class="text-sm mt-2">Prof. Davis has a deep expertise in classical languages and Roman culture.</p>
-                </div>
-                <!-- Faculty Member 7 -->
-                <div class="text-center">
-                    <img src="faculty7.jpg" alt="Mr. Thomas White" class="rounded-lg shadow-lg mb-4 mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="font-semibold">Mr. Thomas White</h4>
-                    <p class="text-sm text-gray-600">Science Teacher</p>
-                    <p class="text-sm mt-2">Mr. White integrates classical scientific texts into his curriculum.</p>
-                </div>
-                <!-- Faculty Member 8 -->
-                <div class="text-center">
-                    <img src="faculty8.jpg" alt="Ms. Anna Taylor" class="rounded-lg shadow-lg mb-4 mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="font-semibold">Ms. Anna Taylor</h4>
-                    <p class="text-sm text-gray-600">Art History Instructor</p>
-                    <p class="text-sm mt-2">Ms. Taylor teaches the appreciation of classical art and architecture.</p>
-                </div>
-                <!-- Faculty Member 9 -->
-                <div class="text-center">
-                    <img src="faculty9.jpg" alt="Dr. James Wilson" class="rounded-lg shadow-lg mb-4 mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="font-semibold">Dr. James Wilson</h4>
-                    <p class="text-sm text-gray-600">Music Professor</p>
-                    <p class="text-sm mt-2">Dr. Wilson specializes in classical music theory and history.</p>
-                </div>
-                <!-- Faculty Member 10 -->
-                <div class="text-center">
-                    <img src="faculty10.jpg" alt="Prof. Rachel Green" class="rounded-lg shadow-lg mb-4 mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="font-semibold">Prof. Rachel Green</h4>
-                    <p class="text-sm text-gray-600">Rhetoric Instructor</p>
-                    <p class="text-sm mt-2">Prof. Green focuses on classical rhetoric and public speaking.</p>
-                </div>
-                <!-- Faculty Member 11 -->
-                <div class="text-center">
-                    <img src="faculty11.jpg" alt="Mr. David Harris" class="rounded-lg shadow-lg mb-4 mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="font-semibold">Mr. David Harris</h4>
-                    <p class="text-sm text-gray-600">Physical Education Coach</p>
-                    <p class="text-sm mt-2">Mr. Harris leads our Western martial training program.</p>
-                </div>
-                <!-- Faculty Member 12 -->
-                <div class="text-center">
-                    <img src="faculty12.jpg" alt="Ms. Linda Martinez" class="rounded-lg shadow-lg mb-4 mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
-                    <h4 class="font-semibold">Ms. Linda Martinez</h4>
-                    <p class="text-sm text-gray-600">Librarian</p>
-                    <p class="text-sm mt-2">Ms. Martinez curates our extensive collection of classical texts.</p>
+                <!-- News -->
+                <div class="info-card">
+                    <h3 class="font-bold">News</h3>
+                    <p>Stay updated with the latest events, achievements, and announcements from Philo Classical Academy.</p>
+                    <a href="#news" class="learn-more inline-block mt-4">Learn More</a>
                 </div>
             </div>
+        </section>
+
+        <!-- Academics Overview -->
+        <section id="academics" class="container mx-auto">
+            <h2 class="font-bold">Academics</h2>
+            <p class="mb-4">Our curriculum is rooted in the great books of the Western tradition, fostering deep engagement with timeless ideas. Students study classical languages, literature, philosophy, and mathematics, while our unique physical education program incorporates traditional Western martial training to build discipline and resilience.</p>
+            <p>We emphasize the appreciation of beauty in art, music, and literature, complementing our pursuit of truth and goodness. Explore our programs for different grade levels to learn more.</p>
+        </section>
+
+        <!-- Admissions Overview -->
+        <section id="admissions" class="container mx-auto">
+            <h2 class="font-bold">Admissions</h2>
+            <p class="mb-4">Philo Classical Academy welcomes applications from families who share our commitment to classical education and virtue. Our admissions process is designed to identify students who will thrive in our rigorous academic environment.</p>
+            <p>Learn more about our application process, tuition, and financial aid opportunities through the links below.</p>
+        </section>
+
+        <!-- News Page -->
+        <section id="news" class="container mx-auto">
+            <h2 class="font-bold">News</h2>
+            <p class="mb-4">Stay informed about the latest developments at Philo Classical Academy, including student achievements, faculty publications, and upcoming events.</p>
+            <p>Recent highlights include our annual Great Books Symposium and student awards in classical language competitions.</p>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="container mx-auto">
+            <h2 class="font-bold">Contact Us</h2>
+            <p class="mb-4">We’d love to hear from you. Reach out with any questions or to schedule a visit.</p>
+            <p>Email: info@philoacademy.org<br>Phone: 608-799-7686<br>Address: 123 Classical Way, Twin Cities, MN</p>
         </section>
     </main>
 
