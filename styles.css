@@ -1,7 +1,7 @@
 /* Mobile-first approach */
 :root {
-    --primary-color: rgb(87, 18, 101); /* Updated to #152260 */
-    --accent-color: rgb(238, 186, 43); /* Updated to #eeba2b */
+    --primary-color: rgb(87, 18, 101); /* Updated to #571265 */
+    --accent-color: rgb(238, 186, 43); /* #eeba2b */
     --tertiary-color: rgb(255, 255, 255);
     --text-color: #333;
     --background-color: #f5f5f5;
@@ -60,11 +60,11 @@ body {
     display: inline-block;
 }
 
-/* Ensure "Philo Academy" uses a classical serif font */
+/* Ensure "Philo Classical Academy" uses a classical serif font */
 .banner .text-container h1 {
     font-family: 'Cinzel', 'Times New Roman', serif !important; /* Higher specificity and fallback */
     font-weight: 700; /* Bold for prominence */
-    font-size: 1.5rem; /* Base size for mobile */
+    font-size: 1.75rem; /* Increased from 1.5rem for mobile */
 }
 
 /* Motto / School Name */
@@ -307,7 +307,7 @@ img:not(.logo) {
 
     .banner .text-container h1 {
         font-family: 'Cinzel', 'Times New Roman', serif !important; /* Ensure consistency on desktop */
-        font-size: 2.5rem;
+        font-size: 3rem; /* Increased from 2.5rem for desktop */
     }
 
     .motto {
