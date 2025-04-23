@@ -46,12 +46,14 @@ h1, h2, h3 {
 }
 
 .logo {
+    width: 10%; /* Base size as a percentage of the parent container */
+    max-width: 60px; /* Cap the size to prevent it from being too large */
+    min-width: 40px; /* Ensure it’s not too small on mobile */
+    height: auto; /* Maintain aspect ratio */
     margin-right: 1rem;
     object-fit: contain;
     will-change: transform;
     transition: transform 0.3s ease;
-    min-height: 40px; /* Prevent logo from being too small */
-    max-height: 80px; /* Cap the maximum height */
 }
 
 .logo:hover {
@@ -275,6 +277,10 @@ img:not(.logo) {
 @media (min-width: 768px) {
     .banner {
         padding: 2rem 0;
+    }
+
+    .logo {
+        max-width: 80px; /* Slightly larger on desktop */
     }
 
     .text-container h1 {
