@@ -42,7 +42,7 @@ body {
 
 /* Logo */
 .logo {
-    width: 80px; /* Base size on mobile */
+    width: 60px; /* Base size on mobile */
     height: auto;
     margin-right: 1rem;
     margin-bottom: 0.5rem;
@@ -60,6 +60,11 @@ body {
     display: inline-block;
 }
 
+.text-container h1 {
+    font-family: 'Cinzel', serif; /* Classical serif font for "Philo Academy" */
+    font-weight: 700; /* Bold for prominence */
+}
+
 /* Motto / School Name */
 .motto {
     font-family: 'Cinzel', serif; /* Updated font-family */
@@ -75,18 +80,6 @@ body {
     height: 2px;
 }
 
-/* Responsive adjustments */
-@media (min-width: 768px) {
-    .logo {
-        width: 120px; /* Larger size for tablets and small PCs */
-    }
-}
-
-@media (min-width: 1200px) {
-    .logo {
-        width: 150px; /* Larger size for large PCs */
-    }
-}
 /* Navigation */
 .sub-banner {
     background-color: var(--accent-color);
@@ -311,6 +304,7 @@ img:not(.logo) {
     }
 
     .text-container h1 {
+        font-family: 'Cinzel', serif; /* Ensure consistency on desktop */
         font-size: 2.5rem;
     }
 
@@ -348,7 +342,7 @@ img:not(.logo) {
         padding: 3rem 0;
     }
 
-    section h2 {
+    .section h2 {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
@@ -396,6 +390,19 @@ img:not(.logo) {
 
     .footer p {
         font-size: 1rem;
+    }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .logo {
+        width: 120px; /* Larger size for tablets and small PCs */
+    }
+}
+
+@media (min-width: 1200px) {
+    .logo {
+        width: 150px; /* Larger size for large PCs */
     }
 }
 
