@@ -50,7 +50,7 @@ h1, h2, h3 {
     object-fit: contain;
     will-change: transform;
     transition: transform 0.3s ease;
-    height: 100%; /* Ensures the logo scales with the parent's height */
+    height: 50%; /* Ensures the logo scales with the parent's height */
     max-height: 1rem; /* Set a fixed maximum height to match the title and motto */
 }
 
