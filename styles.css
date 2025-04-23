@@ -40,8 +40,9 @@ body {
     position: relative;
 }
 
+/* Logo */
 .logo {
-    width: 60px; /* Base size on mobile */
+    width: 80px; /* Base size on mobile */
     height: auto;
     margin-right: 1rem;
     margin-bottom: 0.5rem;
@@ -49,14 +50,17 @@ body {
     transition: transform 0.3s ease;
 }
 
+/* Hover effect for logo */
 .logo:hover {
     transform: scale(1.05);
 }
 
+/* Text container */
 .text-container {
     display: inline-block;
 }
 
+/* Motto */
 .motto {
     font-family: 'Playfair Display', serif;
     font-style: italic;
@@ -65,9 +69,23 @@ body {
     color: var(--tertiary-color);
 }
 
+/* Divider */
 .divider {
     background-color: var(--tertiary-color);
     height: 2px;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .logo {
+        width: 120px; /* Larger size for tablets and small PCs */
+    }
+}
+
+@media (min-width: 1200px) {
+    .logo {
+        width: 150px; /* Larger size for large PCs */
+    }
 }
 
 /* Navigation */
