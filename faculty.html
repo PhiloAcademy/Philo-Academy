@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meet the faculty of Philo Academy, dedicated to classical education in the Twin Cities.">
-    <meta name="keywords" content="Philo Academy, faculty, classical education, Twin Cities">
-    <meta name="author" content="Philo Academy">
-    <title>Philo Academy | Faculty</title>
+    <meta name="description" content="Meet the faculty of Philo Classical Academy, dedicated to classical education in the Twin Cities.">
+    <meta name="keywords" content="Philo Classical Academy, faculty, classical education, Twin Cities">
+    <meta name="author" content="Philo Classical Academy">
+    <title>Philo Classical Academy | Faculty</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -14,11 +15,14 @@
             --primary-color: rgb(75, 0, 130);
             --accent-color: rgb(252, 194, 0);
             --tertiary-color: rgb(255, 255, 255);
+            --text-color: #333;
+            --background-color: #f5f5f5;
         }
         body {
             font-family: 'Roboto', sans-serif;
-            color: #333;
-            background-color: #f5f5f5;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
         }
         h1, h2, h3 {
             font-family: 'Cinzel', serif;
@@ -30,14 +34,14 @@
         .banner {
             background-color: var(--primary-color);
             color: var(--accent-color);
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             position: relative;
         }
         .sub-banner {
             background-color: var(--accent-color);
             position: relative;
             z-index: 10;
-            padding: 1rem 0;
+            padding: 0.75rem 0;
         }
         .divider {
             background-color: var(--tertiary-color);
@@ -50,12 +54,9 @@
         .motto {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1rem;
+            font-size: 0.875rem;
             font-weight: 400;
             color: var(--tertiary-color);
-        }
-        .dropdown:hover .dropdown-menu {
-            display: block;
         }
         .dropdown-menu {
             display: none;
@@ -64,34 +65,47 @@
             border-radius: 4px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+        @media (min-width: 768px) {
+            .dropdown:hover .dropdown-menu,
+            .dropdown:focus-within .dropdown-menu {
+                display: block;
+            }
+        }
         .dropdown-menu a {
             font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
+            font-size: 0.875rem;
             color: var(--tertiary-color);
             padding: 0.5rem 1rem;
             display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .dropdown-menu a:hover {
+        .dropdown-menu a:hover,
+        .dropdown-menu a:focus {
             background-color: var(--accent-color);
             color: var(--primary-color);
         }
         .footer {
             background-color: var(--primary-color);
             color: var(--accent-color);
-            padding: 2rem 0;
+            padding: 1.5rem 0;
+            text-align: center;
         }
         .logo {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: auto;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+            object-fit: contain;
         }
         .nav-link {
             font-family: 'Cinzel', serif;
-            font-size: 1rem;
+            font-size: 0.875rem;
             font-weight: 700;
             color: var(--primary-color);
             transition: color 0.3s ease;
         }
-        .nav-link:hover {
+        .nav-link:hover,
+        .nav-link:focus {
             color: var(--tertiary-color);
         }
         .search-bar {
@@ -99,113 +113,320 @@
             border: 1px solid var(--accent-color);
             border-radius: 4px;
             padding: 0.25rem 0.5rem;
-            width: 100px;
+            width: 80px;
             font-family: 'Roboto', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
+            transition: border-color 0.3s ease, width 0.3s ease;
         }
         .search-bar:focus {
             outline: none;
             border-color: var(--primary-color);
+            width: 120px;
         }
         .search-button {
             background-color: var(--accent-color);
             color: var(--primary-color);
-            padding: 0.25rem 0.6rem;
+            padding: 0.25rem 0.5rem;
             border-radius: 4px;
             font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .search-button:hover {
+        .search-button:hover,
+        .search-button:focus {
             background-color: var(--tertiary-color);
             color: var(--primary-color);
         }
         section {
-            padding: 3rem 0;
+            padding: 2rem 0;
         }
         .container {
             max-width: 1200px;
+        }
+        /* Faculty Grid Styles */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .faculty-card {
+            background-color: var(--tertiary-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        .faculty-card:hover {
+            transform: translateY(-5px);
+        }
+        .faculty-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .faculty-card h3 {
+            font-size: 1.25rem;
+            margin: 0.75rem 0 0.25rem;
+        }
+        .faculty-card .position {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.875rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        .faculty-card p {
+            font-size: 0.875rem;
+            color: var(--text-color);
+            padding: 0 1rem 1rem;
+        }
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .banner {
+                padding: 2rem 0;
+            }
+            .banner .container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .logo {
+                width: 104px;
+                margin-right: 1rem;
+                margin-bottom: 0;
+            }
+            .banner h1 {
+                font-size: 3rem;
+            }
+            .motto {
+                font-size: 1rem;
+            }
+            .sub-banner {
+                padding: 1rem 0;
+            }
+            .nav-link {
+                font-size: 1rem;
+            }
+            .dropdown-menu {
+                min-width: 12rem;
+            }
+            .search-bar {
+                width: 100px;
+                font-size: 0.8rem;
+            }
+            .search-bar:focus {
+                width: 150px;
+            }
+            .search-button {
+                padding: 0.25rem 0.6rem;
+                font-size: 0.8rem;
+            }
+            section {
+                padding: 3rem 0;
+            }
+            section h2 {
+                font-size: 2rem;
+            }
+            .faculty-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+            .faculty-card img {
+                height: 250px;
+            }
+            .faculty-card h3 {
+                font-size: 1.5rem;
+            }
+            .faculty-card .position {
+                font-size: 1rem;
+            }
+            .faculty-card p {
+                font-size: 1rem;
+            }
+            .footer {
+                padding: 2rem 0;
+            }
+            .footer p {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 767px) {
+            .banner .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .search-bar,
+            .search-button {
+                margin: 0 auto;
+            }
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                z-index: 1;
+            }
+        }
+        /* Accessibility */
+        :focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body class="bg-gray-100">
     <!-- Header -->
     <header class="banner">
-        <div class="container mx-auto flex items-center justify-between px-4">
-            <div class="flex items-center">
-                <img src="philo-academy-pegasus.jpg" alt="Philo Academy Pegasus Logo" class="logo mr-4">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+            <div class="flex flex-col items-center md:flex-row">
+                <img src="Heading.jpg?v=2" alt="Philo Classical Academy Banner" class="logo">
                 <div>
-                    <h1 class="text-5xl font-bold accent-text">Philo Academy</h1>
+                    <h1 class="text-4xl md:text-5xl accent-text">Philo Classical Academy</h1>
                     <p class="motto mt-2">Virtute ad Veritatem</p>
                 </div>
             </div>
             <div class="flex items-center space-x-2">
-                <input type="text" class="search-bar" placeholder="Search...">
+                <input type="text" class="search-bar" placeholder="Search..." aria-label="Search">
                 <button class="search-button">Search</button>
             </div>
         </div>
     </header>
     <div class="divider"></div>
+    <!-- Navigation -->
     <nav class="sub-banner">
-        <div class="container mx-auto flex justify-center items-center px-4">
-            <div class="flex space-x-8">
-                <div class="dropdown relative">
-                    <a href="index.html" class="nav-link">Home</a>
-                </div>
-                <div class="dropdown relative">
-                    <a href="index.html#about" class="nav-link">About Us</a>
-                    <div class="dropdown-menu absolute top-full left-0 w-48">
-                        <a href="mission.html" target="_blank" class="block">Our Mission</a>
-                        <a href="history.html" target="_blank" class="block">History</a>
-                        <a href="faculty.html" target="_blank" class="block">Faculty</a>
-                    </div>
-                </div>
-                <div class="dropdown relative">
-                    <a href="index.html#academics" class="nav-link">Academics</a>
-                    <div class="dropdown-menu absolute top-full left-0 w-48">
-                        <a href="k5-program.html" target="_blank" class="block">K-5 Program</a>
-                        <a href="6-9-program.html" target="_blank" class="block">6-9 Program</a>
-                        <a href="10-12-program.html" target="_blank" class="block">10-12 Program</a>
-                    </div>
-                </div>
-                <div class="dropdown relative">
-                    <a href="index.html#admissions" class="nav-link">Admissions</a>
-                    <div class="dropdown-menu absolute top-full left-0 w-48">
-                        <a href="process.html" target="_blank" class="block">Process</a>
-                        <a href="tuition.html" target="_blank" class="block">Tuition</a>
-                        <a href="financial-aid.html" target="_blank" class="block">Financial Aid</a>
-                    </div>
-                </div>
-                <div class="dropdown relative">
-                    <a href="index.html#news" class="nav-link">News</a>
-                </div>
-                <div class="dropdown relative">
-                    <a href="index.html#contact" class="nav-link">Contact</a>
+        <div class="container mx-auto flex flex-col md:flex-row justify-center items-center px-4 space-y-4 md:space-y-0 md:space-x-8">
+            <a href="index.html" class="nav-link">Home</a>
+            <div class="dropdown relative">
+                <a href="index.html#about" class="nav-link">About Us</a>
+                <div class="dropdown-menu hidden">
+                    <a href="mission.html" target="_blank" class="block">Our Mission</a>
+                    <a href="history.html" target="_blank" class="block">History</a>
+                    <a href="faculty.html" target="_blank" class="block">Faculty/Staff</a>
                 </div>
             </div>
+            <div class="dropdown relative">
+                <a href="index.html#academics" class="nav-link">Academics</a>
+                <div class="dropdown-menu hidden">
+                    <a href="k5-program.html" target="_blank" class="block">K-5 Program</a>
+                    <a href="6-9-program.html" target="_blank" class="block">6-9 Program</a>
+                    <a href="10-12-program.html" target="_blank" class="block">10-12 Program</a>
+                </div>
+            </div>
+            <div class="dropdown relative">
+                <a href="index.html#admissions" class="nav-link">Admissions</a>
+                <div class="dropdown-menu hidden">
+                    <a href="process.html" target="_blank" class="block">Process</a>
+                    <a href="tuition.html" target="_blank" class="block">Tuition</a>
+                    <a href="financial-aid.html" target="_blank" class="block">Financial Aid</a>
+                </div>
+            </div>
+            <a href="index.html#news" class="nav-link">News</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main>
-        <section class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Faculty</h2>
-            <p class="text-lg mb-4">Our faculty at Philo Academy are dedicated scholars and educators committed to the classical tradition. They guide our students in the pursuit of truth, goodness, and beauty through rigorous study and moral example.</p>
-            <ul class="list-disc pl-6 text-lg mb-4">
-                <li class="mb-2"><strong>Dr. Eleanor Hart</strong> - Headmaster, Ph.D. in Classical Studies, specializing in Plato and Aristotle.</li>
-                <li class="mb-2"><strong>Prof. Marcus Steele</strong> - Dean of Academics, expert in Latin and Greek, with 20 years of teaching experience.</li>
-                <li class="mb-2"><strong>Ms. Clara Evans</strong> - Literature Instructor, M.A. in English Literature, focusing on the Western canon.</li>
-                <li class="mb-2"><strong>Mr. Thomas Reed</strong> - Martial Training Master, certified in traditional Western combat techniques.</li>
-            </ul>
-            <p class="text-lg">Together, our faculty uphold the values of Philo Academy, ensuring a transformative educational experience for every student.</p>
+        <section class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Our Faculty</h2>
+            <p class="text-lg md:text-xl text-center mb-8">Our faculty at Philo Classical Academy are dedicated scholars and educators committed to the classical tradition, guiding students in the pursuit of truth, goodness, and beauty.</p>
+            <div class="faculty-grid">
+                <!-- Faculty 1 -->
+                <div class="faculty-card">
+                    <img src="faculty1.jpg" alt="Dr. Eleanor Hart" loading="lazy">
+                    <h3>Dr. Eleanor Hart</h3>
+                    <div class="position">Headmaster</div>
+                    <p>Ph.D. in Classical Studies, specializing in Plato and Aristotle, with over 15 years of leadership in classical education.</p>
+                </div>
+                <!-- Faculty 2 -->
+                <div class="faculty-card">
+                    <img src="faculty2.jpg" alt="Prof. Marcus Steele" loading="lazy">
+                    <h3>Prof. Marcus Steele</h3>
+                    <div class="position">Dean of Academics</div>
+                    <p>Expert in Latin and Greek, with 20 years of teaching experience in classical languages and literature.</p>
+                </div>
+                <!-- Faculty 3 -->
+                <div class="faculty-card">
+                    <img src="faculty3.jpg" alt="Ms. Clara Evans" loading="lazy">
+                    <h3>Ms. Clara Evans</h3>
+                    <div class="position">Literature Instructor</div>
+                    <p>M.A. in English Literature, focusing on the Western canon, passionate about Shakespeare and medieval poetry.</p>
+                </div>
+                <!-- Faculty 4 -->
+                <div class="faculty-card">
+                    <img src="faculty4.jpg" alt="Mr. Thomas Reed" loading="lazy">
+                    <h3>Mr. Thomas Reed</h3>
+                    <div class="position">Martial Training Master</div>
+                    <p>Certified in traditional Western combat techniques, dedicated to building discipline and resilience in students.</p>
+                </div>
+                <!-- Faculty 5 -->
+                <div class="faculty-card">
+                    <img src="faculty5.jpg" alt="Dr. Sophia Bennett" loading="lazy">
+                    <h3>Dr. Sophia Bennett</h3>
+                    <div class="position">Philosophy Instructor</div>
+                    <p>Ph.D. in Philosophy, specializing in ethics and metaphysics, with a focus on Socratic teaching methods.</p>
+                </div>
+                <!-- Faculty 6 -->
+                <div class="faculty-card">
+                    <img src="faculty6.jpg" alt="Mr. James Carter" loading="lazy">
+                    <h3>Mr. James Carter</h3>
+                    <div class="position">Mathematics Instructor</div>
+                    <p>M.S. in Mathematics, with 10 years of experience teaching geometry and calculus through classical methods.</p>
+                </div>
+                <!-- Faculty 7 -->
+                <div class="faculty-card">
+                    <img src="faculty7.jpg" alt="Ms. Olivia Grant" loading="lazy">
+                    <h3>Ms. Olivia Grant</h3>
+                    <div class="position">History Instructor</div>
+                    <p>M.A. in History, specializing in ancient civilizations, with a passion for bringing history to life for students.</p>
+                </div>
+                <!-- Faculty 8 -->
+                <div class="faculty-card">
+                    <img src="faculty8.jpg" alt="Dr. Henry Foster" loading="lazy">
+                    <h3>Dr. Henry Foster</h3>
+                    <div class="position">Science Instructor</div>
+                    <p>Ph.D. in Physics, integrating classical scientific texts with modern experimentation for grades 10-12.</p>
+                </div>
+                <!-- Faculty 9 -->
+                <div class="faculty-card">
+                    <img src="faculty9.jpg" alt="Ms. Abigail Moore" loading="lazy">
+                    <h3>Ms. Abigail Moore</h3>
+                    <div class="position">Art Instructor</div>
+                    <p>B.F.A. in Fine Arts, teaching drawing and art history, emphasizing beauty in the classical tradition.</p>
+                </div>
+                <!-- Faculty 10 -->
+                <div class="faculty-card">
+                    <img src="faculty10.jpg" alt="Mr. Daniel Brooks" loading="lazy">
+                    <h3>Mr. Daniel Brooks</h3>
+                    <div class="position">Music Instructor</div>
+                    <p>M.M. in Music Education, specializing in choral music and classical composition for K-9 students.</p>
+                </div>
+                <!-- Faculty 11 -->
+                <div class="faculty-card">
+                    <img src="faculty11.jpg" alt="Dr. Laura Simmons" loading="lazy">
+                    <h3>Dr. Laura Simmons</h3>
+                    <div class="position">Librarian & Archivist</div>
+                    <p>Ph.D. in Library Science, managing the school’s great books collection and teaching research skills.</p>
+                </div>
+                <!-- Faculty 12 -->
+                <div class="faculty-card">
+                    <img src="faculty12.jpg" alt="Mr. Edward Hayes" loading="lazy">
+                    <h3>Mr. Edward Hayes</hLOGIc>
+                    <div class="position">Logic Instructor</div>
+                    <p>M.A. in Philosophy, teaching formal logic and rhetoric, preparing students for Socratic discussions.</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <!-- Footer -->
     <div class="footer-divider"></div>
-    <footer class="footer text-center">
-        <p>Philo Academy | 608-799-7686 | info@philoacademy.org</p>
+    <footer class="footer">
+        <p>Philo Classical Academy | 608-799-7686 | info@philoacademy.org</p>
         <p>Website: philoacademy.org</p>
-        <p>© 2025 Philo Academy. All rights reserved.</p>
+        <p>© 2025 Philo Classical Academy. All rights reserved.</p>
     </footer>
+</body>
+</html>
