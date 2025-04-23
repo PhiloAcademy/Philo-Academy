@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: rgb(75, 0, 130);
-            --accent-color: rgb(252, 194, 0);
+            --primary-color: rgb(85, 23, 147); /* Updated to match index.html */
+            --accent-color: rgb(238, 186, 43); /* Updated to match index.html */
             --tertiary-color: rgb(255, 255, 255);
             --text-color: #333;
             --background-color: #f5f5f5;
@@ -52,7 +52,7 @@
             height: 2px;
         }
         .motto {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cinzel', serif; /* Updated to match index.html */
             font-style: italic;
             font-size: 0.875rem;
             font-weight: 400;
@@ -96,6 +96,18 @@
             margin-right: 1rem;
             margin-bottom: 0.5rem;
             object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        .text-container {
+            display: inline-block;
+        }
+        .banner .text-container h1 {
+            font-family: 'Cinzel', 'Times New Roman', serif !important;
+            font-weight: 700;
+            font-size: 1.75rem;
         }
         .nav-link {
             font-family: 'Cinzel', serif;
@@ -198,7 +210,7 @@
                 margin-right: 1rem;
                 margin-bottom: 0;
             }
-            .banner h1 {
+            .banner .text-container h1 {
                 font-size: 3rem;
             }
             .motto {
@@ -253,11 +265,24 @@
                 font-size: 1rem;
             }
         }
+        @media (min-width: 768px) {
+            .logo {
+                width: 120px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .logo {
+                width: 150px;
+            }
+        }
         @media (max-width: 767px) {
             .banner .container {
                 flex-direction: column;
                 align-items: center;
                 gap: 0.5rem;
+            }
+            .text-container {
+                text-align: center;
             }
             .search-bar,
             .search-button {
@@ -282,7 +307,7 @@
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
             <div class="flex flex-col items-center md:flex-row">
                 <img src="Heading.jpg?v=2" alt="Philo Classical Academy Banner" class="logo">
-                <div>
+                <div class="text-container">
                     <h1 class="text-4xl md:text-5xl accent-text">Philo Classical Academy</h1>
                     <p class="motto mt-2">Virtute ad Veritatem</p>
                 </div>
@@ -413,7 +438,7 @@
                 <!-- Faculty 12 -->
                 <div class="faculty-card">
                     <img src="faculty12.jpg" alt="Mr. Edward Hayes" loading="lazy">
-                    <h3>Mr. Edward Hayes</hLOGIc>
+                    <h3>Mr. Edward Hayes</h3>
                     <div class="position">Logic Instructor</div>
                     <p>M.A. in Philosophy, teaching formal logic and rhetoric, preparing students for Socratic discussions.</p>
                 </div>
