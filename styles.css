@@ -1,13 +1,14 @@
 /* Mobile-first approach */
 :root {
-    --primary-color: rgb(85, 23, 147); /* #571265 */
-    --accent-color: rgb(247, 200, 70); /* #eeba2b */
+    --primary-color: rgb(87, 18, 101); /* #571265 */
+    --accent-color: rgb(238, 186, 43); /* #eeba2b */
     --tertiary-color: rgb(255, 255, 255);
     --text-color: #333;
     --background-color: #f5f5f5;
 }
 
- margin: 0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -227,13 +228,6 @@ section li {
     margin-top: 0.75rem;
 }
 
-/* About Section Image */
-.about-image {
-    max-height: 10rem; /* Match text height on mobile (8rem text + 2rem padding) */
-    width: auto;
-    object-fit: cover;
-}
-
 /* Info Cards */
 .info-grid {
     display: grid;
@@ -374,12 +368,8 @@ img:not(.logo) {
         margin-top: 1rem;
     }
 
-    .about-image {
-        max-height: 11rem; /* Match text height on desktop (9rem text + 2rem padding) */
-    }
-
     .info-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2x2 grid for desktop */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 2rem;
     }
 
@@ -439,6 +429,18 @@ img:not(.logo) {
         position: static !important; /* Ensure static positioning on mobile */
         width: 100%; /* Full width on mobile */
         z-index: 1; /* Lower z-index to prevent overlap */
+    }
+
+    /* Navigation bar behavior on mobile */
+    .sub-banner {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        transition: transform 0.3s ease;
+    }
+
+    .sub-banner.hidden {
+        transform: translateY(-100%);
     }
 }
 
