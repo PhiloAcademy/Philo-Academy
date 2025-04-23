@@ -118,22 +118,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 300); // Debounce delay
     });
-
-    // Navigation bar hide on scroll for mobile
-    let lastScrollTop = 0;
-    const nav = document.querySelector('.sub-banner');
-
-    window.addEventListener('scroll', function() {
-        const st = window.pageYOffset || document.documentElement.scrollTop;
-        if (window.innerWidth <= 767) {
-            if (st > lastScrollTop) {
-                // Scrolling down
-                nav.classList.add('hidden');
-            } else {
-                // Scrolling up
-                nav.classList.remove('hidden');
-            }
-            lastScrollTop = st <= 0 ? 0 : st;
-        }
-    });
 });
