@@ -1,7 +1,7 @@
 /* Mobile-first approach */
 :root {
-    --primary-color: rgb(75, 0, 130);
-    --accent-color: rgb(255, 222, 89); /* Updated to #ffde59 */
+    --primary-color: rgb(21, 34, 96); /* Updated to #152260 */
+    --accent-color: rgb(238, 186, 43); /* Updated to #eeba2b */
     --tertiary-color: rgb(255, 255, 255);
     --text-color: #333;
     --background-color: #f5f5f5;
@@ -426,8 +426,9 @@ img:not(.logo) {
     }
 
     .dropdown-menu {
-        position: static; /* Prevent sticking while scrolling */
+        position: static !important; /* Ensure static positioning on mobile */
         width: 100%; /* Full width on mobile */
+        z-index: 1; /* Lower z-index to prevent overlap */
     }
 }
 
