@@ -60,9 +60,11 @@ body {
     display: inline-block;
 }
 
-.text-container h1 {
-    font-family: 'Cinzel', serif; /* Classical serif font for "Philo Academy" */
+/* Ensure "Philo Academy" uses a classical serif font */
+.banner .text-container h1 {
+    font-family: 'Cinzel', 'Times New Roman', serif !important; /* Higher specificity and fallback */
     font-weight: 700; /* Bold for prominence */
+    font-size: 1.5rem; /* Base size for mobile */
 }
 
 /* Motto / School Name */
@@ -303,8 +305,8 @@ img:not(.logo) {
         margin-bottom: 0;
     }
 
-    .text-container h1 {
-        font-family: 'Cinzel', serif; /* Ensure consistency on desktop */
+    .banner .text-container h1 {
+        font-family: 'Cinzel', 'Times New Roman', serif !important; /* Ensure consistency on desktop */
         font-size: 2.5rem;
     }
 
@@ -317,7 +319,7 @@ img:not(.logo) {
     }
 
     .nav-link {
-        font-size: 1rem;
+       : 1rem;
     }
 
     .dropdown-menu {
@@ -342,7 +344,7 @@ img:not(.logo) {
         padding: 3rem 0;
     }
 
-    .section h2 {
+    section h2 {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
