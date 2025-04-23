@@ -60,9 +60,9 @@ body {
     display: inline-block;
 }
 
-/* Motto */
+/* Motto / School Name */
 .motto {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cinzel', serif; /* Updated font-family */
     font-style: italic;
     font-size: 0.875rem;
     font-weight: 400;
@@ -87,7 +87,6 @@ body {
         width: 150px; /* Larger size for large PCs */
     }
 }
-
 /* Navigation */
 .sub-banner {
     background-color: var(--accent-color);
