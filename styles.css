@@ -1,7 +1,7 @@
 /* Mobile-first approach */
 :root {
-    --primary-color: rgb(87, 18, 101); /* #571265 */
-    --accent-color: rgb(238, 186, 43); /* #eeba2b */
+    --primary-color: rgb(85, 23, 147); /* Updated to #551793 */
+    --accent-color: rgb(238, 186, 43); /* #eeba2b, unchanged */
     --tertiary-color: rgb(255, 255, 255);
     --text-color: #333;
     --background-color: #f5f5f5;
@@ -340,7 +340,7 @@ img:not(.logo) {
         font-size: 0.8rem;
     }
 
-    section {
+    .section {
         padding: 3rem 0;
     }
 
