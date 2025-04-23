@@ -22,7 +22,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3 {
+-removed: h1, h2, h3 {
     font-family: 'Cinzel', serif;
     color: var(--primary-color);
 }
@@ -46,9 +46,9 @@ h1, h2, h3 {
 }
 
 .logo {
-    width: 10%; /* Base size as a percentage of the parent container */
-    max-width: 60px; /* Cap the size to prevent it from being too large */
-    min-width: 40px; /* Ensure it’s not too small on mobile */
+    width: 13%; /* Increased from 10% to 13% (30% larger) */
+    max-width: 78px; /* Increased from 60px to 78px (30% larger) */
+    min-width: 52px; /* Increased from 40px to 52px (30% larger) */
     height: auto; /* Maintain aspect ratio */
     margin-right: 1rem;
     object-fit: contain;
@@ -280,7 +280,7 @@ img:not(.logo) {
     }
 
     .logo {
-        max-width: 80px; /* Slightly larger on desktop */
+        max-width: 104px; /* Increased from 80px to 104px (30% larger) */
     }
 
     .text-container h1 {
