@@ -1,105 +1,106 @@
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 100,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Dropdown menu accessibility (keyboard support)
-const dropdowns = document.querySelectorAll('.dropdown');
-dropdowns.forEach(dropdown => {
-    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-    const dropdownLink = dropdown.querySelector('.nav-link');
-
-    // Toggle dropdown on click (for mobile)
-    dropdownLink.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
+document.addEventListener('DOMContentLoaded', () => {
+    // Event delegation for smooth scrolling
+    document.body.addEventListener('click', (e) => {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (anchor) {
             e.preventDefault();
-            dropdownMenu.classList.toggle('hidden');
+            const targetId = anchor.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
         }
     });
 
-    // Keyboard accessibility
-    dropdownLink.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
+    // Event delegation for dropdowns (click and touch support)
+    document.body.addEventListener('click', (e) => {
+        const dropdown = e.target.closest('.dropdown');
+        if (dropdown) {
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+    });
+
+    // Keyboard accessibility for dropdowns
+    document.body.addEventListener('keydown', (e) => {
+        const dropdown = e.target.closest('.dropdown .nav-link');
+        if (dropdown && (e.key === 'Enter' || e.key === ' ')) {
             e.preventDefault();
-            dropdownMenu.classList.toggle('hidden');
+            const menu = dropdown.parentElement.querySelector('.dropdown-menu');
+            menu.classList.toggle('hidden');
         }
     });
 
     // Close dropdown when focus leaves
-    dropdownMenu.querySelectorAll('a').forEach(link => {
+    document.querySelectorAll('.dropdown-menu a').forEach(link => {
         link.addEventListener('keydown', (e) => {
             if (e.key === 'Tab' && !e.shiftKey) {
-                const lastLink = dropdownMenu.querySelector('a:last-child');
+                const menu = link.closest('.dropdown-menu');
+                const lastLink = menu.querySelector('a:last-child');
                 if (link === lastLink) {
-                    dropdownMenu.classList.add('hidden');
+                    menu.classList.add('hidden');
                 }
             }
         });
     });
-});
 
-// Basic search functionality
-document.querySelector('.search-button').addEventListener('click', () => {
-    const query = document.querySelector('.search-bar').value.toLowerCase().trim();
-    if (!query) {
-        alert('Please enter a search term.');
-        return;
-    }
+    // Debounced search functionality
+    const searchButton = document.querySelector('.search-button');
+    const searchBar = document.querySelector('.search-bar');
+    let searchTimeout;
 
-    // Reset previous highlights
-    document.querySelectorAll('.highlight').forEach(element => {
-        element.classList.remove('highlight');
-        element.innerHTML = element.textContent;
+    searchButton.addEventListener('click', () => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            const query = searchBar.value.toLowerCase().trim();
+            if (!query) {
+                alert('Please enter a search term.');
+                return;
+            }
+
+            // Reset previous highlights
+            document.querySelectorAll('.highlight').forEach(element => {
+                element.classList.remove('highlight');
+                element.innerHTML = element.textContent;
+            });
+
+            // Search in main content
+            const mainContent = document.querySelector('main');
+            const paragraphs = mainContent.querySelectorAll('p, li');
+            let found = false;
+
+            paragraphs.forEach(p => {
+                const text = p.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    found = true;
+                    p.classList.add('highlight');
+                    const regex = new RegExp(`(${query})`, 'gi');
+                    p.innerHTML = p.textContent.replace(regex, '<span class="highlight-text">$1</span>');
+                    p.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+
+            if (!found) {
+                alert(`No results found for "${query}".`);
+            }
+        }, 300); // Debounce delay
     });
 
-    // Search in main content
-    const mainContent = document.querySelector('main');
-    const paragraphs = mainContent.querySelectorAll('p, li');
-    let found = false;
-
-    paragraphs.forEach(p => {
-        const text = p.textContent.toLowerCase();
-        if (text.includes(query)) {
-            found = true;
-            p.classList.add('highlight');
-            const regex = new RegExp(`(${query})`, 'gi');
-            p.innerHTML = p.textContent.replace(regex, '<span class="highlight-text">$1</span>');
-            p.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Dynamically adjust logo height
+    const adjustLogoHeight = () => {
+        const textContainer = document.querySelector('.text-container');
+        const logo = document.querySelector('.logo');
+        if (textContainer && logo) {
+            const textHeight = textContainer.getBoundingClientRect().height;
+            logo.style.height = `${textHeight}px`;
         }
-    });
+    };
 
-    if (!found) {
-        alert(`No results found for "${query}".`);
-    }
+    adjustLogoHeight();
+    window.addEventListener('resize', adjustLogoHeight);
 });
-
-// Highlight styling (added dynamically)
-const style = document.createElement('style');
-style.textContent = `
-    .highlight {
-        background-color: rgba(252, 194, 0, 0.3);
-        padding: 0.2rem;
-        border-radius: 4px;
-    }
-    .highlight-text {
-        background-color: var(--accent-color);
-        color: var(--primary-color);
-        font-weight: 700;
-        padding: 0.1rem 0.3rem;
-        border-radius: 3px;
-    }
-    .dropdown-menu.hidden {
-        display: none;
-    }
-`;
-document.head.appendChild(style);
