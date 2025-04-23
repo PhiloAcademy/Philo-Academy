@@ -1,3 +1,4 @@
+/* Mobile-first approach */
 :root {
     --primary-color: rgb(75, 0, 130);
     --accent-color: rgb(252, 194, 0);
@@ -17,6 +18,8 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3 {
@@ -38,30 +41,29 @@ h1, h2, h3 {
 .banner {
     background-color: var(--primary-color);
     color: var(--accent-color);
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     position: relative;
 }
 
-.banner .logo {
-    height: 2.5em; /* Match the height to the h1 font size (2.5rem in .banner h1) */
-    width: auto; /* Maintain the aspect ratio */
+.logo {
+    margin-right: 1rem;
+    object-fit: contain;
+    will-change: transform;
     transition: transform 0.3s ease;
 }
 
-.banner .logo:hover {
+.logo:hover {
     transform: scale(1.05);
 }
 
-.banner h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+.text-container {
+    display: inline-block;
 }
 
 .motto {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: 400;
     color: var(--tertiary-color);
 }
@@ -74,7 +76,7 @@ h1, h2, h3 {
 /* Navigation */
 .sub-banner {
     background-color: var(--accent-color);
-    padding: 1rem 0;
+    padding: 0.75rem 0;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -82,7 +84,7 @@ h1, h2, h3 {
 
 .nav-link {
     font-family: 'Cinzel', serif;
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: 700;
     color: var(--primary-color);
     transition: color 0.3s ease;
@@ -106,7 +108,7 @@ h1, h2, h3 {
     z-index: 20;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    min-width: 12rem;
+    min-width: 10rem;
 }
 
 .dropdown:hover .dropdown-menu,
@@ -116,7 +118,7 @@ h1, h2, h3 {
 
 .dropdown-menu a {
     font-family: 'Cinzel', serif;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     color: var(--tertiary-color);
     padding: 0.5rem 1rem;
     display: block;
@@ -135,27 +137,28 @@ h1, h2, h3 {
     border: 1px solid var(--accent-color);
     border-radius: 4px;
     padding: 0.25rem 0.5rem;
-    width: 100px;
+    width: 80px;
     font-family: 'Roboto', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     transition: border-color 0.3s ease, width 0.3s ease;
 }
 
 .search-bar:focus {
     outline: none;
     border-color: var(--primary-color);
-    width: 150px;
+    width: 120px;
 }
 
 .search-button {
     background-color: var(--accent-color);
     color: var(--primary-color);
-    padding: 0.25rem 0.6rem;
+    padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-family: 'Cinzel', serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 700;
     transition: background-color 0.3s ease, color 0.3s ease;
+    touch-action: manipulation; /* Optimize for touch */
 }
 
 .search-button:hover,
@@ -166,24 +169,24 @@ h1, h2, h3 {
 
 /* Sections */
 section {
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 
 section h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
 section p,
 section li {
-    font-size: 1.125rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .hero-section {
     position: relative;
-    height: 24rem;
+    height: 20rem;
     background-size: cover;
     background-position: center;
 }
@@ -200,40 +203,41 @@ section li {
 }
 
 .hero-overlay h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--accent-color);
 }
 
 .hero-overlay p {
-    font-size: 1.25rem;
-    margin-top: 1rem;
+    font-size: 1rem;
+    margin-top: 0.75rem;
 }
 
 /* Info Cards */
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
 .info-card {
-    padding: 1.5rem;
+    padding: 1rem;
     text-align: center;
 }
 
 .info-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
 }
 
 .learn-more {
     display: inline-block;
     background-color: var(--primary-color);
     color: var(--accent-color);
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 4px;
     font-weight: 600;
     transition: background-color 0.3s ease, color 0.3s ease;
+    touch-action: manipulation;
 }
 
 .learn-more:hover,
@@ -251,79 +255,112 @@ section li {
 .footer {
     background-color: var(--primary-color);
     color: var(--accent-color);
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     text-align: center;
 }
 
 .footer p {
-    font-size: 1rem;
+    font-size: 0.875rem;
     margin-bottom: 0.5rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .banner .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+/* Lazy-loaded images */
+img:not(.logo) {
+    loading: lazy;
+}
+
+/* Desktop and larger screens */
+@media (min-width: 768px) {
+    .banner {
+        padding: 2rem 0;
     }
 
-    .banner h1 {
-        font-size: 2rem;
+    .text-container h1 {
+        font-size: 2.5rem;
     }
 
-    .sub-banner .container {
-        flex-direction: column;
-        gap: 1rem;
+    .motto {
+        font-size: 1rem;
+    }
+
+    .sub-banner {
+        padding: 1rem 0;
     }
 
     .nav-link {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        background-color: var(--primary-color);
+        min-width: 12rem;
+    }
+
+    .search-bar {
+        width: 100px;
+        font-size: 0.8rem;
+    }
+
+    .search-bar:focus {
+        width: 150px;
+    }
+
+    .search-button {
+        padding: 0.25rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    section {
+        padding: 3rem 0;
     }
 
     section h2 {
-        font-size: 1.75rem;
+        font-size: 2rem;
+        margin-bottom: 2rem;
     }
 
     section p,
     section li {
-        font-size: 1rem;
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-section {
+        height: 24rem;
     }
 
     .hero-overlay h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .hero-overlay p {
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .info-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .learn-more {
+        padding: 0.5rem 1.5rem;
+    }
+
+    .footer {
+        padding: 2rem 0;
+    }
+
+    .footer p {
         font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .banner h1 {
-        font-size: 1.5rem;
-    }
-
-    .motto {
-        font-size: 0.875rem;
-    }
-
-    .search-bar {
-        width: 80px;
-    }
-
-    .search-bar:focus {
-        width: 120px;
-    }
-
-    section h2 {
-        font-size: 1.5rem;
     }
 }
 
