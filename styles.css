@@ -51,7 +51,7 @@ h1, h2, h3 {
     will-change: transform;
     transition: transform 0.3s ease;
     height: 100%; /* Ensures the logo scales with the parent's height */
-    max-height: 3rem; /* Set a fixed maximum height to match the title and motto */
+    max-height: 1rem; /* Set a fixed maximum height to match the title and motto */
 }
 
 .logo:hover {
