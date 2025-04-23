@@ -1,7 +1,7 @@
 /* Mobile-first approach */
 :root {
-    --primary-color: rgb(87, 18, 101); /* Updated to #571265 */
-    --accent-color: rgb(238, 186, 43); /* #eeba2b */
+    --primary-color: rgb(85, 23, 147); /* #571265 */
+    --accent-color: rgb(247, 200, 70); /* #eeba2b */
     --tertiary-color: rgb(255, 255, 255);
     --text-color: #333;
     --background-color: #f5f5f5;
@@ -228,6 +228,13 @@ section li {
     margin-top: 0.75rem;
 }
 
+/* About Section Image */
+.about-image {
+    max-height: 10rem; /* Match text height on mobile (8rem text + 2rem padding) */
+    width: auto;
+    object-fit: cover;
+}
+
 /* Info Cards */
 .info-grid {
     display: grid;
@@ -366,6 +373,10 @@ img:not(.logo) {
     .hero-overlay p {
         font-size: 1.25rem;
         margin-top: 1rem;
+    }
+
+    .about-image {
+        max-height: 11rem; /* Match text height on desktop (9rem text + 2rem padding) */
     }
 
     .info-grid {
