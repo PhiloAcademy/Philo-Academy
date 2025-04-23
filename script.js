@@ -90,17 +90,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 300); // Debounce delay
     });
-
-    // Dynamically adjust logo height
-    const adjustLogoHeight = () => {
-        const textContainer = document.querySelector('.text-container');
-        const logo = document.querySelector('.logo');
-        if (textContainer && logo) {
-            const textHeight = textContainer.getBoundingClientRect().height;
-            logo.style.height = `${textHeight}px`;
-        }
-    };
-
-    adjustLogoHeight();
-    window.addEventListener('resize', adjustLogoHeight);
 });
