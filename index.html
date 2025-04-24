@@ -65,7 +65,7 @@
             border-radius: 4px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: absolute;
-            top: 100%; /* Ensures dropdown appears below the nav item */
+            top: 100%;
             left: 0;
         }
         @media (min-width: 768px) {
@@ -391,8 +391,10 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="container mx-auto">
-            <h2 class="font-bold">About Philo Classical Academy</h2>
+        <section id="about" class="container mx-auto px-4">
+            <div class="text-center mb-6">
+                <h2 class="font-bold text-3xl md:text-4xl">About Philo Classical Academy</h2>
+            </div>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 p-4">
                     <img src="crest.jpg" alt="Philo Classical Academy Campus" class="rounded-lg shadow-lg" loading="lazy">
