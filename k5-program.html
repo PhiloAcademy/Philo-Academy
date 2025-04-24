@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the K-5 curriculum at Philo Classical Academy, featuring classic literature and timeless stories.">
+    <meta name="description" content="Explore the K-5 curriculum at Philo Classical Academy, focusing on classical education, great books, and virtue formation in the Twin Cities.">
     <meta name="keywords" content="Philo Classical Academy, K-5 curriculum, classical education, great books, Twin Cities">
     <meta name="author" content="Philo Classical Academy">
-    <title>Philo Classical Academy | K-5 Program</title>
+    <title>K-5 Program | Philo Classical Academy</title>
     <link rel="icon" type="image/png" href="favicon-32x32.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -64,6 +64,9 @@
             z-index: 20;
             border-radius: 4px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 100%; /* Ensures dropdown appears below the nav item */
+            left: 0;
         }
         @media (min-width: 768px) {
             .dropdown:hover .dropdown-menu,
@@ -156,30 +159,6 @@
         .container {
             max-width: 1200px;
         }
-        /* Subject Buttons */
-        .subject-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        .subject-button {
-            background-color: var(--primary-color);
-            color: var(--accent-color);
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            font-family: 'Cinzel', serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .subject-button:hover,
-        .subject-button:focus {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            transform: scale(1.05);
-        }
         /* Responsive Adjustments */
         @media (min-width: 768px) {
             .banner {
@@ -226,14 +205,6 @@
             }
             section h2 {
                 font-size: 2rem;
-            }
-            .subject-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.5rem;
-            }
-            .subject-button {
-                font-size: 1.5rem;
-                padding: 1.5rem;
             }
             .footer {
                 padding: 2rem 0;
@@ -296,6 +267,7 @@
         </div>
     </header>
     <div class="divider"></div>
+
     <!-- Navigation -->
     <nav class="sub-banner">
         <div class="container mx-auto flex flex-col md:flex-row justify-center items-center px-4 space-y-4 md:space-y-0 md:space-x-8">
@@ -303,25 +275,25 @@
             <div class="dropdown relative">
                 <a href="index.html#about" class="nav-link">About Us</a>
                 <div class="dropdown-menu hidden">
-                    <a href="mission.html" target="_blank" class="block">Our Mission</a>
-                    <a href="history.html" target="_blank" class="block">History</a>
-                    <a href="faculty.html" target="_blank" class="block">Faculty/Staff</a>
+                    <a href="mission.html" class="block">Our Mission</a>
+                    <a href="history.html" class="block">History</a>
+                    <a href="faculty.html" class="block">Faculty/Staff</a>
                 </div>
             </div>
             <div class="dropdown relative">
                 <a href="index.html#academics" class="nav-link">Academics</a>
                 <div class="dropdown-menu hidden">
-                    <a href="k5-program.html" target="_blank" class="block">K-5 Program</a>
-                    <a href="6-9-program.html" target="_blank" class="block">6-9 Program</a>
-                    <a href="10-12-program.html" target="_blank" class="block">10-12 Program</a>
+                    <a href="k5-program.html" class="block">K-5 Program</a>
+                    <a href="6-9-program.html" class="block">6-9 Program</a>
+                    <a href="10-12-program.html" class="block">10-12 Program</a>
                 </div>
             </div>
             <div class="dropdown relative">
                 <a href="index.html#admissions" class="nav-link">Admissions</a>
                 <div class="dropdown-menu hidden">
-                    <a href="process.html" target="_blank" class="block">Process</a>
-                    <a href="tuition.html" target="_blank" class="block">Tuition</a>
-                    <a href="financial-aid.html" target="_blank" class="block">Financial Aid</a>
+                    <a href="process.html" class="block">Process</a>
+                    <a href="tuition.html" class="block">Tuition</a>
+                    <a href="financial-aid.html" class="block">Financial Aid</a>
                 </div>
             </div>
             <a href="index.html#news" class="nav-link">News</a>
@@ -332,19 +304,34 @@
     <!-- Main Content -->
     <main>
         <section class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">K-5 Program Curriculum</h2>
-            <p class="text-lg md:text-xl text-center mb-8">Explore the K-5 curriculum at Philo Classical Academy, organized by subject. Select a subject below to learn more about our approach to classical education.</p>
-
-            <!-- Subject Buttons -->
-            <div class="subject-grid">
-                <a href="literature.html" class="subject-button">Literature</a>
-                <a href="math.html" class="subject-button">Math</a>
-                <a href="humanities.html" class="subject-button">Humanities</a>
-                <a href="science.html" class="subject-button">Science</a>
-                <a href="physical-education.html" class="subject-button">Physical Education</a>
-                <a href="music.html" class="subject-button">Music</a>
-                <a href="art.html" class="subject-button">Art</a>
-            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">K-5 Program</h2>
+            <p class="text-lg md:text-xl text-center mb-8">Our K-5 program at Philo Classical Academy introduces young students to the foundations of classical education through storytelling, moral formation, and an introduction to the great books.</p>
+            
+            <h3 class="text-2xl font-bold mb-4">Curriculum Overview</h3>
+            <p class="mb-4">The K-5 curriculum is designed to spark a love for learning by engaging students with classic stories and foundational knowledge. We emphasize virtue, imagination, and critical thinking through a structured yet joyful approach to education.</p>
+            
+            <h3 class="text-2xl font-bold mb-4">Key Components</h3>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Literature:</strong> Students read timeless stories such as <em>Aesop’s Fables</em>, <em>The Velveteen Rabbit</em>, and selections from <em>Winnie-the-Pooh</em>, fostering imagination and moral understanding.</li>
+                <li><strong>History:</strong> An introduction to historical timelines through narratives, covering ancient civilizations to early American history.</li>
+                <li><strong>Mathematics:</strong> Foundational arithmetic, focusing on number sense, patterns, and problem-solving.</li>
+                <li><strong>Science:</strong> Nature studies and basic scientific concepts through observation and hands-on exploration.</li>
+                <li><strong>Arts:</strong> Exposure to music, art, and poetry to cultivate an appreciation for beauty.</li>
+            </ul>
+            
+            <h3 class="text-2xl font-bold mb-4">Virtue Formation</h3>
+            <p class="mb-4">We integrate virtue education into daily lessons, teaching values such as courage, kindness, and perseverance through stories and classroom discussions. Students learn to embody these virtues in their interactions with peers and teachers.</p>
+            
+            <h3 class="text-2xl font-bold mb-4">Sample Reading List</h3>
+            <ul class="list-disc list-inside mb-4">
+                <li><em>Aesop’s Fables</em> – Aesop</li>
+                <li><em>The Velveteen Rabbit</em> – Margery Williams</li>
+                <li><em>Winnie-the-Pooh</em> – A.A. Milne</li>
+                <li><em>Charlotte’s Web</em> – E.B. White</li>
+                <li><em>The Tale of Peter Rabbit</em> – Beatrix Potter</li>
+            </ul>
+            
+            <p class="text-center mt-8">Interested in learning more about our K-5 program? <a href="index.html#contact" class="text-blue-600 hover:underline">Contact us</a> to schedule a visit!</p>
         </section>
     </main>
 
