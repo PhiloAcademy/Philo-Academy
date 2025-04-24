@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the K-5 curriculum at Philo Classical Academy, focusing on classical education, great books, and virtue formation in the Twin Cities.">
-    <meta name="keywords" content="Philo Classical Academy, K-5 curriculum, classical education, great books, Twin Cities">
+    <meta name="description" content="Explore the K-5 program at Philo Classical Academy, focusing on classical education, great books, and virtue.">
+    <meta name="keywords" content="Philo Classical Academy, K-5 program, classical education, great books, Twin Cities">
     <meta name="author" content="Philo Classical Academy">
     <title>K-5 Program | Philo Classical Academy</title>
     <link rel="icon" type="image/png" href="favicon-32x32.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --primary-color: rgb(85, 23, 147);
@@ -65,7 +66,7 @@
             border-radius: 4px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: absolute;
-            top: 100%; /* Ensures dropdown appears below the nav item */
+            top: 100%;
             left: 0;
         }
         @media (min-width: 768px) {
@@ -247,6 +248,32 @@
             outline: 2px solid var(--accent-color);
             outline-offset: 2px;
         }
+        /* Subject Bubbles */
+        .subject-bubble {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--accent-color);
+        }
+        .subject-bubble i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .subject-bubble h3 {
+            font-size: 1rem;
+            line-height: 1.2;
+            color: var(--primary-color);
+        }
+        .subject-bubble:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -275,7 +302,7 @@
             <div class="dropdown relative">
                 <a href="index.html#about" class="nav-link">About Us</a>
                 <div class="dropdown-menu hidden">
-                    <a href="mission.html" class="block">Our Mission</a>
+                    <a href="mission-vision.html" class="block">Our Mission</a>
                     <a href="history.html" class="block">History</a>
                     <a href="faculty.html" class="block">Faculty/Staff</a>
                 </div>
@@ -305,33 +332,43 @@
     <main>
         <section class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">K-5 Program</h2>
-            <p class="text-lg md:text-xl text-center mb-8">Our K-5 program at Philo Classical Academy introduces young students to the foundations of classical education through storytelling, moral formation, and an introduction to the great books.</p>
-            
-            <h3 class="text-2xl font-bold mb-4">Curriculum Overview</h3>
-            <p class="mb-4">The K-5 curriculum is designed to spark a love for learning by engaging students with classic stories and foundational knowledge. We emphasize virtue, imagination, and critical thinking through a structured yet joyful approach to education.</p>
-            
-            <h3 class="text-2xl font-bold mb-4">Key Components</h3>
-            <ul class="list-disc list-inside mb-4">
-                <li><strong>Literature:</strong> Students read timeless stories such as <em>Aesop’s Fables</em>, <em>The Velveteen Rabbit</em>, and selections from <em>Winnie-the-Pooh</em>, fostering imagination and moral understanding.</li>
-                <li><strong>History:</strong> An introduction to historical timelines through narratives, covering ancient civilizations to early American history.</li>
-                <li><strong>Mathematics:</strong> Foundational arithmetic, focusing on number sense, patterns, and problem-solving.</li>
-                <li><strong>Science:</strong> Nature studies and basic scientific concepts through observation and hands-on exploration.</li>
-                <li><strong>Arts:</strong> Exposure to music, art, and poetry to cultivate an appreciation for beauty.</li>
-            </ul>
-            
-            <h3 class="text-2xl font-bold mb-4">Virtue Formation</h3>
-            <p class="mb-4">We integrate virtue education into daily lessons, teaching values such as courage, kindness, and perseverance through stories and classroom discussions. Students learn to embody these virtues in their interactions with peers and teachers.</p>
-            
-            <h3 class="text-2xl font-bold mb-4">Sample Reading List</h3>
-            <ul class="list-disc list-inside mb-4">
-                <li><em>Aesop’s Fables</em> – Aesop</li>
-                <li><em>The Velveteen Rabbit</em> – Margery Williams</li>
-                <li><em>Winnie-the-Pooh</em> – A.A. Milne</li>
-                <li><em>Charlotte’s Web</em> – E.B. White</li>
-                <li><em>The Tale of Peter Rabbit</em> – Beatrix Potter</li>
-            </ul>
-            
-            <p class="text-center mt-8">Interested in learning more about our K-5 program? <a href="index.html#contact" class="text-blue-600 hover:underline">Contact us</a> to schedule a visit!</p>
+            <p class="mb-4">Our K-5 program at Philo Classical Academy lays a strong foundation for classical education, emphasizing the development of virtue, a love for learning, and foundational skills in core subjects. Students engage with great books, classical stories, and hands-on activities that foster curiosity and critical thinking.</p>
+            <p class="mb-4">We focus on nurturing the whole child through a balanced curriculum that includes literature, mathematics, history, science, art, music, and physical education, all grounded in the pursuit of truth, goodness, and beauty.</p>
+
+            <!-- Subject Bubbles Section -->
+            <h3 class="text-2xl font-bold text-center mb-6">Core Subjects</h3>
+            <div class="grid grid-cols-3 gap-6 mb-8">
+                <!-- Literature -->
+                <a href="k5-reading-list.html" class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-book mb-2"></i>
+                    <h3>Literature</h3>
+                </a>
+                <!-- Mathematics -->
+                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-calculator mb-2"></i>
+                    <h3>Mathematics</h3>
+                </div>
+                <!-- History -->
+                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-landmark mb-2"></i>
+                    <h3>History</h3>
+                </div>
+                <!-- Science -->
+                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-flask mb-2"></i>
+                    <h3>Science</h3>
+                </div>
+                <!-- Art & Music -->
+                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-paint-brush mb-2"></i>
+                    <h3>Art & Music</h3>
+                </div>
+                <!-- Physical Education -->
+                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-running mb-2"></i>
+                    <h3>Physical Education</h3>
+                </div>
+            </div>
         </section>
     </main>
 
