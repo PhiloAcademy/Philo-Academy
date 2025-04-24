@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the K-5 reading list at Philo Classical Academy, featuring classical stories and great books for young learners.">
+    <meta name="keywords" content="Philo Classical Academy, K-5 reading list, classical education, great books, Twin Cities">
+    <meta name="author" content="Philo Classical Academy">
+    <title>K-5 Reading List | Philo Classical Academy</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: rgb(85, 23, 147);
+            --accent-color: rgb(238, 186, 43);
+            --tertiary-color: rgb(255, 255, 255);
+            --text-color: #333;
+            --background-color: #f5f5f5;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-color);
+        }
+        .accent-text {
+            color: var(--accent-color);
+        }
+        .banner {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 1.5rem 0;
+            position: relative;
+        }
+        .sub-banner {
+            background-color: var(--accent-color);
+            position: relative;
+            z-index: 10;
+            padding: 0.75rem 0;
+        }
+        .divider {
+            background-color: var(--tertiary-color);
+            height: 2px;
+        }
+        .footer-divider {
+            background-color: var(--accent-color);
+            height: 2px;
+        }
+        .motto {
+            font-family: 'Cinzel', serif;
+            font-style: italic;
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: var(--tertiary-color);
+        }
+        .dropdown-menu {
+            display: none;
+            background-color: var(--primary-color);
+            z-index: 20;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+        @media (min-width: 768px) {
+            .dropdown:hover .dropdown-menu,
+            .dropdown:focus-within .dropdown-menu {
+                display: block;
+            }
+        }
+        .dropdown-menu a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.875rem;
+            color: var(--tertiary-color);
+            padding: 0.5rem 1rem;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dropdown-menu a:hover,
+        .dropdown-menu a:focus {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        .logo {
+            width: 60px;
+            height: auto;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        .text-container {
+            display: inline-block;
+        }
+        .banner .text-container h1 {
+            font-family: 'Cinzel', 'Times New Roman', serif !important;
+            font-weight: 700;
+            font-size: 1.75rem;
+        }
+        .nav-link {
+            font-family: 'Cinzel', serif;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover,
+        .nav-link:focus {
+            color: var(--tertiary-color);
+        }
+        .search-bar {
+            background-color: var(--tertiary-color);
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            width: 80px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.75rem;
+            transition: border-color 0.3s ease, width 0.3s ease;
+        }
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            width: 120px;
+        }
+        .search-button {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .search-button:hover,
+        .search-button:focus {
+            background-color: var(--tertiary-color);
+            color: var(--primary-color);
+        }
+        section {
+            padding: 2rem 0;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .banner {
+                padding: 2rem 0;
+            }
+            .banner .container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .logo {
+                width: 104px;
+                margin-right: 1rem;
+                margin-bottom: 0;
+            }
+            .banner .text-container h1 {
+                font-size: 3rem;
+            }
+            .motto {
+                font-size: 1rem;
+            }
+            .sub-banner {
+                padding: 1rem 0;
+            }
+            .nav-link {
+                font-size: 1rem;
+            }
+            .dropdown-menu {
+                min-width: 12rem;
+            }
+            .search-bar {
+                width: 100px;
+                font-size: 0.8rem;
+            }
+            .search-bar:focus {
+                width: 150px;
+            }
+            .search-button {
+                padding: 0.25rem 0.6rem;
+                font-size: 0.8rem;
+            }
+            section {
+                padding: 3rem 0;
+            }
+            section h2 {
+                font-size: 2rem;
+            }
+            .footer {
+                padding: 2rem 0;
+            }
+            .footer p {
+                font-size: 1rem;
+            }
+        }
+        @media (min-width: 768px) {
+            .logo {
+                width: 120px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .logo {
+                width: 150px;
+            }
+        }
+        @media (max-width: 767px) {
+            .banner .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .text-container {
+                text-align: center;
+            }
+            .search-bar,
+            .search-button {
+                margin: 0 auto;
+            }
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                z-index: 1;
+            }
+        }
+        /* Accessibility */
+        :focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="banner">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+            <div class="flex flex-col items-center md:flex-row">
+                <img src="Heading.jpg?v=2" alt="Philo Classical Academy Banner" class="logo">
+                <div class="text-container">
+                    <h1 class="text-4xl md:text-5xl accent-text">Philo Classical Academy</h1>
+                    <p class="motto mt-2">Virtute ad Veritatem</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2">
+                <input type="text" class="search-bar" placeholder="Search..." aria-label="Search">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+    </header>
+    <div class="divider"></div>
+
+    <!-- Navigation -->
+    <nav class="sub-banner">
+        <div class="container mx-auto flex flex-col md:flex-row justify-center items-center px-4 space-y-4 md:space-y-0 md:space-x-8">
+            <a href="index.html" class="nav-link">Home</a>
+            <div class="dropdown relative">
+                <a href="index.html#about" class="nav-link">About Us</a>
+                <div class="dropdown-menu hidden">
+                    <a href="mission-vision.html" class="block">Our Mission</a>
+                    <a href="history.html" class="block">History</a>
+                    <a href="faculty.html" class="block">Faculty/Staff</a>
+                </div>
+            </div>
+            <div class="dropdown relative">
+                <a href="index.html#academics" class="nav-link">Academics</a>
+                <div class="dropdown-menu hidden">
+                    <a href="k5-program.html" class="block">K-5 Program</a>
+                    <a href="6-9-program.html" class="block">6-9 Program</a>
+                    <a href="10-12-program.html" class="block">10-12 Program</a>
+                </div>
+            </div>
+            <div class="dropdown relative">
+                <a href="index.html#admissions" class="nav-link">Admissions</a>
+                <div class="dropdown-menu hidden">
+                    <a href="process.html" class="block">Process</a>
+                    <a href="tuition.html" class="block">Tuition</a>
+                    <a href="financial-aid.html" class="block">Financial Aid</a>
+                </div>
+            </div>
+            <a href="index.html#news" class="nav-link">News</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">K-5 Reading List</h2>
+            <p class="mb-4">The K-5 reading list at Philo Classical Academy introduces young learners to timeless stories, fables, and classics that foster a love for reading while emphasizing virtue, courage, and wisdom. Each grade builds on the previous, encouraging moral reflection and historical awareness through engaging narratives.</p>
+
+            <!-- Kindergarten -->
+            <h3 class="text-2xl font-bold mb-4">Kindergarten</h3>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Mother Goose Rhymes</strong> (selected rhymes, e.g., “Humpty Dumpty,” “Jack and Jill”) – Short, memorable verses for recitation and joy.</li>
+                <li><strong>The Three Billy Goats Gruff</strong> (Paul Galdone version) – A tale of bravery and cleverness as three goats outsmart a troll.</li>
+                <li><strong>Goldilocks and the Three Bears</strong> (Paul Galdone version) – A curious girl learns respect for others’ belongings in this classic story.</li>
+                <li><strong>The Gingerbread Man</strong> (Karen Schmidt version) – A lively chase tale teaching caution and quick thinking.</li>
+                <li><strong>The Little Red Hen</strong> (Paul Galdone version) – A lesson in hard work and responsibility as the hen reaps what she sows.</li>
+                <li><strong>Jack and the Beanstalk</strong> (Steven Kellogg retelling) – Adventure with themes of courage and greed.</li>
+            </ul>
+
+            <!-- 1st Grade -->
+            <h3 class="text-2xl font-bold mb-4">1st Grade</h3>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Aesop’s Fables</strong> (selected stories, e.g., “The Tortoise and the Hare,” “The Boy Who Cried Wolf,” Milo Winter illustrations) – Core fables for memorization and discussion.</li>
+                <li><strong>The Ant and the Grasshopper</strong> (Amy Lowry retelling) – Highlights planning vs. idleness.</li>
+                <li><strong>The Lion and the Mouse</strong> (Jerry Pinkney version) – Emphasizes kindness and reciprocity.</li>
+                <li><strong>The Dog and His Reflection</strong> (from Aesop, Ann McGovern collection) – Warns against greed.</li>
+                <li><strong>The Fox and the Grapes</strong> (Aesop, V.S. Vernon Jones translation) – Introduces rationalization.</li>
+                <li><strong>The Goose That Laid the Golden Eggs</strong> (Aesop, Michael Hague illustrations) – Explores gratitude and moderation.</li>
+            </ul>
+
+            <!-- 2nd Grade -->
+            <h3 class="text-2xl font-bold mb-4">2nd Grade</h3>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>D’Aulaires’ Book of Greek Myths</strong> (selected stories, e.g., “Theseus and the Minotaur,” “Daedalus and Icarus”) – Vivid retellings with rich illustrations.</li>
+                <li><strong>The Golden Fleece</strong> (Padraic Colum retelling) – Jason’s quest for heroism and teamwork.</li>
+                <li><strong>Persephone and the Pomegranate Seeds</strong> (Kris Waldherr version) – Explains seasons, explores family ties.</li>
+                <li><strong>King Midas and the Golden Touch</strong> (Charlotte Craft retelling) – Warns against greed, visually engaging.</li>
+                <li><strong>Arachne the Weaver</strong> (from Favorite Greek Myths, Mary Pope Osborne) – Pride and consequences.</li>
+                <li><strong>Pandora’s Box</strong> (Jean Warren retelling) – Curiosity and hope, sparks discussion.</li>
+                <li><strong>Norse Myths</strong> (selected stories, e.g., “The Theft of Thor’s Hammer,” D’Aulaires’ version) – Courage and wit in tales of gods and giants.</li>
+                <li><strong>Eastern Myths</strong> (selected stories, e.g., “The Monkey King,” Aaron Shepard retelling) – Adventure and wisdom from ancient traditions.</li>
+            </ul>
+
+            <!-- 3rd Grade -->
+            <h3 class="text-2xl font-bold mb-4">3rd Grade</h3>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Charlotte’s Web</strong> (E.B. White) – Friendship, sacrifice, and life cycles.</li>
+                <li><strong>The Velveteen Rabbit</strong> (Margery Williams) – Love, authenticity, and becoming “real.”</li>
+                <li><strong>The Tale of Peter Rabbit</strong> (Beatrix Potter) – Disobedience and consequences, rich language.</li>
+                <li><strong>The Lion, the Witch and the Wardrobe</strong> (C.S. Lewis) – Good vs. evil, redemption (abridged for pacing if needed).</li>
+                <li><strong>Pinocchio</strong> (Carlo Collodi, simplified retelling) – Honesty and personal growth.</li>
+                <li><strong>The Princess and the Goblin</strong> (George MacDonald, adapted version) – Courage, faith, and adventure in a magical world.</li>
+            </ul>
+
+            <!-- 4th Grade -->
+            <h3 class="text-2xl font-bold mb-4">4th Grade</h3>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>The Courage of Sarah Noble</strong> (Alice Dalgliesh) – A girl’s bravery in colonial Connecticut, 1707.</li>
+                <li><strong>The Sign of the Beaver</strong> (Elizabeth George Speare) – Friendship and survival in 1768 Maine.</li>
+                <li><strong>The Fighting Ground</strong> (Avi) – A boy’s experience in the Revolutionary War, 1778, exploring courage.</li>
+                <li><strong>Paul Revere’s Ride</strong> (Henry Wadsworth Longfellow) – A poetic retelling of the 1775 ride, inspiring patriotism.</li>
+                <li><strong>Rip Van Winkle</strong> (Washington Irving) – A magical tale of change in post-Revolutionary America, 1780s.</li>
+                <li><strong>The Legend of Sleepy Hollow</strong> (Washington Irving) – Early American folklore in 1790s New York, with Ichabod Crane.</li>
+                <li><strong>American Tall Tales</strong> (Mary Pope Osborne collection) – Larger-than-life heroes like Paul Bunyan, teaching resilience.</li>
+                <li><strong>Little House on the Prairie</strong> (Laura Ingalls Wilder) – Pioneer life in 1870s Kansas, showcasing family and perseverance.</li>
+                <li><strong>Sarah, Plain and Tall</strong> (Patricia MacLachlan) – Love and belonging in the 1880s Midwest.</li>
+            </ul>
+
+            <!-- 5th Grade -->
+            <h3 class="text-2xl font-bold mb-4">5th Grade</h3>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Little Women</strong> (Louisa May Alcott) – Sisterhood, growth, and virtue in Civil War-era New England.</li>
+                <li><strong>Tom Sawyer</strong> (Mark Twain) – Adventure and mischief in 1840s Missouri, exploring friendship.</li>
+                <li><strong>The Wonderful Wizard of Oz</strong> (L. Frank Baum) – Dorothy’s journey of courage and self-discovery in a magical land.</li>
+                <li><strong>Pollyanna</strong> (Eleanor H. Porter) – Optimism and resilience in early 20th-century Vermont.</li>
+                <li><strong>Where the Red Fern Grows</strong> (Wilson Rawls) – Loyalty and loss through a boy’s bond with his dogs in the Ozarks.</li>
+                <li><strong>Roll of Thunder, Hear My Cry</strong> (Mildred D. Taylor) – Racial injustice and family strength in 1930s Mississippi.</li>
+                <li><strong>Bridge to Terabithia</strong> (Katherine Paterson) – Friendship, imagination, and coping with loss in 1970s Virginia.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div class="footer-divider"></div>
+    <footer class="footer">
+        <p>Philo Classical Academy | 608-799-7686 | info@philoacademy.org</p>
+        <p>Website: philoacademy.org</p>
+        <p>© 2025 Philo Classical Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
