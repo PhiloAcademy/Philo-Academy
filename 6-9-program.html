@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the 6-9 curriculum at Philo Classical Academy, organized by subject.">
-    <meta name="keywords" content="Philo Classical Academy, 6-9 curriculum, classical education, Twin Cities">
+    <meta name="description" content="Discover the 6-9 program at Philo Classical Academy, focusing on classical education and great books for middle school students.">
+    <meta name="keywords" content="Philo Classical Academy, 6-9 program, classical education, great books, Twin Cities">
     <meta name="author" content="Philo Classical Academy">
-    <title>Philo Classical Academy | 6-9 Program</title>
+    <title>6-9 Program | Philo Classical Academy</title>
     <link rel="icon" type="image/png" href="favicon-32x32.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --primary-color: rgb(85, 23, 147);
@@ -24,7 +25,7 @@
             background-color: var(--background-color);
             line-height: 1.6;
         }
-        h1, h2, h3, h4 {
+        h1, h2, h3 {
             font-family: 'Cinzel', serif;
             color: var(--primary-color);
         }
@@ -64,6 +65,9 @@
             z-index: 20;
             border-radius: 4px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 100%;
+            left: 0;
         }
         @media (min-width: 768px) {
             .dropdown:hover .dropdown-menu,
@@ -156,31 +160,6 @@
         .container {
             max-width: 1200px;
         }
-        /* Subject Buttons */
-        .subject-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        .subject-button {
-            background-color: var(--primary-color);
-            color: var(--accent-color);
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            font-family: 'Cinzel', serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .subject-button:hover,
-        .subject-button:focus {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            transform: scale(1.05);
-        }
-        /* Responsive Adjustments */
         @media (min-width: 768px) {
             .banner {
                 padding: 2rem 0;
@@ -227,14 +206,6 @@
             section h2 {
                 font-size: 2rem;
             }
-            .subject-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.5rem;
-            }
-            .subject-button {
-                font-size: 1.5rem;
-                padding: 1.5rem;
-            }
             .footer {
                 padding: 2rem 0;
             }
@@ -271,15 +242,39 @@
                 z-index: 1;
             }
         }
-        /* Accessibility */
         :focus {
             outline: 2px solid var(--accent-color);
             outline-offset: 2px;
         }
+        /* Subject Bubbles */
+        .subject-bubble {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--primary-color);
+        }
+        .subject-bubble i {
+            font-size: 1.5rem;
+            color: var(--tertiary-color);
+            margin-bottom: 0.5rem;
+        }
+        .subject-bubble h3 {
+            font-size: 1rem;
+            line-height: 1.2;
+            color: var(--tertiary-color);
+        }
+        .subject-bubble:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
-    <!-- Header -->
     <header class="banner">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
             <div class="flex flex-col items-center md:flex-row">
@@ -296,32 +291,32 @@
         </div>
     </header>
     <div class="divider"></div>
-    <!-- Navigation -->
+
     <nav class="sub-banner">
         <div class="container mx-auto flex flex-col md:flex-row justify-center items-center px-4 space-y-4 md:space-y-0 md:space-x-8">
             <a href="index.html" class="nav-link">Home</a>
             <div class="dropdown relative">
                 <a href="index.html#about" class="nav-link">About Us</a>
                 <div class="dropdown-menu hidden">
-                    <a href="mission.html" target="_blank" class="block">Our Mission</a>
-                    <a href="history.html" target="_blank" class="block">History</a>
-                    <a href="faculty.html" target="_blank" class="block">Faculty/Staff</a>
+                    <a href="mission-vision.html" class="block">Our Mission</a>
+                    <a href="history.html" class="block">History</a>
+                    <a href="faculty.html" class="block">Faculty/Staff</a>
                 </div>
             </div>
             <div class="dropdown relative">
                 <a href="index.html#academics" class="nav-link">Academics</a>
                 <div class="dropdown-menu hidden">
-                    <a href="k5-program.html" target="_blank" class="block">K-5 Program</a>
-                    <a href="6-9-program.html" target="_blank" class="block">6-9 Program</a>
-                    <a href="10-12-program.html" target="_blank" class="block">10-12 Program</a>
+                    <a href="k5-program.html" class="block">K-5 Program</a>
+                    <a href="6-9-program.html" class="block">6-9 Program</a>
+                    <a href="10-12-program.html" class="block">10-12 Program</a>
                 </div>
             </div>
             <div class="dropdown relative">
                 <a href="index.html#admissions" class="nav-link">Admissions</a>
                 <div class="dropdown-menu hidden">
-                    <a href="process.html" target="_blank" class="block">Process</a>
-                    <a href="tuition.html" target="_blank" class="block">Tuition</a>
-                    <a href="financial-aid.html" target="_blank" class="block">Financial Aid</a>
+                    <a href="process.html" class="block">Process</a>
+                    <a href="tuition.html" class="block">Tuition</a>
+                    <a href="financial-aid.html" class="block">Financial Aid</a>
                 </div>
             </div>
             <a href="index.html#news" class="nav-link">News</a>
@@ -329,26 +324,42 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main>
         <section class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">6-9 Program Curriculum</h2>
-            <p class="text-lg md:text-xl text-center mb-8">Explore the 6-9 curriculum at Philo Classical Academy, organized by subject. Select a subject below to learn more about our approach to classical education.</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">6-9 Program</h2>
+            <p class="mb-4">The 6-9 program at Philo Classical Academy builds on the foundation of the K-5 years, deepening students' engagement with classical education. Students explore great books, develop critical thinking, and refine their skills in core subjects while continuing to grow in virtue.</p>
+            <p class="mb-4">Our curriculum emphasizes a rigorous study of literature, history, mathematics, science, Latin, and the arts, preparing students for the challenges of high school and beyond.</p>
 
-            <!-- Subject Buttons -->
-            <div class="subject-grid">
-                <a href="literature6-9.html" class="subject-button">Literature</a>
-                <a href="math6-9.html" class="subject-button">Math</a>
-                <a href="humanities6-9.html" class="subject-button">Humanities</a>
-                <a href="science6-9.html" class="subject-button">Science</a>
-                <a href="physical-education6-9.html" class="subject-button">Physical Education</a>
-                <a href="music6-9.html" class="subject-button">Music</a>
-                <a href="art6-9.html" class="subject-button">Art</a>
+            <h3 class="text-2xl font-bold text-center mb-6">Core Subjects</h3>
+            <div class="grid grid-cols-3 gap-6 mb-8">
+                <a href="literature6-9.html" class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-book mb-2"></i>
+                    <h3>Literature</h3>
+                </a>
+                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-landmark mb-2"></i>
+                    <h3>History</h3>
+                </div>
+                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-calculator mb-2"></i>
+                    <h3>Mathematics</h3>
+                </div>
+                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-flask mb-2"></i>
+                    <h3>Science</h3>
+                </div>
+                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-language mb-2"></i>
+                    <h3>Latin</h3>
+                </div>
+                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-paint-brush mb-2"></i>
+                    <h3>Arts</h3>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <div class="footer-divider"></div>
     <footer class="footer">
         <p>Philo Classical Academy | 608-799-7686 | info@philoacademy.org</p>
