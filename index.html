@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to Philo Classical Academy, a classical education institution in the Twin Cities, fostering virtue and truth through great books and timeless learning.">
-    <meta name="keywords" content="Philo Classical Academy, classical education, great books, Twin Cities, K-12 curriculum">
+    <meta name="description" content="Philo Classical Academy, a classical great books school in the Twin Cities, dedicated to truth, goodness, and beauty.">
+    <meta name="keywords" content="Philo Classical Academy, classical education, great books, Twin Cities, virtue, academics">
     <meta name="author" content="Philo Classical Academy">
-    <title>Philo Classical Academy | Home</title>
+    <title>Philo Classical Academy | Virtute ad Veritatem</title>
     <link rel="icon" type="image/png" href="favicon-32x32.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -64,6 +64,9 @@
             z-index: 20;
             border-radius: 4px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 100%; /* Ensures dropdown appears below the nav item */
+            left: 0;
         }
         @media (min-width: 768px) {
             .dropdown:hover .dropdown-menu,
@@ -157,58 +160,60 @@
             max-width: 1200px;
         }
         /* Hero Section */
-        .hero {
-            background-color: var(--tertiary-color);
+        .hero-section {
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 3rem 1rem;
+            color: white;
+            position: relative;
         }
-        .hero h2 {
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        .hero-section h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
-        .hero p {
+        .hero-section p {
             font-size: 1.25rem;
-            margin-bottom: 2rem;
         }
-        .cta-button {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-family: 'Cinzel', serif;
-            font-size: 1rem;
-            font-weight: 700;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .cta-button:hover,
-        .cta-button:focus {
-            background-color: var(--primary-color);
-            color: var(--accent-color);
-            transform: scale(1.05);
-        }
-        /* Section Cards */
-        .card-grid {
+        /* Info Grid */
+        .info-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
-            margin-top: 2rem;
+            padding: 2rem 0;
         }
-        .card {
-            background-color: var(--tertiary-color);
+        .info-card {
+            background-color: var(--background-color);
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
-        .card:hover {
+        .info-card:hover {
             transform: translateY(-5px);
         }
-        .card h3 {
+        .info-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
-        .card p {
+        .info-card p {
             font-size: 1rem;
+        }
+        .learn-more {
+            color: var(--primary-color);
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        .learn-more:hover {
+            color: var(--accent-color);
         }
         /* Responsive Adjustments */
         @media (min-width: 768px) {
@@ -257,24 +262,20 @@
             section h2 {
                 font-size: 2rem;
             }
-            .hero h2 {
+            .hero-section h2 {
                 font-size: 3.5rem;
             }
-            .hero p {
+            .hero-section p {
                 font-size: 1.5rem;
             }
-            .cta-button {
-                font-size: 1.25rem;
-                padding: 1rem 2rem;
-            }
-            .card-grid {
+            .info-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
             }
-            .card h3 {
+            .info-card h3 {
                 font-size: 1.75rem;
             }
-            .card p {
+            .info-card p {
                 font-size: 1.125rem;
             }
             .footer {
@@ -285,8 +286,8 @@
             }
         }
         @media (min-width: 1024px) {
-            .card-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .info-grid {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
         @media (min-width: 768px) {
@@ -330,7 +331,7 @@
     <header class="banner">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
             <div class="flex flex-col items-center md:flex-row">
-                <img src="Heading.jpg?v=2" alt="Philo Classical Academy Banner" class="logo">
+                <img src="Heading.jpg?v=1" alt="Philo Classical Academy Banner" class="logo">
                 <div class="text-container">
                     <h1 class="text-4xl md:text-5xl accent-text">Philo Classical Academy</h1>
                     <p class="motto mt-2">Virtute ad Veritatem</p>
@@ -351,25 +352,25 @@
             <div class="dropdown relative">
                 <a href="index.html#about" class="nav-link">About Us</a>
                 <div class="dropdown-menu hidden">
-                    <a href="mission.html" target="_blank" class="block">Our Mission</a>
-                    <a href="history.html" target="_blank" class="block">History</a>
-                    <a href="faculty.html" target="_blank" class="block">Faculty/Staff</a>
+                    <a href="mission.html" class="block">Our Mission</a>
+                    <a href="history.html" class="block">History</a>
+                    <a href="faculty.html" class="block">Faculty/Staff</a>
                 </div>
             </div>
             <div class="dropdown relative">
                 <a href="index.html#academics" class="nav-link">Academics</a>
                 <div class="dropdown-menu hidden">
-                    <a href="k5-program.html" target="_blank" class="block">K-5 Program</a>
-                    <a href="6-9-program.html" target="_blank" class="block">6-9 Program</a>
-                    <a href="10-12-program.html" target="_blank" class="block">10-12 Program</a>
+                    <a href="k5-program.html" class="block">K-5 Program</a>
+                    <a href="6-9-program.html" class="block">6-9 Program</a>
+                    <a href="10-12-program.html" class="block">10-12 Program</a>
                 </div>
             </div>
             <div class="dropdown relative">
                 <a href="index.html#admissions" class="nav-link">Admissions</a>
                 <div class="dropdown-menu hidden">
-                    <a href="process.html" target="_blank" class="block">Process</a>
-                    <a href="tuition.html" target="_blank" class="block">Tuition</a>
-                    <a href="financial-aid.html" target="_blank" class="block">Financial Aid</a>
+                    <a href="process.html" class="block">Process</a>
+                    <a href="tuition.html" class="block">Tuition</a>
+                    <a href="financial-aid.html" class="block">Financial Aid</a>
                 </div>
             </div>
             <a href="index.html#news" class="nav-link">News</a>
@@ -380,66 +381,84 @@
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="container mx-auto px-4">
-                <h2 class="text-center">Welcome to Philo Classical Academy</h2>
-                <p class="text-center">Fostering virtue and truth through classical education and great books in the Twin Cities.</p>
-                <div class="text-center">
-                    <a href="index.html#about" class="cta-button">Learn More</a>
+        <section id="home" class="hero-section" style="background-image: url('library.jpg')">
+            <div class="hero-overlay">
+                <div>
+                    <h2 class="font-bold accent-text">Welcome to Philo Classical Academy</h2>
+                    <p class="mt-4">A Classical Education for Truth, Goodness, and Beauty</p>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">About Us</h2>
-            <p class="text-lg md:text-xl text-center mb-8">Philo Classical Academy is dedicated to providing a classical education that nurtures the mind and soul. Our curriculum emphasizes the great books, moral virtues, and critical thinking, preparing students for a life of wisdom and purpose.</p>
-        </section>
-
-        <!-- Academics Section -->
-        <section id="academics" class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Our Academics</h2>
-            <p class="text-lg md:text-xl text-center mb-8">Explore our comprehensive K-12 curriculum, designed to inspire a love for learning through classical literature, mathematics, humanities, and more.</p>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>K-5 Program</h3>
-                    <p>Foundational learning with classic stories, fostering imagination and moral understanding.</p>
-                    <a href="k5-program.html" target="_blank" class="text-sm text-blue-600 hover:underline">Learn More</a>
+        <section id="about" class="container mx-auto">
+            <h2 class="font-bold">About Philo Classical Academy</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 p-4">
+                    <img src="crest.jpg" alt="Philo Classical Academy Campus" class="rounded-lg shadow-lg" loading="lazy">
                 </div>
-                <div class="card">
-                    <h3>6-9 Program</h3>
-                    <p>Deepening knowledge with historical texts, critical thinking, and interdisciplinary studies.</p>
-                    <a href="6-9-program.html" target="_blank" class="text-sm text-blue-600 hover:underline">Learn More</a>
-                </div>
-                <div class="card">
-                    <h3>10-12 Program</h3>
-                    <p>Advanced studies in great books, preparing students for higher education and lifelong learning.</p>
-                    <a href="10-12-program.html" target="_blank" class="text-sm text-blue-600 hover:underline">Learn More</a>
+                <div class="md:w-1/2 p-4">
+                    <p>Located in the vibrant Twin Cities, Philo Classical Academy is a classical, great books school dedicated to the pursuit of truth, goodness, and beauty. Our rigorous curriculum, grounded in the Western intellectual tradition, fosters nobility, virtue, and intellectual excellence. With a unique emphasis on traditional Western martial training, we cultivate both mind and body.</p>
                 </div>
             </div>
         </section>
 
-        <!-- News Section -->
-        <section id="news" class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">News & Events</h2>
-            <p class="text-lg md:text-xl text-center mb-8">Stay updated with the latest happenings at Philo Classical Academy.</p>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Open House</h3>
-                    <p>Join us on May 15, 2025, for our annual Open House to meet our faculty and explore our campus.</p>
+        <!-- Info Sections -->
+        <section class="bg-white">
+            <div class="container mx-auto info-grid">
+                <!-- School Overview -->
+                <div class="info-card">
+                    <h3 class="font-bold">Our School</h3>
+                    <p>Philo Classical Academy is a beacon of classical education, fostering a serious and academic environment where students engage with the great books and timeless ideas.</p>
+                    <a href="#about" class="learn-more inline-block mt-4">Learn More</a>
                 </div>
-                <div class="card">
-                    <h3>Spring Recital</h3>
-                    <p>Our students will perform at the Spring Recital on June 5, 2025. Don’t miss this celebration of music and art!</p>
+                <!-- Mission -->
+                <div class="info-card">
+                    <h3 class="font-bold">Our Mission</h3>
+                    <p>Guided by our motto, "Virtute ad Veritatem," we aim to cultivate virtuous scholars who seek truth through rigorous study and noble character.</p>
+                    <a href="mission.html" class="learn-more inline-block mt-4">Learn More</a>
+                </div>
+                <!-- Academics -->
+                <div class="info-card">
+                    <h3 class="font-bold">Academics</h3>
+                    <p>Our curriculum emphasizes the great books, classical languages, and the appreciation of beauty alongside truth and goodness, preparing students for a life of wisdom.</p>
+                    <a href="#academics" class="learn-more inline-block mt-4">Learn More</a>
+                </div>
+                <!-- News -->
+                <div class="info-card">
+                    <h3 class="font-bold">News</h3>
+                    <p>Stay updated with the latest events, achievements, and announcements from Philo Classical Academy.</p>
+                    <a href="#news" class="learn-more inline-block mt-4">Learn More</a>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Contact Us</h2>
-            <p class="text-lg md:text-xl text-center mb-8">Reach out to learn more about our programs or to schedule a visit.</p>
-            <p class="text-center">Phone: 608-799-7686 | Email: <a href="mailto:info@philoacademy.org" class="text-blue-600 hover:underline">info@philoacademy.org</a></p>
+        <!-- Academics Overview -->
+        <section id="academics" class="container mx-auto">
+            <h2 class="font-bold">Academics</h2>
+            <p class="mb-4">Our curriculum is rooted in the great books of the Western tradition, fostering deep engagement with timeless ideas. Students study classical languages, literature, philosophy, and mathematics, while our unique physical education program incorporates traditional Western martial training to build discipline and resilience.</p>
+            <p>We emphasize the appreciation of beauty in art, music, and literature, complementing our pursuit of truth and goodness. Explore our programs for different grade levels to learn more.</p>
+        </section>
+
+        <!-- Admissions Overview -->
+        <section id="admissions" class="container mx-auto">
+            <h2 class="font-bold">Admissions</h2>
+            <p class="mb-4">Philo Classical Academy welcomes applications from families who share our commitment to classical education and virtue. Our admissions process is designed to identify students who will thrive in our rigorous academic environment.</p>
+            <p>Learn more about our application process, tuition, and financial aid opportunities through the links below.</p>
+        </section>
+
+        <!-- News Page -->
+        <section id="news" class="container mx-auto">
+            <h2 class="font-bold">News</h2>
+            <p class="mb-4">Stay informed about the latest developments at Philo Classical Academy, including student achievements, faculty publications, and upcoming events.</p>
+            <p>Recent highlights include our annual Great Books Symposium and student awards in classical language competitions.</p>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="container mx-auto">
+            <h2 class="font-bold">Contact Us</h2>
+            <p class="mb-4">We’d love to hear from you. Reach out with any questions or to schedule a visit.</p>
+            <p>Email: info@philoacademy.org<br>Phone: 608-799-7686<br>Address: 123 Classical Way, Twin Cities, MN</p>
         </section>
     </main>
 
@@ -450,5 +469,7 @@
         <p>Website: philoacademy.org</p>
         <p>© 2025 Philo Classical Academy. All rights reserved.</p>
     </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
