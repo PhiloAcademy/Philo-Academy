@@ -148,7 +148,7 @@
         .search-button:hover,
         .search-button:focus {
             background-color: var(--tertiary-color);
-            color: similarly colored;
+            color: var(--primary-color);
         }
         section {
             padding: 2rem 0;
@@ -156,42 +156,29 @@
         .container {
             max-width: 1200px;
         }
-        /* Curriculum Styles */
-        .grade-section {
-            margin-bottom: 2rem;
+        /* Subject Buttons */
+        .subject-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
         }
-        .grade-section h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
+        .subject-button {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
-        .grade-section ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .grade-section li {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        .schedule-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-        .schedule-table th,
-        .schedule-table td {
-            border: 1px solid var(--primary-color);
-            padding: 0.5rem;
-            text-align: left;
-            font-size: 0.875rem;
-        }
-        .schedule-table th {
+        .subject-button:hover,
+        .subject-button:focus {
             background-color: var(--accent-color);
             color: var(--primary-color);
-            font-family: 'Cinzel', serif;
-        }
-        .schedule-table td {
-            background-color: var(--tertiary-color);
+            transform: scale(1.05);
         }
         /* Responsive Adjustments */
         @media (min-width: 768px) {
@@ -240,16 +227,13 @@
             section h2 {
                 font-size: 2rem;
             }
-            .grade-section h3 {
-                font-size: 2rem;
+            .subject-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
             }
-            .grade-section li {
-                font-size: 1.125rem;
-            }
-            .schedule-table th,
-            .schedule-table td {
-                font-size: 1rem;
-                padding: 0.75rem;
+            .subject-button {
+                font-size: 1.5rem;
+                padding: 1.5rem;
             }
             .footer {
                 padding: 2rem 0;
@@ -285,11 +269,6 @@
                 position: static;
                 width: 100%;
                 z-index: 1;
-            }
-            .schedule-table th,
-            .schedule-table td {
-                font-size: 0.75rem;
-                padding: 0.25rem;
             }
         }
         /* Accessibility */
@@ -354,158 +333,17 @@
     <main>
         <section class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">K-5 Program Curriculum</h2>
-            <p class="text-lg md:text-xl text-center mb-8">Our K-5 curriculum introduces young learners to classic literature and timeless stories, fostering a love for reading, moral understanding, and critical thinking.</p>
+            <p class="text-lg md:text-xl text-center mb-8">Explore the K-5 curriculum at Philo Classical Academy, organized by subject. Select a subject below to learn more about our approach to classical education.</p>
 
-            <!-- Kindergarten -->
-            <div class="grade-section">
-                <h3>Kindergarten</h3>
-                <ul>
-                    <li><strong>Mother Goose Rhymes</strong> (selected rhymes, e.g., “Humpty Dumpty,” “Jack and Jill”) – Short, memorable verses for recitation and joy.</li>
-                    <li><strong>The Three Billy Goats Gruff</strong> (Paul Galdone version) – A tale of bravery and problem-solving.</li>
-                    <li><strong>Goldilocks and the Three Bears</strong> – A classic story of curiosity and consequences.</li>
-                    <li><strong>The Gingerbread Man</strong> (Karen Schmidt version) – A fun tale of adventure and cunning.</li>
-                    <li><strong>The Little Red Hen</strong> (Paul Galdone version) – Emphasizes the value of hard work and responsibility.</li>
-                    <li><strong>Jack and the Beanstalk</strong> (Steven Kellogg retelling) – Adventure with themes of courage and greed.</li>
-                </ul>
-            </div>
-
-            <!-- 1st Grade -->
-            <div class="grade-section">
-                <h3>1st Grade</h3>
-                <ul>
-                    <li><strong>Mother Goose Rhymes</strong> (selected rhymes, e.g., “Humpty Dumpty,” “Jack and Jill”) – Short, memorable verses for recitation and joy.</li>
-                    <li><strong>The Three Billy Goats Gruff</strong> (Paul Galdone version) – A tale of bravery and problem-solving.</li>
-                    <li><strong>Goldilocks and the Three Bears</strong> – A classic story of curiosity and consequences.</li>
-                    <li><strong>The Gingerbread Man</strong> (Karen Schmidt version) – A fun tale of adventure and cunning.</li>
-                    <li><strong>The Little Red Hen</strong> (Paul Galdone version) – Emphasizes the value of hard work and responsibility.</li>
-                    <li><strong>Jack and the Beanstalk</strong> (Steven Kellogg retelling) – Adventure with themes of courage and greed.</li>
-                </ul>
-            </div>
-
-            <!-- 2nd Grade -->
-            <div class="grade-section">
-                <h3>2nd Grade</h3>
-                <ul>
-                    <li><strong>D’Aulaires’ Book of Greek Myths</strong> (selected stories, e.g., “Theseus and the Minotaur,” “Daedalus and Icarus”) – Vivid retellings with rich illustrations.</li>
-                    <li><strong>The Golden Fleece</strong> (Padraic Colum retelling) – Jason’s quest for heroism and teamwork.</li>
-                    <li><strong>Persephone and the Pomegranate Seeds</strong> (Kris Waldherr version) – Explains seasons, explores family ties.</li>
-                    <li><strong>King Midas and the Golden Touch</strong> (Charlotte Craft retelling) – Warns against greed, visually engaging.</li>
-                    <li><strong>Arachne the Weaver</strong> (from Favorite Greek Myths, Mary Pope Osborne) – Pride and consequences.</li>
-                    <li><strong>Pandora’s Box</strong> (Jean Warren retelling) – Curiosity and hope, sparks discussion.</li>
-                    <li><strong>Norse Myths</strong> – Introduction to Norse mythology and heroic tales.</li>
-                    <li><strong>Eastern Myths</strong> – Exploration of cultural stories from Eastern traditions.</li>
-                </ul>
-            </div>
-
-            <!-- 3rd Grade -->
-            <div class="grade-section">
-                <h3>3rd Grade</h3>
-                <ul>
-                    <li><strong>Charlotte’s Web</strong> (E.B. White) – Friendship, sacrifice, and life cycles.</li>
-                    <li><strong>The Velveteen Rabbit</strong> (Margery Williams) – Love, authenticity, and becoming “real.”</li>
-                    <li><strong>The Tale of Peter Rabbit</strong> (Beatrix Potter) – Disobedience and consequences, rich language.</li>
-                    <li><strong>The Lion, the Witch and the Wardrobe</strong> (C.S. Lewis) – Good vs. evil, redemption (abridged for pacing if needed).</li>
-                    <li><strong>Pinocchio</strong> (Carlo Collodi, simplified retelling) – Honesty and personal growth.</li>
-                    <li><strong>The Princess and the Goblin</strong> (George MacDonald, adapted version) – Courage, faith, and adventure in a magical world.</li>
-                </ul>
-            </div>
-
-            <!-- 4th Grade -->
-            <div class="grade-section">
-                <h3>4th Grade</h3>
-                <p class="mb-4">The 4th-grade curriculum includes a structured reading schedule over 36 weeks, focusing on historical and literary texts:</p>
-                <table class="schedule-table">
-                    <thead>
-                        <tr>
-                            <th>Weeks</th>
-                            <th>Title</th>
-                            <th>Pages</th>
-                            <th>Pages/Day</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Weeks 1–2</td>
-                            <td>The Courage of Sarah Noble</td>
-                            <td>60 pages</td>
-                            <td>~6 pages/day</td>
-                        </tr>
-                        <tr>
-                            <td>Weeks 3–5</td>
-                            <td>The Sign of the Beaver</td>
-                            <td>135 pages</td>
-                            <td>~9 pages/day</td>
-                        </tr>
-                        <tr>
-                            <td>Weeks 6–9</td>
-                            <td>The Fighting Ground</td>
-                            <td>160 pages</td>
-                            <td>~8 pages/day</td>
-                        </tr>
-                        <tr>
-                            <td>Week 10</td>
-                            <td>Paul Revere’s Ride</td>
-                            <td>10 pages</td>
-                            <td>~2 pages/day</td>
-                        </tr>
-                        <tr>
-                            <td>Weeks 11–12</td>
-                            <td>Rip Van Winkle</td>
-                            <td>30 pages</td>
-                            <td>~3 pages/day</td>
-                        </tr>
-                        <tr>
-                            <td>Weeks 13–14</td>
-                            <td>The Legend of Sleepy Hollow</td>
-                            <td>40 pages</td>
-                            <td>~4 pages/day</td>
-                        </tr>
-                        <tr>
-                            <td>Weeks 15–16</td>
-                            <td>American Tall Tales</td>
-                            <td>60 pages</td>
-                            <td>~6 pages/day</td>
-                        </tr>
-                        <tr>
-                            <td>Weeks 17–22</td>
-                            <td>Little House on the Prairie</td>
-                            <td>250 pages</td>
-                            <td>~8–9 pages/day</td>
-                        </tr>
-                        <tr>
-                            <td>Weeks 23–24</td>
-                            <td>Sarah, Plain and Tall</td>
-                            <td>60 pages</td>
-                            <td>~6 pages/day</td>
-                        </tr>
-                        <tr>
-                            <td>Weeks 25–30</td>
-                            <td>Light reading or catch-up (e.g., revisit Little House chapters)</td>
-                            <td>-</td>
-                            <td>~2–3 pages/day if needed</td>
-                        </tr>
-                        <tr>
-                            <td>Weeks 31–36</td>
-                            <td>Buffer for review, essays (e.g., “Was Jonathan brave?”), history units (e.g., colonial life), or activities (e.g., tall tale storytelling)</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- 5th Grade -->
-            <div class="grade-section">
-                <h3>5th Grade</h3>
-                <ul>
-                    <li><strong>Little Women</strong> – Family, growth, and resilience in 19th-century America.</li>
-                    <li><strong>Tom Sawyer</strong> – Adventure, mischief, and moral lessons in a small-town setting.</li>
-                    <li><strong>The Wonderful Wizard of Oz</strong> – Courage, friendship, and self-discovery in a fantastical world.</li>
-                    <li><strong>Pollyanna</strong> – Optimism and the power of a positive outlook.</li>
-                    <li><strong>Where the Red Fern Grows</strong> – Loyalty, love, and loss through a boy’s bond with his dogs.</li>
-                    <li><strong>Roll of Thunder, Hear My Cry</strong> – Racial injustice and family strength in the 1930s South.</li>
-                    <li><strong>Bridge to Terabithia</strong> – Friendship, imagination, and coping with loss.</li>
-                </ul>
+            <!-- Subject Buttons -->
+            <div class="subject-grid">
+                <a href="literature.html" class="subject-button">Literature</a>
+                <a href="math.html" class="subject-button">Math</a>
+                <a href="humanities.html" class="subject-button">Humanities</a>
+                <a href="science.html" class="subject-button">Science</a>
+                <a href="physical-education.html" class="subject-button">Physical Education</a>
+                <a href="music.html" class="subject-button">Music</a>
+                <a href="art.html" class="subject-button">Art</a>
             </div>
         </section>
     </main>
