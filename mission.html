@@ -3,21 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The mission of Philo Classical Academy, a classical great books school in the Twin Cities, dedicated to truth, goodness, and beauty.">
-    <meta name="keywords" content="Philo Classical Academy, mission, classical education, great books, Twin Cities">
+    <meta name="description" content="Learn about the mission, vision, and philosophy of education at Philo Classical Academy, a classical great books school in the Twin Cities.">
+    <meta name="keywords" content="Philo Classical Academy, mission, vision, philosophy of education, classical education, Twin Cities">
     <meta name="author" content="Philo Classical Academy">
-    <title>Our Mission | Philo Classical Academy</title>
+    <title>Mission and Vision | Philo Classical Academy</title>
     <link rel="icon" type="image/png" href="favicon-32x32.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: rgb(85, 23, 147);
+            --accent-color: rgb(238, 186, 43);
+            --tertiary-color: rgb(255, 255, 255);
+            --text-color: #333;
+            --background-color: #f5f5f5;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-color);
+        }
+        .accent-text {
+            color: var(--accent-color);
+        }
+        .banner {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 1.5rem 0;
+            position: relative;
+        }
+        .sub-banner {
+            background-color: var(--accent-color);
+            position: relative;
+            z-index: 10;
+            padding: 0.75rem 0;
+        }
+        .divider {
+            background-color: var(--tertiary-color);
+            height: 2px;
+        }
+        .footer-divider {
+            background-color: var(--accent-color);
+            height: 2px;
+        }
+        .motto {
+            font-family: 'Cinzel', serif;
+            font-style: italic;
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: var(--tertiary-color);
+        }
+        .dropdown-menu {
+            display: none;
+            background-color: var(--primary-color);
+            z-index: 20;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+        @media (min-width: 768px) {
+            .dropdown:hover .dropdown-menu,
+            .dropdown:focus-within .dropdown-menu {
+                display: block;
+            }
+        }
+        .dropdown-menu a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.875rem;
+            color: var(--tertiary-color);
+            padding: 0.5rem 1rem;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dropdown-menu a:hover,
+        .dropdown-menu a:focus {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        .logo {
+            width: 60px;
+            height: auto;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        .text-container {
+            display: inline-block;
+        }
+        .banner .text-container h1 {
+            font-family: 'Cinzel', 'Times New Roman', serif !important;
+            font-weight: 700;
+            font-size: 1.75rem;
+        }
+        .nav-link {
+            font-family: 'Cinzel', serif;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover,
+        .nav-link:focus {
+            color: var(--tertiary-color);
+        }
+        .search-bar {
+            background-color: var(--tertiary-color);
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            width: 80px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.75rem;
+            transition: border-color 0.3s ease, width 0.3s ease;
+        }
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            width: 120px;
+        }
+        .search-button {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .search-button:hover,
+        .search-button:focus {
+            background-color: var(--tertiary-color);
+            color: var(--primary-color);
+        }
+        section {
+            padding: 2rem 0;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .banner {
+                padding: 2rem 0;
+            }
+            .banner .container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .logo {
+                width: 104px;
+                margin-right: 1rem;
+                margin-bottom: 0;
+            }
+            .banner .text-container h1 {
+                font-size: 3rem;
+            }
+            .motto {
+                font-size: 1rem;
+            }
+            .sub-banner {
+                padding: 1rem 0;
+            }
+            .nav-link {
+                font-size: 1rem;
+            }
+            .dropdown-menu {
+                min-width: 12rem;
+            }
+            .search-bar {
+                width: 100px;
+                font-size: 0.8rem;
+            }
+            .search-bar:focus {
+                width: 150px;
+            }
+            .search-button {
+                padding: 0.25rem 0.6rem;
+                font-size: 0.8rem;
+            }
+            section {
+                padding: 3rem 0;
+            }
+            section h2 {
+                font-size: 2rem;
+            }
+            .footer {
+                padding: 2rem 0;
+            }
+            .footer p {
+                font-size: 1rem;
+            }
+        }
+        @media (min-width: 768px) {
+            .logo {
+                width: 120px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .logo {
+                width: 150px;
+            }
+        }
+        @media (max-width: 767px) {
+            .banner .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .text-container {
+                text-align: center;
+            }
+            .search-bar,
+            .search-button {
+                margin: 0 auto;
+            }
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                z-index: 1;
+            }
+        }
+        /* Accessibility */
+        :focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
     <!-- Header -->
     <header class="banner">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
             <div class="flex flex-col items-center md:flex-row">
-                <img src="philo-academy-pegasus.jpg" alt="Philo Classical Academy Pegasus Logo" class="logo">
+                <img src="Heading.jpg?v=2" alt="Philo Classical Academy Banner" class="logo">
                 <div class="text-container">
                     <h1 class="text-4xl md:text-5xl accent-text">Philo Classical Academy</h1>
                     <p class="motto mt-2">Virtute ad Veritatem</p>
@@ -30,28 +267,65 @@
         </div>
     </header>
     <div class="divider"></div>
+
+    <!-- Navigation -->
     <nav class="sub-banner">
         <div class="container mx-auto flex flex-col md:flex-row justify-center items-center px-4 space-y-4 md:space-y-0 md:space-x-8">
+            <a href="index.html" class="nav-link">Home</a>
             <div class="dropdown relative">
-                <a href="index.html#home" class="nav-link">Home</a>
-            </div>
-            <div class="dropdown relative">
-                <a href="about.html" class="nav-link">About Us</a>
+                <a href="index.html#about" class="nav-link">About Us</a>
                 <div class="dropdown-menu hidden">
-                    <a href="mission.html" target="_blank" class="block">Our Mission</a>
-                    <a href="history.html" target="_blank" class="block">History</a>
-                    <a href="faculty.html" target="_blank" class="block">Faculty</a>
+                    <a href="mission-vision.html" class="block">Mission/Vision</a>
+                    <a href="history.html" class="block">History</a>
+                    <a href="faculty.html" class="block">Faculty/Staff</a>
                 </div>
             </div>
+            <div class="dropdown relative">
+                <a href="index.html#academics" class="nav-link">Academics</a>
+                <div class="dropdown-menu hidden">
+                    <a href="k5-program.html" class="block">K-5 Program</a>
+                    <a href="6-9-program.html" class="block">6-9 Program</a>
+                    <a href="10-12-program.html" class="block">10-12 Program</a>
+                </div>
+            </div>
+            <div class="dropdown relative">
+                <a href="index.html#admissions" class="nav-link">Admissions</a>
+                <div class="dropdown-menu hidden">
+                    <a href="process.html" class="block">Process</a>
+                    <a href="tuition.html" class="block">Tuition</a>
+                    <a href="financial-aid.html" class="block">Financial Aid</a>
+                </div>
+            </div>
+            <a href="index.html#news" class="nav-link">News</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main>
-        <section class="container mx-auto">
-            <h2 class="font-bold">Our Mission</h2>
-            <p class="mb-4">Guided by our motto, "Virtute ad Veritatem" (Through Virtue to Truth), Philo Classical Academy is committed to cultivating virtuous scholars who seek truth through rigorous study and noble character. We aim to foster a deep appreciation for the Western intellectual tradition, encouraging students to pursue truth, goodness, and beauty in all aspects of their lives.</p>
-            <p>Our mission is to provide a classical education that equips students with the intellectual and moral tools to lead lives of purpose, wisdom, and service.</p>
+        <section class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Mission and Vision</h2>
+
+            <h3 class="text-2xl font-bold mb-4">Philosophy of Education</h3>
+            <p class="mb-4">At Philo Classical Academy, we hold firm to the belief that modern education has lost its tradition of nobility. Schools have become fixated on fleeting trends, narrow worldviews, and purely pragmatic job training. Philo Classical Academy rejects this approach to education.</p>
+            <p class="mb-4">PCA is not a typical classical school. We champion the enduring legacy of the Western Tradition to inspire our students to excellence. We believe that a truly rigorous education—emphasizing academics, physical fitness, and virtue—is more essential now than ever. Every element of our curriculum is thoughtfully chosen for its capacity to foster an appreciation of beauty, goodness, and truth.</p>
+            <p class="mb-4">At PCA, we reject a simplistic "Trivium" structure to education. Students are exposed to a logical, enriching, and traditional curriculum at every level. Unlike a typical Liberal Arts school, we do not elevate one subject over another; each is valued for its unique contribution to developing a high degree of intelligence and character. Our literature, history, and fine arts programs inspire students to seek beauty and virtue, while our language, science, and mathematics curricula develop an appreciation for the logical order. Together, these disciplines cultivate logic, communication, and wisdom.</p>
+            <p class="mb-4">Philo Classical Academy is committed to restoring the classical aims of education to cultivate the best people with the best resources.</p>
+
+            <h3 class="text-2xl font-bold mb-4">Mission</h3>
+            <p class="mb-4">The mission of Philo Classical Academy is to provide a truly rigorous education in academics, virtue, and physical fitness that cultivates a deep love of the True, the Good, and the Beautiful in pursuit of the classical ideal of excellence.</p>
+
+            <h3 class="text-2xl font-bold mb-4">Vision</h3>
+            <p class="mb-4">Graduates of Philo Classical Education will:</p>
+            <ul class="list-disc list-inside mb-4">
+                <li>Live life in pursuit of the True, the Good, and the Beautiful.</li>
+                <li>Strive for excellence in all aspects of life.</li>
+                <li>Demonstrate wisdom and virtue.</li>
+                <li>Seek opportunities to engage in deep and important conversations.</li>
+                <li>Be well versed in the core of the Western Tradition.</li>
+            </ul>
+
+            <p class="text-center mt-8">Interested in learning more about our mission and vision? <a href="index.html#contact" class="text-blue-600 hover:underline">Contact us</a> to schedule a visit!</p>
         </section>
     </main>
 
@@ -62,7 +336,5 @@
         <p>Website: philoacademy.org</p>
         <p>© 2025 Philo Classical Academy. All rights reserved.</p>
     </footer>
-
-    <script src="script.js" defer></script>
 </body>
 </html>
