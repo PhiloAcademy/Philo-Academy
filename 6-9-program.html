@@ -272,6 +272,17 @@
             transform: scale(1.05);
             transition: transform 0.3s ease;
         }
+        /* Centering the Grid */
+        .subjects-grid-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+            gap: 1.5rem;
+            width: fit-content;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -328,33 +339,35 @@
         <section class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">6-9 Program</h2>
             <p class="mb-4">The 6-9 program at Philo Classical Academy builds on the foundation of the K-5 years, deepening students' engagement with classical education. Students explore great books, develop critical thinking, and refine their skills in core subjects while continuing to grow in virtue.</p>
-            <p class="mb-4">Our curriculum emphasizes a rigorous study of literature, history, mathematics, science, Latin, and the arts, preparing students for the challenges of high school and beyond.</p>
+            <p class="mb-4">Our curriculum emphasizes a rigorous study of literature, history, mathematics, science, languages, and fine arts, preparing students for the challenges of high school and beyond.</p>
 
             <h3 class="text-2xl font-bold text-center mb-6">Core Subjects</h3>
-            <div class="grid grid-cols-3 gap-6 mb-8">
-                <a href="literature6-9.html" class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-book mb-2"></i>
-                    <h3>Literature</h3>
-                </a>
-                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-landmark mb-2"></i>
-                    <h3>History</h3>
-                </div>
-                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-calculator mb-2"></i>
-                    <h3>Mathematics</h3>
-                </div>
-                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-flask mb-2"></i>
-                    <h3>Science</h3>
-                </div>
-                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-language mb-2"></i>
-                    <h3>Latin</h3>
-                </div>
-                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-paint-brush mb-2"></i>
-                    <h3>Arts</h3>
+            <div class="subjects-grid-wrapper">
+                <div class="subjects-grid">
+                    <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-landmark mb-2"></i>
+                        <h3>History</h3>
+                    </div>
+                    <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-calculator mb-2"></i>
+                        <h3>Mathematics</h3>
+                    </div>
+                    <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-flask mb-2"></i>
+                        <h3>Science</h3>
+                    </div>
+                    <a href="literature6-9.html" class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-book mb-2"></i>
+                        <h3>Literature</h3>
+                    </a>
+                    <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-palette mb-2"></i>
+                        <h3>Languages and Fine Arts</h3>
+                    </div>
+                    <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-users mb-2"></i>
+                        <h3>Humanities</h3>
+                    </div>
                 </div>
             </div>
         </section>
