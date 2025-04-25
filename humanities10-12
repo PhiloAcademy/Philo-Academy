@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the 10-12 Humanities program at Philo Classical Academy, focusing on key philosophical, political, scientific, and religious texts from ancient to modern times.">
+    <meta name="keywords" content="Philo Classical Academy, 10-12 Humanities, classical education, philosophy, great books">
+    <meta name="author" content="Philo Classical Academy">
+    <title>10-12 Humanities | Philo Classical Academy</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: rgb(85, 23, 147);
+            --accent-color: rgb(238, 186, 43);
+            --tertiary-color: rgb(255, 255, 255);
+            --text-color: #333;
+            --background-color: #f5f5f5;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-color);
+        }
+        .accent-text {
+            color: var(--accent-color);
+        }
+        .banner {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 1.5rem 0;
+            position: relative;
+        }
+        .sub-banner {
+            background-color: var(--accent-color);
+            position: relative;
+            z-index: 10;
+            padding: 0.75rem 0;
+        }
+        .divider {
+            background-color: var(--tertiary-color);
+            height: 2px;
+        }
+        .footer-divider {
+            background-color: var(--accent-color);
+            height: 2px;
+        }
+        .motto {
+            font-family: 'Cinzel', serif;
+            font-style: italic;
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: var(--tertiary-color);
+        }
+        .dropdown-menu {
+            display: none;
+            background-color: var(--primary-color);
+            z-index: 20;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+        @media (min-width: 768px) {
+            .dropdown:hover .dropdown-menu,
+            .dropdown:focus-within .dropdown-menu {
+                display: block;
+            }
+        }
+        .dropdown-menu a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.875rem;
+            color: var(--tertiary-color);
+            padding: 0.5rem 1rem;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dropdown-menu a:hover,
+        .dropdown-menu a:focus {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        .logo {
+            width: 60px;
+            height: auto;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        .text-container {
+            display: inline-block;
+        }
+        .banner .text-container h1 {
+            font-family: 'Cinzel', 'Times New Roman', serif !important;
+            font-weight: 700;
+            font-size: 1.75rem;
+        }
+        .nav-link {
+            font-family: 'Cinzel', serif;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover,
+        .nav-link:focus {
+            color: var(--tertiary-color);
+        }
+        .search-bar {
+            background-color: var(--tertiary-color);
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            width: 80px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.75rem;
+            transition: border-color 0.3s ease, width 0.3s ease;
+        }
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            width: 120px;
+        }
+        .search-button {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .search-button:hover,
+        .search-button:focus {
+            background-color: var(--tertiary-color);
+            color: var(--primary-color);
+        }
+        section {
+            padding: 2rem 0;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        @media (min-width: 768px) {
+            .banner {
+                padding: 2rem 0;
+            }
+            .banner .container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .logo {
+                width: 104px;
+                margin-right: 1rem;
+                margin-bottom: 0;
+            }
+            .banner .text-container h1 {
+                font-size: 3rem;
+            }
+            .motto {
+                font-size: 1rem;
+            }
+            .sub-banner {
+                padding: 1rem 0;
+            }
+            .nav-link {
+                font-size: 1rem;
+            }
+            .dropdown-menu {
+                min-width: 12rem;
+            }
+            .search-bar {
+                width: 100px;
+                font-size: 0.8rem;
+            }
+            .search-bar:focus {
+                width: 150px;
+            }
+            .search-button {
+                padding: 0.25rem 0.6rem;
+                font-size: 0.8rem;
+            }
+            section {
+                padding: 3rem 0;
+            }
+            section h2 {
+                font-size: 2rem;
+            }
+            .footer {
+                padding: 2rem 0;
+            }
+            .footer p {
+                font-size: 1rem;
+            }
+        }
+        @media (min-width: 768px) {
+            .logo {
+                width: 120px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .logo {
+                width: 150px;
+            }
+        }
+        @media (max-width: 767px) {
+            .banner .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .text-container {
+                text-align: center;
+            }
+            .search-bar,
+            .search-button {
+                margin: 0 auto;
+            }
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                z-index: 1;
+            }
+        }
+        :focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        .period-heading {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="banner">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+            <div class="flex flex-col items-center md:flex-row">
+                <img src="Heading.jpg?v=2" alt="Philo Classical Academy Banner" class="logo">
+                <div class="text-container">
+                    <h1 class="text-4xl md:text-5xl accent-text">Philo Classical Academy</h1>
+                    <p class="motto mt-2">Virtute ad Veritatem</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2">
+                <input type="text" class="search-bar" placeholder="Search..." aria-label="Search">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+    </header>
+    <div class="divider"></div>
+
+    <nav class="sub-banner">
+        <div class="container mx-auto flex flex-col md:flex-row justify-center items-center px-4 space-y-4 md:space-y-0 md:space-x-8">
+            <a href="index.html" class="nav-link">Home</a>
+            <div class="dropdown relative">
+                <a href="index.html#about" class="nav-link">About Us</a>
+                <div class="dropdown-menu hidden">
+                    <a href="mission-vision.html" class="block">Our Mission</a>
+                    <a href="history.html" class="block">History</a>
+                    <a href="faculty.html" class="block">Faculty/Staff</a>
+                </div>
+            </div>
+            <div class="dropdown relative">
+                <a href="index.html#academics" class="nav-link">Academics</a>
+                <div class="dropdown-menu hidden">
+                    <a href="k5-program.html" class="block">K-5 Program</a>
+                    <a href="6-9-program.html" class="block">6-9 Program</a>
+                    <a href="10-12-program.html" class="block">10-12 Program</a>
+                </div>
+            </div>
+            <div class="dropdown relative">
+                <a href="index.html#admissions" class="nav-link">Admissions</a>
+                <div class="dropdown-menu hidden">
+                    <a href="process.html" class="block">Process</a>
+                    <a href="tuition.html" class="block">Tuition</a>
+                    <a href="financial-aid.html" class="block">Financial Aid</a>
+                </div>
+            </div>
+            <a href="index.html#news" class="nav-link">News</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">10-12 Humanities Program</h2>
+            <p class="mb-4">The 10-12 Humanities program at Philo Classical Academy engages students with foundational texts in philosophy, political theory, science, and religion, spanning from ancient to modern times. Through rigorous study, students develop critical thinking and a deep understanding of human thought and society.</p>
+
+            <h3 class="text-2xl font-bold mb-4">10th Grade: Political Thought</h3>
+            <h4 class="period-heading">17th Century</h4>
+            <ul>
+                <li><strong>Thomas Hobbes</strong> (<em>Leviathan</em>, 1651): "The State of Nature and the Social Contract" – Advocates for a strong sovereign authority to prevent chaos and maintain order.</li>
+                <li><strong>John Locke</strong> (<em>Two Treatises of Government</em>, 1689): "On Natural Rights and the Consent of the Governed" – Discusses life, liberty, and property as fundamental rights and the role of government to protect them.</li>
+            </ul>
+            <h4 class="period-heading">18th Century</h4>
+            <ul>
+                <li><strong>David Hume</strong> (<em>Essays, Moral and Political</em>, 1742): "Of the Original Contract" – Critiques the idea of the social contract and emphasizes the role of custom and stability in governance.</li>
+                <li><strong>Montesquieu</strong> (<em>The Spirit of Laws</em>, 1748): "On the Separation of Powers" – Explores the division of government into legislative, executive, and judicial branches.</li>
+                <li><strong>Jean-Jacques Rousseau</strong> (<em>The Social Contract</em>, 1762): "Man is Born Free, and Everywhere He is in Chains" – Examines the general will and collective sovereignty.</li>
+                <li><strong>Adam Smith</strong> (<em>The Wealth of Nations</em>, 1776): "On the Role of Government in Economic Life" – Discusses the government's role in maintaining justice, defense, and public works, while advocating for free markets.</li>
+                <li><strong>Thomas Paine</strong> (<em>Common Sense</em>, 1776): "On the Necessity of Independence" – Advocates for independence and critiques monarchical government.</li>
+                <li><strong>John Adams</strong> (<em>Thoughts on Government</em>, 1776): "On Republican Government" – Offers a framework for constructing a balanced and effective government.</li>
+                <li><strong>Edmund Burke</strong> (<em>Reflections on the Revolution in France</em>, 1790): "On Tradition and Gradual Reform" – Critiques radical political change and emphasizes the importance of societal continuity.</li>
+                <li><strong>Alexander Hamilton, James Madison, and John Jay</strong> (<em>The Federalist Papers</em>, 1788): "Federalist No. 10: On Factions" – Examines the dangers of factions and the benefits of a large republic.</li>
+            </ul>
+            <h4 class="period-heading">19th Century</h4>
+            <ul>
+                <li><strong>Jeremy Bentham</strong> (<em>An Introduction to the Principles of Morals and Legislation</em>, 1789): "Utilitarianism and Legal Reform" – Introduces the greatest happiness principle as a foundation for governance.</li>
+                <li><strong>Benjamin Constant</strong> (<em>The Liberty of Ancients Compared with That of Moderns</em>, 1819): "On Individual Freedom and Political Participation" – Contrasts ancient and modern concepts of liberty.</li>
+                <li><strong>John Stuart Mill</strong> (<em>On Liberty</em>, 1859): "The Harm Principle and Freedom of Expression" – Advocates for individual liberties and explores the limits of societal authority over the individual.</li>
+                <li><strong>Karl Marx and Friedrich Engels</strong> (<em>The Communist Manifesto</em>, 1848): "The History of Class Struggles" – Analyzes the relationship between economic systems and political power.</li>
+                <li><strong>Henry Sidgwick</strong> (<em>The Elements of Politics</em>, 1891): "On Political Ethics and Justice" – Examines the moral foundations of political systems.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mb-4">11th Grade: Science and Religion</h3>
+            <h4 class="period-heading">11th–15th Century (Medieval Period)</h4>
+            <ul>
+                <li><strong>Anselm of Canterbury</strong> (<em>Proslogion</em>): Key chapters on the ontological argument.</li>
+                <li><strong>Peter Abelard</strong> (<em>Sic et Non</em>): Select theological contradictions.</li>
+                <li><strong>Thomas Aquinas</strong> (<em>Summa Theologica</em>): Sections on faith and reason.</li>
+                <li><strong>William of Ockham</strong> (<em>Summa Logicae</em>): Chapters on nominalism.</li>
+            </ul>
+            <h4 class="period-heading">16th–17th Century (Renaissance and Early Modern Period)</h4>
+            <ul>
+                <li><strong>Desiderius Erasmus</strong> (<em>The Praise of Folly</em>): Satirical highlights.</li>
+                <li><strong>Martin Luther</strong> (<em>The Ninety-Five Theses</em>): Main critiques.</li>
+                <li><strong>Niccolò Machiavelli</strong> (<em>The Discourses</em>): Religion and statecraft chapters.</li>
+                <li><strong>John Calvin</strong> (<em>Institutes of the Christian Religion</em>): Key sections on predestination.</li>
+                <li><strong>Francis Bacon</strong> (<em>Novum Organum</em>): Inductive reasoning chapters.</li>
+                <li><strong>Johannes Kepler</strong> (<em>Harmonices Mundi</em>): Laws of planetary motion.</li>
+                <li><strong>Galileo Galilei</strong> (<em>Dialogue Concerning the Two Chief World Systems</em>): Heliocentric argument excerpts.</li>
+                <li><strong>René Descartes</strong> (<em>Discourse on the Method</em>): Methodology and mechanistic views.</li>
+            </ul>
+            <h4 class="period-heading">18th Century (Scientific and Religious Enlightenment)</h4>
+            <ul>
+                <li><strong>Isaac Newton</strong> (<em>Mathematical Principles of Natural Philosophy</em>): Laws of motion and gravity summary.</li>
+                <li><strong>John Locke</strong> (<em>The Reasonableness of Christianity</em>): Rational theology sections.</li>
+                <li><strong>Voltaire</strong> (<em>Letters on the English</em>): Religion and science highlights.</li>
+                <li><strong>Jean-Jacques Rousseau</strong> (<em>The Social Contract</em>): Civil religion and general will.</li>
+                <li><strong>David Hume</strong> (<em>Dialogues Concerning Natural Religion</em>): Problem of evil and theology.</li>
+            </ul>
+            <h4 class="period-heading">19th Century (Industrial Revolution and Religious Renewal)</h4>
+            <ul>
+                <li><strong>Søren Kierkegaard</strong> (<em>Fear and Trembling</em>): Faith and the absurd highlights.</li>
+                <li><strong>Michael Faraday</strong> (<em>Experimental Researches in Electricity</em>): Electromagnetism overview.</li>
+                <li><strong>John Henry Newman</strong> (<em>An Essay on the Development of Christian Doctrine</em>): Evolution of religious thought.</li>
+                <li><strong>Charles Darwin</strong> (<em>On the Origin of Species</em>): Natural selection summary.</li>
+                <li><strong>James Clerk Maxwell</strong> (<em>A Treatise on Electricity and Magnetism</em>): Electromagnetic theory essentials.</li>
+            </ul>
+            <h4 class="period-heading">20th Century (Modern Science and Religion)</h4>
+            <ul>
+                <li><strong>G.K. Chesterton</strong> (<em>Orthodoxy</em>): Faith and truth arguments.</li>
+                <li><strong>Albert Einstein</strong> (<em>Relativity: The Special and the General Theory</em>): Space-time theory summary.</li>
+                <li><strong>Sigmund Freud</strong> (<em>The Future of an Illusion</em>): Psychology of religion.</li>
+                <li><strong>C.S. Lewis</strong> (<em>The Abolition of Man</em>): Objective values and moral relativism.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mb-4">12th Grade: Philosophy</h3>
+            <h4 class="period-heading">Ancient Greek Philosophy</h4>
+            <ul>
+                <li><strong>Socrates</strong> (via Plato’s <em>Apology</em>, c. 399 BCE): Socrates’ defense of the examined life.</li>
+                <li><strong>Plato</strong> (<em>The Republic</em>, c. 380 BCE): "The Allegory of the Cave" and "Justice in the Ideal State."</li>
+                <li><strong>Aristotle</strong> (<em>Nicomachean Ethics</em>, c. 350 BCE): On virtue ethics and eudaimonia.</li>
+                <li><strong>Aristotle</strong> (<em>Physics</em>, c. 350 BCE): On causality and the nature of change.</li>
+            </ul>
+            <h4 class="period-heading">Roman Philosophy</h4>
+            <ul>
+                <li><strong>Cicero</strong> (<em>On Duties</em>, c. 44 BCE): On virtue and its role in moral obligations.</li>
+                <li><strong>Seneca</strong> (<em>Letters to Lucilius</em>, c. 65 CE): On Stoic ethics and tranquility.</li>
+                <li><strong>Marcus Aurelius</strong> (<em>Meditations</em>, c. 180 CE): Reflections on self-discipline and ethical leadership.</li>
+            </ul>
+            <h4 class="period-heading">Medieval Philosophy</h4>
+            <ul>
+                <li><strong>Boethius</strong> (<em>The Consolation of Philosophy</em>, c. 524): Divine justice and the problem of evil.</li>
+                <li><strong>Anselm of Canterbury</strong> (<em>Proslogion</em>, 1078): On the Ontological Argument for God.</li>
+                <li><strong>Peter Abelard</strong> (<em>Ethica</em>, c. 1138): On moral intention and ethical judgment.</li>
+                <li><strong>Thomas Aquinas</strong> (<em>Summa Theologica</em>, 1265–1274): Natural law and human law.</li>
+                <li><strong>William of Ockham</strong> (<em>Summa Logicae</em>, c. 1323): On nominalism and human knowledge.</li>
+            </ul>
+            <h4 class="period-heading">Early Modern Philosophy</h4>
+            <ul>
+                <li><strong>Niccolò Machiavelli</strong> (<em>The Discourses</em>, 1517): On religion and statecraft.</li>
+                <li><strong>Francis Bacon</strong> (<em>Novum Organum</em>, 1620): Inductive reasoning and the scientific method.</li>
+                <li><strong>Thomas Hobbes</strong> (<em>Leviathan</em>, 1651): On the state of nature and social contract.</li>
+                <li><strong>Johannes Kepler</strong> (<em>Harmonices Mundi</em>, 1619): On planetary motion.</li>
+                <li><strong>Galileo Galilei</strong> (<em>Dialogue Concerning the Two Chief World Systems</em>, 1632): On heliocentrism.</li>
+                <li><strong>René Descartes</strong> (<em>Discourse on the Method</em>, 1637): On mechanistic views and epistemology.</li>
+            </ul>
+            <h4 class="period-heading">18th Century Philosophy</h4>
+            <ul>
+                <li><strong>David Hume</strong> (<em>An Enquiry Concerning the Principles of Morals</em>, 1751): On moral sentiment and empathy.</li>
+                <li><strong>Jean-Jacques Rousseau</strong> (<em>The Social Contract</em>, 1762): Civil religion and the general will.</li>
+                <li><strong>Adam Smith</strong> (<em>The Theory of Moral Sentiments</em>, 1759): Sympathy and the moral judgment of actions.</li>
+                <li><strong>Immanuel Kant</strong> (<em>Critique of Practical Reason</em>, 1788): On moral law and freedom.</li>
+            </ul>
+            <h4 class="period-heading">19th Century Philosophy</h4>
+            <ul>
+                <li><strong>Søren Kierkegaard</strong> (<em>The Sickness Unto Death</em>, 1849): On despair and ethical responsibility.</li>
+                <li><strong>Charles Darwin</strong> (<em>On the Origin of Species</em>, 1859): On natural selection and evolution.</li>
+                <li><strong>Friedrich Nietzsche</strong> (<em>On the Genealogy of Morals</em>, 1887): Critique of moral values and their historical development.</li>
+            </ul>
+            <h4 class="period-heading">20th Century Philosophy</h4>
+            <ul>
+                <li><strong>Albert Einstein</strong> (<em>Relativity: The Special and the General Theory</em>, 1916): Space-time and its implications.</li>
+                <li><strong>G.E. Moore</strong> (<em>Principia Ethica</em>, 1903): On the "naturalistic fallacy."</li>
+                <li><strong>Simone de Beauvoir</strong> (<em>The Ethics of Ambiguity</em>, 1947): On freedom and existential ethics.</li>
+                <li><strong>John Rawls</strong> (<em>Justice as Fairness: A Restatement</em>, 2001): Distributive justice.</li>
+            </ul>
+        </section>
+    </main>
+
+    <div class="footer-divider"></div>
+    <footer class="footer">
+        <p>Philo Classical Academy | 608-799-7686 | info@philoacademy.org</p>
+        <p>Website: philoacademy.org</p>
+        <p>© 2025 Philo Classical Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
