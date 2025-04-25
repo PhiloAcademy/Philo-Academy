@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the 10-12 history curriculum at Philo Classical Academy, covering British history, European scientific and religious history, and Western civilization from 1500 to 2000.">
+    <meta name="keywords" content="Philo Classical Academy, history curriculum, British history, European history, Western civilization, classical education">
+    <meta name="author" content="Philo Classical Academy">
+    <title>History 10-12 | Philo Classical Academy</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: rgb(85, 23, 147);
+            --accent-color: rgb(238, 186, 43);
+            --tertiary-color: rgb(255, 255, 255);
+            --text-color: #333;
+            --background-color: #f5f5f5;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-color);
+        }
+        .accent-text {
+            color: var(--accent-color);
+        }
+        .banner {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 1.5rem 0;
+            position: relative;
+        }
+        .sub-banner {
+            background-color: var(--accent-color);
+            position: relative;
+            z-index: 10;
+            padding: 0.75rem 0;
+        }
+        .divider {
+            background-color: var(--tertiary-color);
+            height: 2px;
+        }
+        .footer-divider {
+            background-color: var(--accent-color);
+            height: 2px;
+        }
+        .motto {
+            font-family: 'Cinzel', serif;
+            font-style: italic;
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: var(--tertiary-color);
+        }
+        .dropdown-menu {
+            display: none;
+            background-color: var(--primary-color);
+            z-index: 20;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+        @media (min-width: 768px) {
+            .dropdown:hover .dropdown-menu,
+            .dropdown:focus-within .dropdown-menu {
+                display: block;
+            }
+        }
+        .dropdown-menu a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.875rem;
+            color: var(--tertiary-color);
+            padding: 0.5rem 1rem;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dropdown-menu a:hover,
+        .dropdown-menu a:focus {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        .logo {
+            width: 60px;
+            height: auto;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        .text-container {
+            display: inline-block;
+        }
+        .banner .text-container h1 {
+            font-family: 'Cinzel', 'Times New Roman', serif !important;
+            font-weight: 700;
+            font-size: 1.75rem;
+        }
+        .nav-link {
+            font-family: 'Cinzel', serif;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover,
+        .nav-link:focus {
+            color: var(--tertiary-color);
+        }
+        .search-bar {
+            background-color: var(--tertiary-color);
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            width: 80px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.75rem;
+            transition: border-color 0.3s ease, width 0.3s ease;
+        }
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            width: 120px;
+        }
+        .search-button {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .search-button:hover,
+        .search-button:focus {
+            background-color: var(--tertiary-color);
+            color: var(--primary-color);
+        }
+        section {
+            padding: 2rem 0;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        @media (min-width: 768px) {
+            .banner {
+                padding: 2rem 0;
+            }
+            .banner .container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .logo {
+                width: 104px;
+                margin-right: 1rem;
+                margin-bottom: 0;
+            }
+            .banner .text-container h1 {
+                font-size: 3rem;
+            }
+            .motto {
+                font-size: 1rem;
+            }
+            .sub-banner {
+                padding: 1rem 0;
+            }
+            .nav-link {
+                font-size: 1rem;
+            }
+            .dropdown-menu {
+                min-width: 12rem;
+            }
+            .search-bar {
+                width: 100px;
+                font-size: 0.8rem;
+            }
+            .search-bar:focus {
+                width: 150px;
+            }
+            .search-button {
+                padding: 0.25rem 0.6rem;
+                font-size: 0.8rem;
+            }
+            section {
+                padding: 3rem 0;
+            }
+            section h2 {
+                font-size: 2rem;
+            }
+            .footer {
+                padding: 2rem 0;
+            }
+            .footer p {
+                font-size: 1rem;
+            }
+        }
+        @media (min-width: 768px) {
+            .logo {
+                width: 120px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .logo {
+                width: 150px;
+            }
+        }
+        @media (max-width: 767px) {
+            .banner .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .text-container {
+                text-align: center;
+            }
+            .search-bar,
+            .search-button {
+                margin: 0 auto;
+            }
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                z-index: 1;
+            }
+        }
+        :focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="banner">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+            <div class="flex flex-col items-center md:flex-row">
+                <img src="Heading.jpg?v=2" alt="Philo Classical Academy Banner" class="logo">
+                <div class="text-container">
+                    <h1 class="text-4xl md:text-5xl accent-text">Philo Classical Academy</h1>
+                    <p class="motto mt-2">Virtute ad Veritatem</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2">
+                <input type="text" class="search-bar" placeholder="Search..." aria-label="Search">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+    </header>
+    <div class="divider"></div>
+
+    <nav class="sub-banner">
+        <div class="container mx-auto flex flex-col md:flex-row justify-center items-center px-4 space-y-4 md:space-y-0 md:space-x-8">
+            <a href="index.html" class="nav-link">Home</a>
+            <div class="dropdown relative">
+                <a href="index.html#about" class="nav-link">About Us</a>
+                <div class="dropdown-menu hidden">
+                    <a href="mission-vision.html" class="block">Our Mission</a>
+                    <a href="history.html" class="block">History</a>
+                    <a href="faculty.html" class="block">Faculty/Staff</a>
+                </div>
+            </div>
+            <div class="dropdown relative">
+                <a href="index.html#academics" class="nav-link">Academics</a>
+                <div class="dropdown-menu hidden">
+                    <a href="k5-program.html" class="block">K-5 Program</a>
+                    <a href="6-9-program.html" class="block">6-9 Program</a>
+                    <a href="10-12-program.html" class="block">10-12 Program</a>
+                </div>
+            </div>
+            <div class="dropdown relative">
+                <a href="index.html#admissions" class="nav-link">Admissions</a>
+                <div class="dropdown-menu hidden">
+                    <a href="process.html" class="block">Process</a>
+                    <a href="tuition.html" class="block">Tuition</a>
+                    <a href="financial-aid.html" class="block">Financial Aid</a>
+                </div>
+            </div>
+            <a href="index.html#news" class="nav-link">News</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">History Curriculum: Grades 10-12</h2>
+
+            <h3 class="text-2xl font-bold mb-4">10th Grade: British History (1750-1950)</h3>
+            <p class="mb-4">Students explore Britain’s transformation from 1750 to 1950, guided by *The Shaping of Modern Britain: Identity, Industry and Empire, 1780-1914* by Eric J. Evans, with an extended focus through 1950. Culturally, this era shaped a modern British identity through literary movements like Romanticism (e.g., Wordsworth) and the Victorian novel (e.g., Dickens), alongside growing national pride expressed through institutions like the BBC (founded 1922). The Industrial Revolution (c. 1760-1840) drove economic change, making Britain a global industrial leader with innovations like the steam engine, though it also brought social challenges like urban poverty and labor unrest, addressed through reforms like the Factory Acts. Politically, Britain’s empire expanded to its zenith by 1914, controlling vast territories like India, but also faced tensions, such as the 1857 Indian Rebellion. Democratic reforms, including the Reform Acts (1832, 1867, 1884) and women’s suffrage (1918, 1928), redefined governance, while post-WWI decline led to India’s independence (1947) and the establishment of the welfare state under Attlee (1945), including the NHS (1948).</p>
+
+            <h3 class="text-2xl font-bold mb-4">11th Grade: Scientific and Religious History of Europe (1000-2000)</h3>
+            <p class="mb-4">This course examines the interplay of science and religion in Europe from 1000 to 2000, drawing from *Medieval Europe and the World: From Late Antiquity to Modernity, 400-1500* and *Introduction to the History and Philosophy of Science* by Richard DeWitt. From 1000 to 1500, students explore the medieval synthesis of Christian theology and Aristotelian science, where the Catholic Church dominated intellectual life, yet early scientific inquiry emerged through figures like Roger Bacon. The period saw tensions between faith and reason, exemplified by the condemnation of Galileo in 1633, as the Scientific Revolution (Copernicus, Newton) challenged religious orthodoxy. From 1500 to 2000, the Enlightenment and Darwin’s theory of evolution (1859) further strained religious authority, while science advanced through the development of modern physics (Einstein) and genetics (Watson and Crick). The course also covers the Church’s evolving role, from the Protestant Reformation’s fragmentation of Christendom to the 20th-century secularization of Europe, amidst debates over creationism and the ethical implications of scientific progress.</p>
+
+            <h3 class="text-2xl font-bold mb-4">12th Grade: From Dawn to Decadence by Jacques Barzun</h3>
+            <p class="mb-4">Students engage with *From Dawn to Decadence* (2000) by Jacques Barzun, a profound exploration of Western civilization from 1500 to 2000. Barzun’s deep scholarship traces cultural shifts through four key revolutions: the Protestant Reformation, which challenged the Catholic Church’s authority; the rise of the nation-state, shifting power to centralized governments; the French Revolution, which introduced ideals of equality; and the post-WWI era, which reshaped societies with new political systems. The book encourages students to reflect on big questions: How do cultural movements rise and fall? What drives societies to seek simplicity or progress? Barzun examines the tension between innovation (like the Industrial Revolution) and the recurring desire for a return to simpler ideals, prompting students to consider the patterns that shape history and what they reveal about our own time.</p>
+        </section>
+    </main>
+
+    <div class="footer-divider"></div>
+    <footer class="footer">
+        <p>Philo Classical Academy | 608-799-7686 | info@philoacademy.org</p>
+        <p>Website: philoacademy.org</p>
+        <p>© 2025 Philo Classical Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
