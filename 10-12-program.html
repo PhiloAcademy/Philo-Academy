@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about the 10-12 program at Philo Classical Academy, offering a rigorous classical education for high school students.">
+    <meta name="description" content="Discover the 10-12 program at Philo Classical Academy, focusing on classical education and great books for high school students.">
     <meta name="keywords" content="Philo Classical Academy, 10-12 program, classical education, great books, Twin Cities">
     <meta name="author" content="Philo Classical Academy">
     <title>10-12 Program | Philo Classical Academy</title>
@@ -259,7 +259,7 @@
             background-color: var(--primary-color);
         }
         .subject-bubble i {
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: var(--accent-color);
             margin-bottom: 0.5rem;
         }
@@ -267,10 +267,22 @@
             font-size: 1rem;
             line-height: 1.2;
             color: var(--accent-color);
+            text-shadow: 0 0 2px var(--accent-color);
         }
         .subject-bubble:hover {
             transform: scale(1.05);
             transition: transform 0.3s ease;
+        }
+        /* Centering the Grid */
+        .subjects-grid-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+            gap: 1.5rem;
+            width: fit-content;
         }
     </style>
 </head>
@@ -327,34 +339,36 @@
     <main>
         <section class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">10-12 Program</h2>
-            <p class="mb-4">The 10-12 program at Philo Classical Academy offers a rigorous classical education, preparing students for college and beyond through deep engagement with great books, advanced coursework, and a focus on virtue and wisdom.</p>
-            <p class="mb-4">Students study a comprehensive curriculum including literature, history, mathematics, science, Latin, philosophy, and the arts, culminating in a senior thesis that showcases their intellectual growth.</p>
+            <p class="mb-4">The 10-12 program at Philo Classical Academy prepares students for higher education and lifelong learning through an advanced classical curriculum. Students engage deeply with great books, sharpen their analytical skills, and explore complex ideas in core subjects.</p>
+            <p class="mb-4">Our program emphasizes rigorous study in literature, history, mathematics, science, languages, fine arts, and humanities, fostering intellectual growth and moral development.</p>
 
             <h3 class="text-2xl font-bold text-center mb-6">Core Subjects</h3>
-            <div class="grid grid-cols-3 gap-6 mb-8">
-                <a href="literature10-12.html" class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-book mb-2"></i>
-                    <h3>Literature</h3>
-                </a>
-                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-landmark mb-2"></i>
-                    <h3>History</h3>
-                </div>
-                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-calculator mb-2"></i>
-                    <h3>Mathematics</h3>
-                </div>
-                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-flask mb-2"></i>
-                    <h3>Science</h3>
-                </div>
-                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-language mb-2"></i>
-                    <h3>Latin</h3>
-                </div>
-                <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-book-open mb-2"></i>
-                    <h3>Philosophy</h3>
+            <div class="subjects-grid-wrapper">
+                <div class="subjects-grid">
+                    <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-landmark mb-2"></i>
+                        <h3>History</h3>
+                    </div>
+                    <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-calculator mb-2"></i>
+                        <h3>Mathematics</h3>
+                    </div>
+                    <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-flask mb-2"></i>
+                        <h3>Science</h3>
+                    </div>
+                    <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-book mb-2"></i>
+                        <h3>Literature</h3>
+                    </div>
+                    <div class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-palette mb-2"></i>
+                        <h3>Languages and Fine Arts</h3>
+                    </div>
+                    <a href="humanities10-12.html" class="subject-bubble flex flex-col items-center p-6 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <i class="fas fa-users mb-2"></i>
+                        <h3>Humanities</h3>
+                    </a>
                 </div>
             </div>
         </section>
