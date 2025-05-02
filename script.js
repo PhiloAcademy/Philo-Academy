@@ -119,3 +119,62 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300); // Debounce delay
     });
 });
+
+// Popup-specific JavaScript
+// Show modal on page load
+window.onload = function() {
+    document.getElementById('joinUsModal').style.display = 'flex';
+};
+
+// Close modal
+function closeModal() {
+    document.getElementById('joinUsModal').style.display = 'none';
+}
+
+// Handle form submission
+function handleSubmit(event) {
+    event.preventDefault();
+    const form = document.getElementById('joinUsForm');
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const interest = document.getElementById('interest').value;
+    const message = document.getElementById('message').value.trim();
+    const errorMessage = document.getElementById('errorMessage');
+    const successMessage = document.getElementById('successMessage');
+
+    // Validate required fields
+    if (!name || !email) {
+        errorMessage.style.display = 'block';
+        successMessage.style.display = 'none';
+        return;
+    }
+
+    // Hide error and show success
+    errorMessage.style.display = 'none';
+    successMessage.style.display = 'block';
+
+    // Simulate sending data to info@philoclassical.org
+    const formData = {
+        name: name,
+        email: email,
+        phone: phone,
+        interest: interest,
+        message: message
+    };
+    console.log('Form Data to be sent to info@philoclassical.org:', formData);
+    // Note: Actual email sending requires server-side implementation
+
+    // Reset form
+    form.reset();
+
+    // Close modal after a delay
+    setTimeout(closeModal, 2000);
+}
+
+// Close modal when clicking outside
+document.getElementById('joinUsModal').addEventListener('click', function(event) {
+    if (event.target === this) {
+        closeModal();
+    }
+});
