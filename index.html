@@ -191,14 +191,25 @@
             padding: 2rem 0;
         }
         .info-card {
-            background-color: var(--background-color);
+            background-color: var(--accent-color);
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            text-align: center;
         }
         .info-card:hover {
             transform: translateY(-5px);
+        }
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .icon-container svg {
+            width: 48px;
+            height: 48px;
+            color: var(--primary-color);
         }
         .info-card h3 {
             font-size: 1.5rem;
@@ -213,7 +224,45 @@
             transition: color 0.3s ease;
         }
         .learn-more:hover {
-            color: var(--accent-color);
+            color: var(--tertiary-color);
+        }
+        /* Slideshow Section */
+        .slideshow-section {
+            padding: 2rem 0;
+        }
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+        }
+        .slide.active {
+            display: block;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+        .dots-container {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .dot.active-dot {
+            background-color: var(--primary-color);
         }
         /* Responsive Adjustments */
         @media (min-width: 768px) {
@@ -480,9 +529,9 @@
     <!-- Popup -->
     <div class="popup-overlay" id="join-us-popup">
         <div class="popup-content">
-            <button class="close-popup" aria-label="Close popup">&times;</button>
+            <button class="close-popup" aria-label="Close popup">×</button>
             <h2 class="accent-text">Join Us in Building Philo Classical Academy</h2>
-            <p>Be a part of our vision to create a classical great books school in the Twin Cities, dedicated to truth, goodness, and beauty. Your support can help make this dream a reality. Share your passion and join our founding community today!</p>
+            <p>Help us bring a classical great books school to the Twin Cities, dedicated to truth, goodness, and beauty. Your support can shape the future of education. Join our founding community today!</p>
             <form id="join-us-form">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required aria-required="true">
@@ -539,24 +588,36 @@
             <div class="container mx-auto info-grid">
                 <!-- School Overview -->
                 <div class="info-card">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    </div>
                     <h3 class="font-bold">Our School</h3>
                     <p>Philo Classical Academy is a beacon of classical education, fostering a serious and academic environment where students engage with the great books and timeless ideas.</p>
                     <a href="#about" class="learn-more inline-block mt-4">Learn More</a>
                 </div>
                 <!-- Mission -->
                 <div class="info-card">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                    </div>
                     <h3 class="font-bold">Our Mission</h3>
                     <p>Guided by our motto, "Virtute ad Veritatem," we aim to cultivate virtuous scholars who seek truth through rigorous study and noble character.</p>
                     <a href="mission.html" class="learn-more inline-block mt-4">Learn More</a>
                 </div>
                 <!-- Academics -->
                 <div class="info-card">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                    </div>
                     <h3 class="font-bold">Academics</h3>
                     <p>Our curriculum emphasizes the great books, classical languages, and the appreciation of beauty alongside truth and goodness, preparing students for a life of wisdom.</p>
                     <a href="#academics" class="learn-more inline-block mt-4">Learn More</a>
                 </div>
                 <!-- News -->
                 <div class="info-card">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg>
+                    </div>
                     <h3 class="font-bold">News</h3>
                     <p>Stay updated with the latest events, achievements, and announcements from Philo Classical Academy.</p>
                     <a href="#news" class="learn-more inline-block mt-4">Learn More</a>
@@ -564,25 +625,32 @@
             </div>
         </section>
 
-        <!-- Academics Overview -->
-        <section id="academics" class="container mx-auto">
-            <h2 class="font-bold">Academics</h2>
-            <p class="mb-4">Our curriculum is rooted in the great books of the Western tradition, fostering deep engagement with timeless ideas. Students study classical languages, literature, philosophy, and mathematics, while our unique physical education program incorporates traditional Western martial training to build discipline and resilience.</p>
-            <p>We emphasize the appreciation of beauty in art, music, and literature, complementing our pursuit of truth and goodness. Explore our programs for different grade levels to learn more.</p>
-        </section>
-
-        <!-- Admissions Overview -->
-        <section id="admissions" class="container mx-auto">
-            <h2 class="font-bold">Admissions</h2>
-            <p class="mb-4">Philo Classical Academy welcomes applications from families who share our commitment to classical education and virtue. Our admissions process is designed to identify students who will thrive in our rigorous academic environment.</p>
-            <p>Learn more about our application process, tuition, and financial aid opportunities through the links below.</p>
-        </section>
-
-        <!-- News Page -->
-        <section id="news" class="container mx-auto">
-            <h2 class="font-bold">News</h2>
-            <p class="mb-4">Stay informed about the latest developments at Philo Classical Academy, including student achievements, faculty publications, and upcoming events.</p>
-            <p>Recent highlights include our annual Great Books Symposium and student awards in classical language competitions.</p>
+        <!-- Slideshow Section -->
+        <section id="slideshow" class="slideshow-section">
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <img src="https://picsum.photos/800/400?random=1" alt="Classical Education Image 1">
+                </div>
+                <div class="slide">
+                    <img src="https://picsum.photos/800/400?random=2" alt="Classical Education Image 2">
+                </div>
+                <div class="slide">
+                    <img src="https://picsum.photos/800/400?random=3" alt="Classical Education Image 3">
+                </div>
+                <div class="slide">
+                    <img src="https://picsum.photos/800/400?random=4" alt="Classical Education Image 4">
+                </div>
+                <div class="slide">
+                    <img src="https://picsum.photos/800/400?random=5" alt="Classical Education Image 5">
+                </div>
+            </div>
+            <div class="dots-container">
+                <span class="dot active-dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
         </section>
 
         <!-- Contact Page -->
