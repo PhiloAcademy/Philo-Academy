@@ -403,53 +403,6 @@
             color: var(--text-color);
             margin-bottom: 1.5rem;
         }
-        .popup-content label {
-            font-family: 'Cinzel', serif;
-            color: var(--primary-color);
-            font-size: 1rem;
-            display: block;
-            text-align: left;
-            margin-bottom: 0.5rem;
-        }
-        .popup-content input,
-        .popup-content select,
-        .popup-content textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid var(--accent-color);
-            border-radius: 4px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        .popup-content input:focus,
-        .popup-content select:focus,
-        .popup-content textarea:focus {
-            border-color: var(--primary-color);
-            outline: none;
-        }
-        .popup-content textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        .popup-content button {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            font-family: 'Cinzel', serif;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .popup-content button:hover,
-        .popup-content button:focus {
-            background-color: var(--primary-color);
-            color: var(--accent-color);
-        }
         .close-popup {
             position: absolute;
             top: 1rem;
@@ -459,6 +412,17 @@
             font-size: 1.5rem;
             color: var(--primary-color);
             cursor: pointer;
+        }
+        /* Embedded Google Form Styles */
+        .google-form-container {
+            width: 100%;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        .google-form-container iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
         }
         @media (max-width: 767px) {
             .popup-content {
@@ -470,6 +434,9 @@
             }
             .popup-content p {
                 font-size: 1rem;
+            }
+            .google-form-container iframe {
+                height: 500px;
             }
         }
     </style>
@@ -532,27 +499,9 @@
             <button class="close-popup" aria-label="Close popup">×</button>
             <h2 class="accent-text">Join Us in Building Philo Classical Academy</h2>
             <p>Help us bring a classical great books school to the Twin Cities, dedicated to truth, goodness, and beauty. Your support can shape the future of education. Join our founding community today!</p>
-            <form id="join-us-form">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required aria-required="true">
-                
-                <label for="contact">Contact (Email or Phone)</label>
-                <input type="text" id="contact" name="contact" required aria-required="true">
-                
-                <label for="help-type">How Would You Like to Help?</label>
-                <select id="help-type" name="help-type" required aria-required="true">
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="volunteer">Volunteer</option>
-                    <option value="donate">Donate</option>
-                    <option value="spread-the-word">Spread the Word</option>
-                    <option value="other">Other</option>
-                </select>
-                
-                <label for="comments">Comments</label>
-                <textarea id="comments" name="comments" placeholder="Tell us more about how you'd like to contribute..."></textarea>
-                
-                <button type="submit">Submit</button>
-            </form>
+            <div class="google-form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeOFtH6nEA3w-U9NxyNDgUT8A34WHvOXsl49z1nuvygUKXaqw/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
         </div>
     </div>
 
