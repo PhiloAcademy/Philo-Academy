@@ -5,24 +5,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Show popup after 2 seconds
     setTimeout(() => {
-        popupOverlay.style.display = 'flex';
+        if (popupOverlay) {
+            popupOverlay.style.display = 'flex';
+        }
     }, 2000);
 
     // Close popup on close button click
-    closePopup.addEventListener('click', () => {
-        popupOverlay.style.display = 'none';
-    });
+    if (closePopup) {
+        closePopup.addEventListener('click', () => {
+            popupOverlay.style.display = 'none';
+        });
+    }
 
     // Close popup on clicking outside
-    popupOverlay.addEventListener('click', (e) => {
-        if (e.target === popupOverlay) {
-            popupOverlay.style.display = 'none';
-        }
-    });
+    if (popupOverlay) {
+        popupOverlay.addEventListener('click', (e) => {
+            if (e.target === popupOverlay) {
+                popupOverlay.style.display = 'none';
+            }
+        });
+    }
 
     // Close popup on Escape key
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && popupOverlay.style.display === 'flex') {
+        if (e.key === 'Escape' && popupOverlay && popupOverlay.style.display === 'flex') {
             popupOverlay.style.display = 'none';
         }
     });
@@ -36,35 +42,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Slideshow functionality
-    let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    let slideInterval;
 
     function showSlide(index) {
+        if (!slides.length) return; // Exit if no slides
+        // Normalize index
+        currentSlide = (index + slides.length) % slides.length;
+        // Update slides
         slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
+            slide.classList.toggle('active', i === currentSlide);
         });
+        // Update dots
         dots.forEach((dot, i) => {
-            dot.classList.toggle('active-dot', i === index);
+            dot.classList.toggle('active-dot', i === currentSlide);
         });
     }
 
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
+        showSlide(currentSlide + 1);
     }
 
-    // Initially show the first slide
-    showSlide(currentSlide);
+    function startSlideshow() {
+        if (slideInterval) clearInterval(slideInterval); // Clear existing interval
+        slideInterval = setInterval(nextSlide, 3000); // Cycle every 3 seconds
+    }
 
-    // Cycle slides every 5 seconds
-    setInterval(nextSlide, 5000);
+    // Initialize slideshow
+    if (slides.length > 0) {
+        showSlide(currentSlide);
+        startSlideshow();
+    }
 
     // Add click event to dots
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
-            currentSlide = index;
             showSlide(index);
+            startSlideshow(); // Restart interval on manual navigation
         });
     });
 });
