@@ -9,9 +9,421 @@
     <title>Philo Classical Academy | Virtute ad Veritatem</title>
     <link rel="icon" type="image/png" href="favicon-32x32.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: rgb(85, 23, 147);
+            --accent-color: rgb(238, 186, 43);
+            --tertiary-color: rgb(255, 255, 255);
+            --text-color: #333;
+            --background-color: #f5f5f5;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-color);
+        }
+        .accent-text {
+            color: var(--accent-color);
+        }
+        .banner {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 1.5rem 0;
+            position: relative;
+        }
+        .sub-banner {
+            background-color: var(--accent-color);
+            position: relative;
+            z-index: 10;
+            padding: 0.75rem 0;
+        }
+        .divider {
+            background-color: var(--tertiary-color);
+            height: 2px;
+        }
+        .footer-divider {
+            background-color: var(--accent-color);
+            height: 2px;
+        }
+        .motto {
+            font-family: 'Cinzel', serif;
+            font-style: italic;
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: var(--tertiary-color);
+        }
+        .dropdown-menu {
+            display: none;
+            background-color: var(--primary-color);
+            z-index: 20;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+        @media (min-width: 768px) {
+            .dropdown:hover .dropdown-menu,
+            .dropdown:focus-within .dropdown-menu {
+                display: block;
+            }
+        }
+        .dropdown-menu a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.875rem;
+            color: var(--tertiary-color);
+            padding: 0.5rem 1rem;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dropdown-menu a:hover,
+        .dropdown-menu a:focus {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        .logo {
+            width: 60px;
+            height: auto;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        .text-container {
+            display: inline-block;
+        }
+        .banner .text-container h1 {
+            font-family: 'Cinzel', 'Times New Roman', serif !important;
+            font-weight: 700;
+            font-size: 1.75rem;
+        }
+        .nav-link {
+            font-family: 'Cinzel', serif;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover,
+        .nav-link:focus {
+            color: var(--tertiary-color);
+        }
+        .search-bar {
+            background-color: var(--tertiary-color);
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            width: 80px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.75rem;
+            transition: border-color 0.3s ease, width 0.3s ease;
+        }
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            width: 120px;
+        }
+        .search-button {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .search-button:hover,
+        .search-button:focus {
+            background-color: var(--tertiary-color);
+            color: var(--primary-color);
+        }
+        section {
+            padding: 2rem 0;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        /* Hero Section */
+        .hero-section {
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        .hero-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero-section p {
+            font-size: 1.25rem;
+        }
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 2rem 0;
+        }
+        .info-card {
+            background-color: var(--background-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .info-card p {
+            font-size: 1rem;
+        }
+        .learn-more {
+            color: var(--primary-color);
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        .learn-more:hover {
+            color: var(--accent-color);
+        }
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .banner {
+                padding: 2rem 0;
+            }
+            .banner .container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .logo {
+                width: 104px;
+                margin-right: 1rem;
+                margin-bottom: 0;
+            }
+            .banner .text-container h1 {
+                font-size: 3rem;
+            }
+            .motto {
+                font-size: 1rem;
+            }
+            .sub-banner {
+                padding: 1rem 0;
+            }
+            .nav-link {
+                font-size: 1rem;
+            }
+            .dropdown-menu {
+                min-width: 12rem;
+            }
+            .search-bar {
+                width: 100px;
+                font-size: 0.8rem;
+            }
+            .search-bar:focus {
+                width: 150px;
+            }
+            .search-button {
+                padding: 0.25rem 0.6rem;
+                font-size: 0.8rem;
+            }
+            section {
+                padding: 3rem 0;
+            }
+            .hero-section h2 {
+                font-size: 3.5rem;
+            }
+            .hero-section p {
+                font-size: 1.5rem;
+            }
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            .info-card h3 {
+                font-size: 1.75rem;
+            }
+            .info-card p {
+                font-size: 1.125rem;
+            }
+            .footer {
+                padding: 2rem 0;
+            }
+            .footer p {
+                font-size: 1rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .info-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (min-width: 768px) {
+            .logo {
+                width: 120px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .logo {
+                width: 150px;
+            }
+        }
+        @media (max-width: 767px) {
+            .banner .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .text-container {
+                text-align: center;
+            }
+            .search-bar,
+            .search-button {
+                margin: 0 auto;
+            }
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                z-index: 1;
+            }
+        }
+        /* Accessibility */
+        :focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+        /* Popup Styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .popup-content {
+            background-color: var(--tertiary-color);
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 90%;
+            width: 500px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            position: relative;
+            text-align: center;
+        }
+        .popup-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .popup-content p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.125rem;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+        .popup-content label {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-color);
+            font-size: 1rem;
+            display: block;
+            text-align: left;
+            margin-bottom: 0.5rem;
+        }
+        .popup-content input,
+        .popup-content select,
+        .popup-content textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .popup-content input:focus,
+        .popup-content select:focus,
+        .popup-content textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        .popup-content textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .popup-content button {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .popup-content button:hover,
+        .popup-content button:focus {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+        }
+        .close-popup {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+        @media (max-width: 767px) {
+            .popup-content {
+                width: 95%;
+                padding: 1.5rem;
+            }
+            .popup-content h2 {
+                font-size: 1.5rem;
+            }
+            .popup-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
     <!-- Header -->
@@ -64,6 +476,36 @@
             <a href="index.html#contact" class="nav-link">Contact</a>
         </div>
     </nav>
+
+    <!-- Popup -->
+    <div class="popup-overlay" id="join-us-popup">
+        <div class="popup-content">
+            <button class="close-popup" aria-label="Close popup">&times;</button>
+            <h2 class="accent-text">Join Us in Building Philo Classical Academy</h2>
+            <p>Be a part of our vision to create a classical great books school in the Twin Cities, dedicated to truth, goodness, and beauty. Your support can help make this dream a reality. Share your passion and join our founding community today!</p>
+            <form id="join-us-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required aria-required="true">
+                
+                <label for="contact">Contact (Email or Phone)</label>
+                <input type="text" id="contact" name="contact" required aria-required="true">
+                
+                <label for="help-type">How Would You Like to Help?</label>
+                <select id="help-type" name="help-type" required aria-required="true">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="volunteer">Volunteer</option>
+                    <option value="donate">Donate</option>
+                    <option value="spread-the-word">Spread the Word</option>
+                    <option value="other">Other</option>
+                </select>
+                
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="comments" placeholder="Tell us more about how you'd like to contribute..."></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main>
@@ -158,44 +600,6 @@
         <p>Website: philoacademy.org</p>
         <p>© 2025 Philo Classical Academy. All rights reserved.</p>
     </footer>
-
-    <!-- Popup Modal -->
-    <div id="joinUsModal" class="modal">
-        <div class="modal-content">
-            <button class="close-button" onclick="closeModal()"><i class="fas fa-times"></i></button>
-            <h2>Join Us to Make Philo Classical Academy a Reality!</h2>
-            <p>Help us establish a classical school in Woodbury, MN, dedicated to truth, virtue, and academic excellence. Share your interest and join our mission!</p>
-            <form id="joinUsForm" onsubmit="handleSubmit(event)">
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone">
-                
-                <label for="interest">How Would You Like to Contribute?</label>
-                <select id="interest" name="interest">
-                    <option value="volunteer">Volunteer</option>
-                    <option value="donor">Donor</option>
-                    <option value="founding_board">Founding Board</option>
-                    <option value="general">General Interest</option>
-                </select>
-                
-                <label for="message">Message/Comments</label>
-                <textarea id="message" name="message"></textarea>
-                
-                <p id="errorMessage" class="error">Please fill out all required fields.</p>
-                <p id="successMessage" class="success">Thank you! Your information has been submitted.</p>
-                
-                <div class="flex justify-center space-x-4">
-                    <button type="submit">Submit</button>
-                    <button type="button" onclick="closeModal()">Close</button>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <script src="script.js" defer></script>
 </body>
