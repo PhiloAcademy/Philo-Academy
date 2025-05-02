@@ -1,37 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const popup = document.getElementById('join-us-popup');
+    // Popup functionality
+    const popupOverlay = document.getElementById('join-us-popup');
     const closePopup = document.querySelector('.close-popup');
-    const form = document.getElementById('join-us-form');
 
     // Show popup after 2 seconds
     setTimeout(() => {
-        popup.style.display = 'flex';
+        popupOverlay.style.display = 'flex';
     }, 2000);
 
-    // Close popup when close button is clicked
+    // Close popup on close button click
     closePopup.addEventListener('click', () => {
-        popup.style.display = 'none';
+        popupOverlay.style.display = 'none';
     });
 
-    // Close popup when clicking outside the content
-    popup.addEventListener('click', (e) => {
-        if (e.target === popup) {
-            popup.style.display = 'none';
+    // Close popup on clicking outside
+    popupOverlay.addEventListener('click', (e) => {
+        if (e.target === popupOverlay) {
+            popupOverlay.style.display = 'none';
         }
     });
 
-    // Handle form submission
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const contact = document.getElementById('contact').value;
-        const helpType = document.getElementById('help-type').value;
-        const comments = document.getElementById('comments').value;
+    // Close popup on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popupOverlay.style.display === 'flex') {
+            popupOverlay.style.display = 'none';
+        }
+    });
 
-        console.log('Form Submitted:', { name, contact, helpType, comments });
-        alert('Thank you for your submission! We will get back to you soon.');
-        popup.style.display = 'none';
-        form.reset();
+    // Listen for Google Form submission to close popup
+    window.addEventListener('message', (event) => {
+        if (event.data === 'form-submitted') {
+            alert('Thank you! Your response has been saved.');
+            popupOverlay.style.display = 'none';
+        }
     });
 
     // Slideshow functionality
