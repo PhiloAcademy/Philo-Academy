@@ -1,573 +1,164 @@
-/* Mobile-first approach */
-:root {
-    --primary-color: rgb(85, 23, 147); /* #551793 */
-    --accent-color: rgb(238, 186, 43); /* #eeba2b */
-    --tertiary-color: rgb(255, 255, 255);
-    --text-color: #333;
-    --background-color: #f5f5f5;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.accent-text {
-    color: var(--accent-color);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-/* Banner */
-.banner {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-    padding: 1.5rem 0;
-    position: relative;
-}
-
-/* Logo */
-.logo {
-    width: 60px; /* Base size on mobile */
-    height: auto;
-    margin-right: 1rem;
-    margin-bottom: 0.5rem;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-/* Hover effect for logo */
-.logo:hover {
-    transform: scale(1.05);
-}
-
-/* Text container */
-.text-container {
-    display: inline-block;
-}
-
-/* Ensure "Philo Classical Academy" uses a classical serif font */
-.banner .text-container h1 {
-    font-family: 'Cinzel', 'Times New Roman', serif !important; /* Higher specificity and fallback */
-    font-weight: 700; /* Bold for prominence */
-    font-size: 1.75rem; /* Increased from 1.5rem for mobile */
-}
-
-/* Motto / School Name */
-.motto {
-    font-family: 'Cinzel', serif; /* Updated font-family */
-    font-style: italic;
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: var(--tertiary-color);
-}
-
-/* Divider */
-.divider {
-    background-color: var(--tertiary-color);
-    height: 2px;
-}
-
-/* Navigation */
-.sub-banner {
-    background-color: var(--accent-color);
-    padding: 0.75rem 0;
-    z-index: 10;
-}
-
-.nav-link {
-    font-family: 'Cinzel', serif;
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover,
-.nav-link:focus {
-    color: var(--tertiary-color);
-}
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--primary-color);
-    z-index: 20;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    min-width: 8rem; /* Reduced for mobile */
-}
-
-/* Remove hover for mobile, rely on JS */
-@media (min-width: 768px) {
-    .dropdown:hover .dropdown-menu,
-    .dropdown:focus-within .dropdown-menu {
-        display: block;
-    }
-}
-
-.dropdown-menu a {
-    font-family: 'Cinzel', serif;
-    font-size: 0.875rem;
-    color: var(--tertiary-color);
-    padding: 0.5rem 1rem;
-    display: block;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dropdown-menu a:hover,
-.dropdown-menu a:focus {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-}
-
-/* Search Bar */
-.search-bar {
-    background-color: var(--tertiary-color);
-    border: 1px solid var(--accent-color);
-    border-radius: 4px;
-    padding: 0.25rem 0.5rem;
-    width: 80px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.75rem;
-    transition: border-color 0.3s ease, width 0.3s ease;
-}
-
-.search-bar:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    width: 120px;
-}
-
-.search-button {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-family: 'Cinzel', serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    touch-action: manipulation;
-}
-
-.search-button:hover,
-.search-button:focus {
-    background-color: var(--tertiary-color);
-    color: var(--primary-color);
-}
-
-/* Sections */
-section {
-    padding: 2rem 0;
-}
-
-section h2 {
-    font-family: 'Cinzel', serif;
-    color: var(--primary-color);
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-section p,
-section li {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
-}
-
-.hero-section {
-    position: relative;
-    height: 20rem;
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--tertiary-color);
-}
-
-.hero-overlay h2 {
-    font-family: 'Cinzel', serif;
-    color: var(--primary-color);
-    font-size: 2rem;
-    color: var(--accent-color);
-}
-
-.hero-overlay p {
-    font-size: 1rem;
-    margin-top: 0.75rem;
-}
-
-/* Info Cards */
-.info-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-.info-card {
-    padding: 1rem;
-    text-align: center;
-}
-
-.info-card h3 {
-    font-family: 'Cinzel', serif;
-    color: var(--primary-color);
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-}
-
-.learn-more {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    touch-action: manipulation;
-}
-
-.learn-more:hover,
-.learn-more:focus {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-}
-
-/* Footer */
-.footer-divider {
-    background-color: var(--accent-color);
-    height: 2px;
-}
-
-.footer {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-    padding: 1.5rem 0;
-    text-align: center;
-}
-
-.footer p {
-    font-size: 0.875rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Lazy-loaded images */
-img:not(.logo) {
-    loading: lazy;
-}
-
-/* Desktop and larger screens */
-@media (min-width: 768px) {
-    .banner {
-        padding: 2rem 0;
-    }
-
-    .banner .container {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .logo {
-        width: 104px; /* Directly set to 104px (previously 80px scaled to 104px) */
-        margin-right: 1rem;
-        margin-bottom: 0;
-    }
-
-    .banner .text-container h1 {
-        font-family: 'Cinzel', 'Times New Roman', serif !important; /* Ensure consistency on desktop */
-        font-size: 3rem; /* Increased from 2.5rem for desktop */
-    }
-
-    .motto {
-        font-size: 1rem;
-    }
-
-    .sub-banner {
-        padding: 1rem 0;
-        position: sticky;
-        top: 0;
-    }
-
-    .nav-link {
-        font-size: 1rem;
-    }
-
-    .dropdown-menu {
-        min-width: 12rem; /* Larger on desktop */
-    }
-
-    .search-bar {
-        width: 100px;
-        font-size: 0.8rem;
-    }
-
-    .search-bar:focus {
-        width: 150px;
-    }
-
-    .search-button {
-        padding: 0.25rem 0.6rem;
-        font-size: 0.8rem;
-    }
-
-    section {
-        padding: 3rem 0;
-    }
-
-    section h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    section p,
-    section li {
-        font-size: 1.125rem;
-        margin-bottom: 1rem;
-    }
-
-    .hero-section {
-        height: 24rem;
-    }
-
-    .hero-overlay h2 {
-        font-size: 2.5rem;
-    }
-
-    .hero-overlay p {
-        font-size: 1.25rem;
-        margin-top: 1rem;
-    }
-
-    .info-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-
-    .info-card {
-        padding: 1.5rem;
-    }
-
-    .info-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .learn-more {
-        padding: 0.5rem 1.5rem;
-    }
-
-    .footer {
-        padding: 2rem 0;
-    }
-
-    .footer p {
-        font-size: 1rem;
-    }
-}
-
-/* Responsive adjustments */
-@media (min-width: 768px) {
-    .logo {
-        width: 120px; /* Larger size for tablets and small PCs */
-    }
-}
-
-@media (min-width: 1200px) {
-    .logo {
-        width: 150px; /* Larger size for large PCs */
-    }
-}
-
-/* Mobile-specific adjustments */
-@media (max-width: 767px) {
-    .banner .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .text-container {
-        text-align: center;
-    }
-
-    .search-bar,
-    .search-button {
-        margin: 0 auto;
-    }
-
-    .dropdown-menu {
-        position: static !important; /* Ensure static positioning on mobile */
-        width: 100%; /* Full width on mobile */
-        z-index: 1; /* Lower z-index to prevent overlap */
-    }
-}
-
-/* Accessibility */
-:focus {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
-}
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
-
-/* Highlight styles for search */
-.highlight {
-    background-color: rgba(238, 186, 43, 0.3);
-}
-
-.highlight-text {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    padding: 0 0.2rem;
-}
-
-/* Popup-specific CSS */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background-color: var(--tertiary-color);
-    padding: 2rem;
-    border-radius: 8px;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.modal-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.modal-content p {
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.modal-content label {
-    font-family: 'Roboto', sans-serif;
-    color: var(--primary-color);
-    display: block;
-    margin-bottom: 0.25rem;
-}
-
-.modal-content input,
-.modal-content select,
-.modal-content textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid var(--accent-color);
-    border-radius: 4px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.875rem;
-}
-
-.modal-content textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-.modal-content button {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    font-family: 'Cinzel', serif;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.modal-content button:hover {
-    background-color: var(--primary-color);
-    color: var(--tertiary-color);
-}
-
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 1.25rem;
-    color: var(--primary-color);
-    cursor: pointer;
-}
-
-.error {
-    color: red;
-    font-size: 0.75rem;
-    margin-bottom: 1rem;
-    display: none;
-}
-
-.success {
-    color: green;
-    font-size: 0.875rem;
-    margin-bottom: 1rem;
-    display: none;
-    text-align: center;
-}
-
-@media (max-width: 640px) {
-    .modal-content {
-        padding: 1.5rem;
-        width: 95%;
-    }
-    .modal-content h2 {
-        font-size: 1.25rem;
-    }
-}
+document.addEventListener('DOMContentLoaded', () => {
+    // Event delegation for smooth scrolling
+    document.body.addEventListener('click', (e) => {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (anchor) {
+            e.preventDefault();
+            const targetId = anchor.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+
+    // Event delegation for dropdowns (click and touch support)
+    document.body.addEventListener('click', (e) => {
+        const dropdown = e.target.closest('.dropdown');
+        if (dropdown) {
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+                // Close other open dropdowns
+                document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
+                    if (otherMenu !== menu && !otherMenu.classList.contains('hidden')) {
+                        otherMenu.classList.add('hidden');
+                    }
+                });
+            }
+        } else {
+            // Close all dropdowns if clicking outside
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                if (!menu.classList.contains('hidden')) {
+                    menu.classList.add('hidden');
+                }
+            });
+        }
+    });
+
+    // Keyboard accessibility for dropdowns
+    document.body.addEventListener('keydown', (e) => {
+        const dropdown = e.target.closest('.dropdown .nav-link');
+        if (dropdown && (e.key === 'Enter' || e.key === ' ')) {
+            e.preventDefault();
+            const menu = dropdown.parentElement.querySelector('.dropdown-menu');
+            menu.classList.toggle('hidden');
+            // Close other open dropdowns
+            document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
+                if (otherMenu !== menu && !otherMenu.classList.contains('hidden')) {
+                    otherMenu.classList.add('hidden');
+                }
+            });
+        }
+    });
+
+    // Close dropdown when focus leaves
+    document.querySelectorAll('.dropdown-menu a').forEach(link => {
+        link.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab' && !e.shiftKey) {
+                const menu = link.closest('.dropdown-menu');
+                const lastLink = menu.querySelector('a:last-child');
+                if (link === lastLink) {
+                    menu.classList.add('hidden');
+                }
+            }
+        });
+    });
+
+    // Close dropdowns on scroll
+    window.addEventListener('scroll', () => {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            if (!menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+            }
+        });
+    });
+
+    // Debounced search functionality
+    const searchButton = document.querySelector('.search-button');
+    const searchBar = document.querySelector('.search-bar');
+    let searchTimeout;
+
+    searchButton.addEventListener('click', () => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            const query = searchBar.value.toLowerCase().trim();
+            if (!query) {
+                alert('Please enter a search term.');
+                return;
+            }
+
+            // Reset previous highlights
+            document.querySelectorAll('.highlight').forEach(element => {
+                element.classList.remove('highlight');
+                element.innerHTML = element.textContent;
+            });
+
+            // Search in main content
+            const mainContent = document.querySelector('main');
+            const paragraphs = mainContent.querySelectorAll('p, li');
+            let found = false;
+
+            paragraphs.forEach(p => {
+                const text = p.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    found = true;
+                    p.classList.add('highlight');
+                    const regex = new RegExp(`(${query})`, 'gi');
+                    p.innerHTML = p.textContent.replace(regex, '<span class="highlight-text">$1</span>');
+                    p.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+
+            if (!found) {
+                alert(`No results found for "${query}".`);
+            }
+        }, 300); // Debounce delay
+    });
+
+    // Popup functionality
+    const popupOverlay = document.getElementById('join-us-popup');
+    const closePopup = document.querySelector('.close-popup');
+    const joinUsForm = document.getElementById('join-us-form');
+
+    // Show popup after 2 seconds
+    setTimeout(() => {
+        popupOverlay.style.display = 'flex';
+    }, 2000);
+
+    // Close popup on close button click
+    closePopup.addEventListener('click', () => {
+        popupOverlay.style.display = 'none';
+    });
+
+    // Close popup on clicking outside
+    popupOverlay.addEventListener('click', (e) => {
+        if (e.target === popupOverlay) {
+            popupOverlay.style.display = 'none';
+        }
+    });
+
+    // Close popup on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popupOverlay.style.display === 'flex') {
+            popupOverlay.style.display = 'none';
+        }
+    });
+
+    // Handle form submission
+    joinUsForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const contact = document.getElementById('contact').value;
+        const helpType = document.getElementById('help-type').value;
+        const comments = document.getElementById('comments').value;
+
+        // For demo purposes, show an alert (replace with actual form submission logic)
+        alert(`Thank you, ${name}! We'll contact you at ${contact} regarding your offer to ${helpType}. Comments: ${comments || 'None'}`);
+        popupOverlay.style.display = 'none';
+        joinUsForm.reset();
+    });
+});
