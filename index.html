@@ -380,12 +380,14 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.6);
             z-index: 1000;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
+            padding-top: 2rem; /* Add padding to push popup down */
+            overflow-y: auto;
         }
         .popup-content {
             background-color: var(--tertiary-color);
-            padding: 2rem;
+            padding: 3rem 2rem 2rem 2rem; /* Increased top padding */
             border-radius: 8px;
             max-width: 90%;
             width: 500px;
@@ -416,18 +418,18 @@
         /* Embedded Google Form Styles */
         .google-form-container {
             width: 100%;
-            max-height: 500px;
+            max-height: 400px;
             overflow-y: auto;
         }
         .google-form-container iframe {
             width: 100%;
-            height: 600px;
+            height: 400px;
             border: none;
         }
         @media (max-width: 767px) {
             .popup-content {
                 width: 95%;
-                padding: 1.5rem;
+                padding: 2.5rem 1.5rem 1.5rem 1.5rem; /* Adjusted padding for mobile */
             }
             .popup-content h2 {
                 font-size: 1.5rem;
@@ -435,8 +437,14 @@
             .popup-content p {
                 font-size: 1rem;
             }
+            .google-form-container {
+                max-height: 350px;
+            }
             .google-form-container iframe {
-                height: 500px;
+                height: 350px;
+            }
+            .popup-overlay {
+                padding-top: 1rem; /* Less padding on mobile */
             }
         }
     </style>
@@ -500,7 +508,7 @@
             <h2 class="accent-text">Join Us in Building Philo Classical Academy</h2>
             <p>Help us bring a classical great books school to the Twin Cities, dedicated to truth, goodness, and beauty. Your support can shape the future of education. Join our founding community today!</p>
             <div class="google-form-container">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeOFtH6nEA3w-U9NxyNDgUT8A34WHvOXsl49z1nuvygUKXaqw/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeOFtH6nEA3w-U9NxyNDgUT8A34WHvOXsl49z1nuvygUKXaqw/viewform?embedded=true" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
         </div>
     </div>
