@@ -240,13 +240,17 @@
         .slide {
             display: none;
             width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
         .slide.active {
             display: block;
+            opacity: 1;
         }
         .slide img {
             width: 100%;
             height: auto;
+            object-fit: cover;
         }
         .dots-container {
             text-align: center;
@@ -260,6 +264,7 @@
             background-color: #bbb;
             border-radius: 50%;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         .dot.active-dot {
             background-color: var(--primary-color);
@@ -382,12 +387,12 @@
             z-index: 1000;
             align-items: flex-start;
             justify-content: center;
-            padding-top: 2rem; /* Add padding to push popup down */
+            padding-top: 2rem;
             overflow-y: auto;
         }
         .popup-content {
             background-color: var(--tertiary-color);
-            padding: 3rem 2rem 2rem 2rem; /* Increased top padding */
+            padding: 3rem 2rem 2rem 2rem;
             border-radius: 8px;
             max-width: 90%;
             width: 500px;
@@ -429,7 +434,7 @@
         @media (max-width: 767px) {
             .popup-content {
                 width: 95%;
-                padding: 2.5rem 1.5rem 1.5rem 1.5rem; /* Adjusted padding for mobile */
+                padding: 2.5rem 1.5rem 1.5rem 1.5rem;
             }
             .popup-content h2 {
                 font-size: 1.5rem;
@@ -444,7 +449,7 @@
                 height: 350px;
             }
             .popup-overlay {
-                padding-top: 1rem; /* Less padding on mobile */
+                padding-top: 1rem;
             }
         }
     </style>
@@ -505,8 +510,8 @@
     <div class="popup-overlay" id="join-us-popup">
         <div class="popup-content">
             <button class="close-popup" aria-label="Close popup">×</button>
-            <h2 class="accent-text">Join Us in Building Philo Classical Academy</h2>
-            <p>Help us bring a classical great books school to the Twin Cities, dedicated to truth, goodness, and beauty. Your support can shape the future of education. Join our founding community today!</p>
+            <h2 class="accent-text">Help Bring Philo Classical Academy to Woodbury</h2>
+            <p>Join us in our mission to establish a classical great books school in Woodbury, dedicated to truth, goodness, and beauty. Philo Classical Academy does not yet exist as a school, but with your support, we can shape the future of education. Become part of our founding community today!</p>
             <div class="google-form-container">
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeOFtH6nEA3w-U9NxyNDgUT8A34WHvOXsl49z1nuvygUKXaqw/viewform?embedded=true" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
@@ -586,19 +591,19 @@
         <section id="slideshow" class="slideshow-section">
             <div class="slideshow-container">
                 <div class="slide active">
-                    <img src="https://picsum.photos/800/400?random=1" alt="Classical Education Image 1">
+                    <img src="https://picsum.photos/800/400?random=1" alt="Classical Education Image 1" loading="lazy">
                 </div>
                 <div class="slide">
-                    <img src="https://picsum.photos/800/400?random=2" alt="Classical Education Image 2">
+                    <img src="https://picsum.photos/800/400?random=2" alt="Classical Education Image 2" loading="lazy">
                 </div>
                 <div class="slide">
-                    <img src="https://picsum.photos/800/400?random=3" alt="Classical Education Image 3">
+                    <img src="https://picsum.photos/800/400?random=3" alt="Classical Education Image 3" loading="lazy">
                 </div>
                 <div class="slide">
-                    <img src="https://picsum.photos/800/400?random=4" alt="Classical Education Image 4">
+                    <img src="https://picsum.photos/800/400?random=4" alt="Classical Education Image 4" loading="lazy">
                 </div>
                 <div class="slide">
-                    <img src="https://picsum.photos/800/400?random=5" alt="Classical Education Image 5">
+                    <img src="https://picsum.photos/800/400?random=5" alt="Classical Education Image 5" loading="lazy">
                 </div>
             </div>
             <div class="dots-container">
