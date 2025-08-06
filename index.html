@@ -8,10 +8,10 @@
     <meta name="author" content="Philo Classical Academy">
     <title>Philo Classical Academy | Virtute ad Veritatem</title>
     <link rel="icon" type="image/png" href="favicon-32x32.png">
-    <!-- Preload critical fonts for better performance -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;700&display=swap" as="style" onload="this.rel='stylesheet'">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --primary-color: rgb(85, 23, 147);
@@ -56,16 +56,15 @@
             color: var(--tertiary-color);
         }
         .dropdown { position: relative; }
-        .dropdown-toggle {
-            cursor: pointer;
+        .nav-link {
             font-family: 'Cinzel', serif;
             font-size: 0.875rem;
             font-weight: 700;
             color: var(--primary-color);
             transition: color 0.3s ease;
         }
-        .dropdown-toggle:hover,
-        .dropdown-toggle:focus {
+        .nav-link:hover,
+        .nav-link:focus {
             color: var(--tertiary-color);
         }
         .dropdown-menu {
@@ -80,7 +79,10 @@
             width: 100%;
             min-width: 12rem;
         }
-        .dropdown-menu.active { display: block; }
+        .dropdown:hover .dropdown-menu,
+        .dropdown:focus-within .dropdown-menu {
+            display: block;
+        }
         .dropdown-menu a {
             font-family: 'Cinzel', serif;
             font-size: 0.875rem;
@@ -299,8 +301,6 @@
             height: 400px;
             border: none;
         }
-        /* Hamburger menu styles */
-        #nav-links.hidden { display: none; }
         #back-to-top {
             display: none;
             position: fixed;
@@ -327,7 +327,7 @@
             .banner .text-container h1 { font-size: 3rem; }
             .motto { font-size: 1rem; }
             .sub-banner { padding: 1rem 0; }
-            .dropdown-toggle { font-size: 1rem; }
+            .nav-link { font-size: 1rem; }
             .search-bar {
                 width: 100px;
                 font-size: 0.8rem;
@@ -376,11 +376,6 @@
             .google-form-container { max-height: 350px; }
             .google-form-container iframe { height: 350px; }
             .popup-overlay { padding-top: 1rem; }
-            #nav-links:not(.hidden) {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-            }
         }
         :focus {
             outline: 2px solid var(--accent-color);
@@ -408,42 +403,27 @@
     <div class="divider"></div>
 
     <nav class="sub-banner">
-        <div class="container flex flex-col md:flex-row justify-between items-center px-4">
-            <div class="flex justify-between w-full md:hidden">
-                <button id="menu-toggle" class="text-2xl text-primary-color" aria-label="Toggle navigation">☰</button>
-            </div>
-            <div id="nav-links" class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 hidden md:flex">
+        <div class="container flex flex-col md:flex-row justify-center items-center px-4">
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
                 <a href="index.html" class="nav-link" aria-current="page">Home</a>
-                <div class="dropdown">
-                    <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">About Us</button>
+                <div class="dropdown relative">
+                    <a href="mission.html" class="nav-link">About Us</a>
                     <div class="dropdown-menu">
                         <a href="mission.html">Our Mission</a>
                         <a href="history.html">History</a>
                         <a href="faculty.html">Faculty/Staff</a>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <a href="academics.html" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Academics</a>
+                <div class="dropdown relative">
+                    <a href="academics.html" class="nav-link">Academics</a>
                     <div class="dropdown-menu">
-                        <a href="k5-program.html">K-5 Program</a>
-                        <a href="6-9-program.html">6-9 Program</a>
-                        <a href="10-12-program.html">10-12 Program</a>
-                        <a href="literature.html">Literature</a>
-                        <a href="mathK-5.html">Math K-5</a>
-                        <a href="math6-9.html">Math 6-9</a>
-                        <a href="math10-12.html">Math 10-12</a>
-                        <a href="scienceK-5.html">Science K-5</a>
-                        <a href="science6-9.html">Science 6-9</a>
-                        <a href="science10-12.html">Science 10-12</a>
-                        <a href="artK-5.html">Art K-5</a>
-                        <a href="art6-9.html">Art 6-9</a>
-                        <a href="humanitiesK-5.html">Humanities K-5</a>
-                        <a href="humanities10-12.html">Humanities 10-12</a>
-                        <a href="k5-reading-list.html">K-5 Reading List</a>
+                        <a href="k5-program.html">K-5</a>
+                        <a href="6-9-program.html">6-9</a>
+                        <a href="10-12-program.html">10-12</a>
                     </div>
                 </div>
-                <div class="dropdown">
-                    <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Admissions</button>
+                <div class="dropdown relative">
+                    <a href="process.html" class="nav-link">Admissions</a>
                     <div class="dropdown-menu">
                         <a href="process.html">Process</a>
                         <a href="tuition.html">Tuition</a>
@@ -570,49 +550,6 @@
     <button id="back-to-top" aria-label="Back to Top">↑</button>
 
     <script>
-        // Dropdown Menu Functionality
-        document.querySelectorAll('.dropdown-toggle').forEach(button => {
-            button.addEventListener('click', (e) => {
-                if (button.tagName === 'BUTTON') {
-                    e.preventDefault();
-                    const dropdown = button.closest('.dropdown');
-                    const menu = dropdown.querySelector('.dropdown-menu');
-                    const isOpen = menu.classList.contains('active');
-                    document.querySelectorAll('.dropdown-menu.active').forEach(openMenu => {
-                        if (openMenu !== menu) {
-                            openMenu.classList.remove('active');
-                            openMenu.closest('.dropdown').querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                    menu.classList.toggle('active');
-                    button.setAttribute('aria-expanded', !isOpen);
-                }
-            });
-        });
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown-menu.active').forEach(menu => {
-                    menu.classList.remove('active');
-                    menu.closest('.dropdown').querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
-                });
-            }
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.dropdown-menu.active').forEach(menu => {
-                    menu.classList.remove('active');
-                    menu.closest('.dropdown').querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
-                });
-            }
-        });
-
-        // Hamburger Menu Functionality
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('hidden');
-        });
-
         // Slideshow Functionality
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
