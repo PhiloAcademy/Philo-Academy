@@ -399,7 +399,8 @@
                 </div>
             </div>
             <div class="flex items-center space-x-2">
-                <input type="text" class="search-bar" placeholder="Search..." aria-label="Search">
+                <label for="search-input" class="sr-only">Search the site</label>
+                <input id="search-input" type="text" class="search-bar" placeholder="Search..." aria-label="Search">
                 <button class="search-button">Search</button>
             </div>
         </div>
@@ -412,7 +413,7 @@
                 <button id="menu-toggle" class="text-2xl text-primary-color" aria-label="Toggle navigation">☰</button>
             </div>
             <div id="nav-links" class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 hidden md:flex">
-                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html" class="nav-link" aria-current="page">Home</a>
                 <div class="dropdown">
                     <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">About Us</button>
                     <div class="dropdown-menu">
@@ -422,11 +423,23 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Academics</button>
+                    <a href="academics.html" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Academics</a>
                     <div class="dropdown-menu">
                         <a href="k5-program.html">K-5 Program</a>
                         <a href="6-9-program.html">6-9 Program</a>
                         <a href="10-12-program.html">10-12 Program</a>
+                        <a href="literature.html">Literature</a>
+                        <a href="mathK-5.html">Math K-5</a>
+                        <a href="math6-9.html">Math 6-9</a>
+                        <a href="math10-12.html">Math 10-12</a>
+                        <a href="scienceK-5.html">Science K-5</a>
+                        <a href="science6-9.html">Science 6-9</a>
+                        <a href="science10-12.html">Science 10-12</a>
+                        <a href="artK-5.html">Art K-5</a>
+                        <a href="art6-9.html">Art 6-9</a>
+                        <a href="humanitiesK-5.html">Humanities K-5</a>
+                        <a href="humanities10-12.html">Humanities 10-12</a>
+                        <a href="k5-reading-list.html">K-5 Reading List</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -500,7 +513,7 @@
                     </div>
                     <h3 class="font-bold">Academics</h3>
                     <p>Our curriculum emphasizes the great books, classical languages, and the appreciation of beauty alongside truth and goodness, preparing students for a life of wisdom.</p>
-                    <a href="#academics" class="learn-more inline-block mt-4">Learn More</a>
+                    <a href="academics.html" class="learn-more inline-block mt-4">Learn More</a>
                 </div>
                 <div class="info-card">
                     <div class="icon-container">
@@ -560,18 +573,20 @@
         // Dropdown Menu Functionality
         document.querySelectorAll('.dropdown-toggle').forEach(button => {
             button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const dropdown = button.closest('.dropdown');
-                const menu = dropdown.querySelector('.dropdown-menu');
-                const isOpen = menu.classList.contains('active');
-                document.querySelectorAll('.dropdown-menu.active').forEach(openMenu => {
-                    if (openMenu !== menu) {
-                        openMenu.classList.remove('active');
-                        openMenu.closest('.dropdown').querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
-                    }
-                });
-                menu.classList.toggle('active');
-                button.setAttribute('aria-expanded', !isOpen);
+                if (button.tagName === 'BUTTON') {
+                    e.preventDefault();
+                    const dropdown = button.closest('.dropdown');
+                    const menu = dropdown.querySelector('.dropdown-menu');
+                    const isOpen = menu.classList.contains('active');
+                    document.querySelectorAll('.dropdown-menu.active').forEach(openMenu => {
+                        if (openMenu !== menu) {
+                            openMenu.classList.remove('active');
+                            openMenu.closest('.dropdown').querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    menu.classList.toggle('active');
+                    button.setAttribute('aria-expanded', !isOpen);
+                }
             });
         });
         document.addEventListener('click', (e) => {
@@ -656,6 +671,14 @@
         });
         window.addEventListener('scroll', () => {
             backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+
+        // Basic Search Functionality
+        document.querySelector('.search-button').addEventListener('click', () => {
+            const query = document.querySelector('.search-bar').value;
+            if (query) {
+                window.location.href = `https://www.google.com/search?q=site:philoacademy.org+${encodeURIComponent(query)}`;
+            }
         });
     </script>
 </body>
