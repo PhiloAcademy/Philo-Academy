@@ -57,7 +57,7 @@
             font-size: 0.875rem;
             color: var(--tertiary-color);
         }
-        .dropdown { position: relative; }
+       username_1: .dropdown { position: relative; }
         .nav-link {
             font-family: 'Cinzel', serif;
             font-size: 0.875rem;
@@ -215,24 +215,33 @@
         .slideshow-container {
             position: relative;
             width: 100%;
-            max-width: 800px;
+            max-width: 600px; /* Reduced max-width for smaller slideshow */
             margin: 0 auto;
             overflow: hidden;
+            aspect-ratio: 3 / 2; /* Maintain consistent aspect ratio */
         }
         .slide {
             display: none;
             width: 100%;
             opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
         }
         .slide.active {
             display: block;
             opacity: 1;
+            transform: translateX(0);
+        }
+        .slide:not(.active) {
+            transform: translateX(100%);
         }
         .slide img {
             width: 100%;
             height: auto;
             object-fit: cover;
+            max-height: 300px; /* Limit image height for faster loading */
         }
         .dots-container {
             text-align: center;
@@ -379,6 +388,13 @@
             .google-form-container { max-height: 350px; }
             .google-form-container iframe { height: 350px; }
             .popup-overlay { padding-top: 1rem; }
+            .slideshow-container {
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+            .slide img {
+                max-height: 200px; /* Smaller images for mobile */
+            }
         }
         :focus {
             outline: 2px solid var(--accent-color);
@@ -512,19 +528,19 @@
         <section id="slideshow" class="slideshow-section">
             <div class="slideshow-container">
                 <div class="slide active">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Sanzio_01.jpg" alt="The School of Athens by Raphael, depicting ancient Greek philosophers" loading="lazy">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Sanzio_01.jpg/600px-Sanzio_01.jpg" alt="The School of Athens by by Raphael, depicting ancient Greek philosophers" loading="lazy">
                 </div>
                 <div class="slide">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Aristotle_Altemps_Inv8575.jpg" alt="Bust of Aristotle, ancient Greek philosopher" loading="lazy">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Aristotle_Altemps_Inv8575.jpg/600px-Aristotle_Altemps_Inv8575.jpg" alt="Bust of Aristotle, ancient Greek philosopher" loading="lazy">
                 </div>
                 <div class="slide">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Plato_Silanion_Musei_Capitolini_MC1377.jpg" alt="Bust of Plato, founder of the Academy" loading="lazy">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Plato_Silanion_Musei_Capitolini_MC1377.jpg/600px-Plato_Silanion_Musei_Capitolini_MC1377.jpg" alt="Bust of Plato, founder of the Academy" loading="lazy">
                 </div>
                 <div class="slide">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Thales_of_Miletus.jpg" alt="Engraving of Thales of Miletus, pre-Socratic philosopher" loading="lazy">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c'c6/Thales_of_Miletus.jpg/600px-Thales_of_Miletus.jpg" alt="Engraving of Thales of Miletus, pre-Socratic philosopher" loading="lazy">
                 </div>
                 <div class="slide">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Diogenes_-_Walters_37131.jpg" alt="Painting of Diogenes the Cynic by Jean-Léon Gérôme" loading="lazy">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Diogenes_-_Walters_37131.jpg/600px-Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Diogenes_-_Walters_37131.jpg" alt="Painting of Diogenes the Cynic by Jean-Léon Gérôme" loading="lazy">
                 </div>
             </div>
             <div class="dots-container">
@@ -557,23 +573,38 @@
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
         let currentSlide = 0;
+        let isTransitioning = false;
+
         function showSlide(index) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+
             slides.forEach((slide, i) => {
                 slide.classList.toggle('active', i === index);
             });
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active-dot', i === index);
             });
+
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 800); // Match transition duration
         }
+
         dots.forEach(dot => {
             dot.addEventListener('click', () => {
-                currentSlide = parseInt(dot.dataset.slide);
-                showSlide(currentSlide);
+                if (!isTransitioning) {
+                    currentSlide = parseInt(dot.dataset.slide);
+                    showSlide(currentSlide);
+                }
             });
         });
+
         setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
+            if (!isTransitioning) {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
         }, 5000);
 
         // Popup Functionality with Persistence
