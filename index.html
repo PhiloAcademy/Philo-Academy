@@ -1,124 +1,622 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Philo Classical Academy — a Christ-centered liberal arts education cultivating wisdom, eloquence, and virtue." />
-  <title>Philo Classical Academy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+    <!-- Essential Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Philo Classical Academy: A K–12 classical great books school in the Twin Cities, cultivating virtue, wisdom, and beauty through rigorous liberal arts education.">
+    <meta name="keywords" content="Philo Classical Academy, classical education, great books, Twin Cities, virtue, academics, K-12, liberal arts">
+    <meta name="author" content="Philo Classical Academy">
+    <meta name="theme-color" content="#551793">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Philo Classical Academy | Virtute ad Veritatem">
+    <meta property="og:description" content="A classical great books school in the Twin Cities dedicated to truth, goodness, and beauty.">
+    <meta property="og:image" content="https://philoacademy.org/og-image.jpg">
+    <meta property="og:url" content="https://philoacademy.org">
+    <meta property="og:type" content="website">
 
-  <!-- Banner -->
-  <header class="banner">
-    <div class="container flex-center">
-      <img src="logo.png" alt="Philo Classical Academy Logo" class="logo" />
-      <div class="text-container">
-        <h1>Philo Classical Academy</h1>
-        <p class="motto">Sapientia et Virtus — Wisdom and Virtue</p>
-      </div>
-    </div>
-  </header>
+    <!-- Title & Favicon -->
+    <title>Philo Classical Academy | Virtute ad Veritatem</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  <div class="divider"></div>
+    <!-- Fonts: Preload Critical, Fallback Gracefully -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <!-- Navigation -->
-  <nav class="sub-banner">
-    <div class="container flex-between">
-      <ul class="nav-list">
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li class="dropdown">
-          <a href="#about" class="nav-link">About</a>
-          <ul class="dropdown-menu">
-            <li><a href="#mission">Our Mission</a></li>
-            <li><a href="#faculty">Faculty</a></li>
-            <li><a href="#history">History</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#academics" class="nav-link">Academics</a>
-          <ul class="dropdown-menu">
-            <li><a href="#curriculum">Curriculum</a></li>
-            <li><a href="#admissions">Admissions</a></li>
-          </ul>
-        </li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <form class="search-form" role="search">
-        <label for="search" class="sr-only">Search</label>
-        <input id="search" type="text" class="search-bar" placeholder="Search..." />
-        <button type="submit" class="search-button">Go</button>
-      </form>
-    </div>
-  </nav>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-  <!-- Hero Section -->
-  <section class="hero-section" style="background-image: url('hero.jpg');">
-    <div class="hero-overlay">
-      <div>
-        <h2>Forming Hearts and Minds</h2>
-        <p>Grounded in classical learning, guided by faith.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Philo Classical Academy",
+      "url": "https://philoacademy.org",
+      "logo": "https://philoacademy.org/logo.svg",
+      "description": "A K–12 classical great books school in the Twin Cities dedicated to truth, goodness, and beauty.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Classical Way",
+        "addressLocality": "Twin Cities",
+        "addressRegion": "MN",
+        "postalCode": "55101"
+      },
+      "telephone": "+1-612-405-4594",
+      "email": "info@philoacademy.org",
+      "founder": "Founding Community",
+      "foundingDate": "2025"
+    }
+    </script>
 
-  <!-- Welcome Section -->
-  <section id="home">
-    <div class="container">
-      <h2>Welcome to Philo Classical Academy</h2>
-      <p>
-        At Philo Classical Academy, we provide a rich, Christ-centered education rooted in the classical tradition. 
-        Our students are trained in wisdom, eloquence, and virtue to engage the world with clarity and grace.
-      </p>
-    </div>
-  </section>
-
-  <!-- Info Grid -->
-  <section>
-    <div class="container info-grid">
-      <article class="info-card">
-        <h3>Our Mission</h3>
-        <p>To cultivate students who love truth, goodness, and beauty through classical education grounded in the Gospel.</p>
-        <a href="#mission" class="learn-more">Learn More</a>
-      </article>
-      <article class="info-card">
-        <h3>Academics</h3>
-        <p>Offering a classical curriculum that integrates the liberal arts and the wisdom of Christian tradition.</p>
-        <a href="#academics" class="learn-more">Explore</a>
-      </article>
-      <article class="info-card">
-        <h3>Admissions</h3>
-        <p>Join a community of families committed to academic excellence and Christian formation.</p>
-        <a href="#admissions" class="learn-more">Apply Now</a>
-      </article>
-    </div>
-  </section>
-
-  <div class="footer-divider"></div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Philo Classical Academy. All rights reserved.</p>
-      <p><a href="#contact" class="accent-text">Contact Us</a> | <a href="#privacy" class="accent-text">Privacy Policy</a></p>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile dropdown toggles
-    document.querySelectorAll('.dropdown > .nav-link').forEach(link => {
-      link.addEventListener('click', e => {
-        if (window.innerWidth < 768) {
-          e.preventDefault();
-          const menu = link.nextElementSibling;
-          menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    <!-- Performance-First CSS: Tailwind + Custom -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* === Root Variables & Dark Mode === */
+        :root {
+            --primary: #551793;
+            --accent: #eeba2b;
+            --light: #f8f9fa;
+            --dark: #1a1a1a;
+            --text: #2d1b3a;
+            --transition: 0.3s ease;
+            --radius: 0.5rem;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
         }
-      });
-    });
-  </script>
 
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #8c52be;
+                --accent: #ffd700;
+                --light: #121212;
+                --dark: #000;
+                --text: #e0d4f5;
+            }
+            .hero-section { filter: brightness(0.9); }
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', Georgia, serif;
+            color: var(--primary);
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+        }
+
+        a { color: inherit; text-decoration: none; transition: var(--transition); }
+        a:hover, a:focus { color: var(--accent); outline: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* === Layout === */
+        .container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+        .section { @apply py-16 md:py-24; }
+        .divider { @apply h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-50; }
+
+        /* === Header === */
+        .banner {
+            background: var(--primary);
+            color: var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: var(--shadow-md);
+        }
+        .logo {
+            width: 60px;
+            transition: transform var(--transition);
+        }
+        .logo:hover { transform: scale(1.08); }
+
+        .nav-link {
+            @apply font-bold text-sm md:text-base tracking-wider uppercase transition-colors;
+            color: var(--primary);
+        }
+        .nav-link:hover, .nav-link:focus { color: white; }
+
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            @apply hidden absolute top-full left-0 min-w-48 bg-white shadow-lg rounded-lg overflow-hidden mt-2;
+            z-index: 40;
+        }
+        .dropdown:hover .dropdown-menu,
+        .dropdown:focus-within .dropdown-menu {
+            @apply block;
+        }
+        .dropdown-menu a {
+            @apply block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gradient-to-r hover:from-var(--accent) hover:to-yellow-400 hover:text-var(--primary) transition;
+        }
+
+        /* === Hero === */
+        .hero-section {
+            @apply relative h-screen min-h-96 flex items-center justify-center text-center overflow-hidden;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/694740/pexels-photo-694740.jpeg?cs=srgb&dl=pexels-minan1398-694740.jpg&fm=jpg') center/cover no-repeat;
+        }
+        .hero-overlay {
+            @apply max-w-4xl mx-auto p-8 rounded-2xl backdrop-blur-sm bg-black/30;
+        }
+        .hero-title {
+            @apply text-4xl md:text-6xl lg:text-7xl font-bold text-var(--accent) drop-shadow-lg;
+            animation: fadeInUp 1s ease-out;
+        }
+        .hero-subtitle {
+            @apply text-lg md:text-2xl text-white mt-4 opacity-90;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        /* === Info Cards === */
+        .info-grid {
+            @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8;
+        }
+        .info-card {
+            @apply bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center border border-gray-100;
+            transform: translateY(0);
+        }
+        .info-card:hover {
+            transform: translateY(-8px);
+        }
+        .info-icon {
+            @apply w-16 h-16 mx-auto mb-4 text-var(--primary);
+        }
+
+        /* === Testimonials === */
+        .testimonial-grid {
+            @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+        }
+        .testimonial-card {
+            @apply bg-white p-6 rounded-xl shadow-md border border-gray-100 italic text-gray-600;
+        }
+
+        /* === Slideshow === */
+        .slideshow {
+            @apply relative max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-xl;
+            aspect-ratio: 16 / 9;
+        }
+        .slide {
+            @apply absolute inset-0 opacity-0 transition-opacity duration-1000;
+        }
+        .slide.active {
+            @apply opacity-100;
+        }
+        .slide img {
+            @apply w-full h-full object-cover;
+        }
+        .dots {
+            @apply flex justify-center gap-2 mt-6;
+        }
+        .dot {
+            @apply w-3 h-3 rounded-full bg-gray-400 cursor-pointer transition;
+        }
+        .dot.active {
+            @apply bg-var(--accent) scale-125;
+        }
+
+        /* === Newsletter === */
+        .newsletter {
+            @apply bg-var(--primary) text-white py-16 text-center;
+        }
+
+        /* === Popup === */
+        .popup {
+            @apply fixed inset-0 bg-black/70 flex items-start justify-center p-4 z-50 overflow-y-auto;
+            backdrop-filter: blur(8px);
+            animation: fadeIn 0.4s ease-out;
+        }
+        .popup-content {
+            @apply bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8 mt-16 relative;
+        }
+        .close-btn {
+            @apply absolute top-4 right-4 text-2xl text-gray-500 hover:text-var(--primary) transition;
+        }
+
+        /* === Back to Top === */
+        #back-to-top {
+            @apply fixed bottom-6 right-6 bg-var(--primary) text-white p-4 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-40;
+        }
+        #back-to-top.visible {
+            @apply opacity-100 visible;
+        }
+
+        /* === Animations === */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === Accessibility === */
+        .sr-only {
+            @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+        }
+        :focus-visible {
+            @apply outline-none ring-4 ring-var(--accent) ring-offset-2;
+        }
+
+        /* === Print Styles === */
+        @media print {
+            .banner, .sub-banner, #back-to-top, .popup, .slideshow { display: none !important; }
+            body { background: white; color: black; }
+            a::after { content: " (" attr(href) ")"; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Skip Link -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:bg-var(--primary) focus:text-white focus:p-2 focus:rounded">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="banner">
+        <div class="container flex flex-col md:flex-row items-center justify-between py-4">
+            <div class="flex items-center gap-4">
+                <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/fe1dac2b-c695-408c-9b7d-3e5780f565c1.__CR0,0,970,600_PT0_SX970_V1___.png" alt="Philo Classical Academy Crest" class="logo" width="60" height="60" loading="lazy">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-var(--accent)">Philo Classical Academy</h1>
+                    <p class="motto text-sm italic text-white/90">Virtute ad Veritatem</p>
+                </div>
+            </div>
+
+            <form class="flex items-center gap-2 mt-4 md:mt-0" role="search">
+                <label for="search" class="sr-only">Search</label>
+                <input id="search" type="search" placeholder="Search..." class="px-4 py-2 rounded-lg border border-var(--accent) focus:border-var(--primary) focus:w-48 transition-all w-32 text-sm">
+                <button type="submit" class="bg-var(--accent) text-var(--primary) px-4 py-2 rounded-lg font-bold text-sm hover:bg-white transition">Go</button>
+            </form>
+        </div>
+    </header>
+
+    <div class="divider"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-var(--accent) py-3 sticky top-16 z-40 shadow-sm">
+        <div class="container flex flex-wrap justify-center gap-6 text-sm font-bold">
+            <a href="#home" class="nav-link" aria-current="page">Home</a>
+            <div class="dropdown">
+                <a href="mission.html" class="nav-link">About</a>
+                <div class="dropdown-menu">
+                    <a href="mission.html">Mission</a>
+                    <a href="history.html">History</a>
+                    <a href="faculty.html">Faculty</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="academics.html" class="nav-link">Academics</a>
+                <div class="dropdown-menu">
+                    <a href="k5.html">K–5</a>
+                    <a href="middle.html">6–9</a>
+                    <a href="upper.html">10–12</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="admissions.html" class="nav-link">Admissions</a>
+                <div class="dropdown-menu">
+                    <a href="process.html">Process</a>
+                    <a href="tuition.html">Tuition</a>
+                    <a href="aid.html">Financial Aid</a>
+                </div>
+            </div>
+            <a href="#news" class="nav-link">News</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Founding Popup -->
+    <div id="founding-popup" class="popup hidden" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+        <div class="popup-content">
+            <button class="close-btn" aria-label="Close">×</button>
+            <h2 id="popup-title" class="text-2xl md:text-3xl font-bold text-var(--accent)">Founding Philo in Woodbury</h2>
+            <p class="mt-4 text-gray-700">Join our mission to bring classical education to Woodbury. Be part of something timeless.</p>
+            <div class="mt-6">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeOFtH6nEA3w-U9NxyNDgUT8A34WHvOXsl49z1nuvygUKXaqw/viewform?embedded=true" class="w-full h-96 border-0" title="Founding Interest Form" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <main id="main" class="flex-1">
+
+        <!-- Hero -->
+        <section id="home" class="hero-section">
+            <div class="hero-overlay">
+                <h2 class="hero-title">Welcome to Philo</h2>
+                <p class="hero-subtitle">A Classical Education in Truth, Goodness, and Beauty</p>
+                <a href="#contact" class="mt-8 inline-block bg-var(--accent) text-var(--primary) px-8 py-3 rounded-full font-bold hover:bg-white transition shadow-lg">Request Information</a>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section bg-white">
+            <div class="container">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">About Philo Classical Academy</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://www.shutterstock.com/image-illustration/number-font-numbers-classical-french-260nw-1912219405.jpg" alt="Philo Crest" class="rounded-2xl shadow-xl" loading="lazy">
+                    </div>
+                    <div>
+                        <p class="text-lg leading-relaxed">Nestled in the heart of the Twin Cities, <strong>Philo Classical Academy</strong> is a K–12 school rooted in the great books tradition. We cultivate intellectual virtue, moral character, and aesthetic appreciation through a rigorous liberal arts curriculum.</p>
+                        <p class="mt-4">Our students read primary texts, debate ideas, and pursue wisdom — preparing not just for college, but for a life well-lived.</p>
+                        <a href="mission.html" class="mt-6 inline-block text-var(--accent) font-bold hover:underline">Read Our Full Mission →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Classical -->
+        <section class="section bg-gray-50">
+            <div class="container text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-12">Why Classical Education?</h2>
+                <p class="text-lg max-w-3xl mx-auto mb-12">Classical education fosters wonder, virtue, and lifelong learning through the pursuit of truth, goodness, and beauty. Our approach builds character and critical thinking for a flourishing life.</p>
+                <a href="academics.html" class="inline-block bg-var(--primary) text-white px-8 py-3 rounded-full font-bold hover:bg-var(--accent) transition">Explore Our Curriculum</a>
+            </div>
+        </section>
+
+        <!-- Info Cards -->
+        <section class="section bg-white">
+            <div class="container">
+                <div class="info-grid">
+                    <article class="info-card">
+                        <i class="fa-solid fa-book-open info-icon"></i>
+                        <h3 class="text-xl font-bold">Great Books</h3>
+                        <p>Engage directly with Plato, Shakespeare, Euclid, and Austen — the foundation of Western thought.</p>
+                        <a href="academics.html" class="mt-4 inline-block text-var(--accent) font-bold hover:underline">Learn More →</a>
+                    </article>
+                    <article class="info-card">
+                        <i class="fa-solid fa-shield-halved info-icon"></i>
+                        <h3 class="text-xl font-bold">Virtue Formation</h3>
+                        <p>Character education integrated into every class, fostering courage, justice, and wisdom.</p>
+                        <a href="mission.html" class="mt-4 inline-block text-var(--accent) font-bold hover:underline">Our Approach →</a>
+                    </article>
+                    <article class="info-card">
+                        <i class="fa-solid fa-graduation-cap info-icon"></i>
+                        <h3 class="text-xl font-bold">K–12 Continuum</h3>
+                        <p>Seamless progression from grammar to rhetoric, building mastery at every stage.</p>
+                        <a href="k5.html" class="mt-4 inline-block text-var(--accent) font-bold hover:underline">View Programs →</a>
+                    </article>
+                    <article class="info-card">
+                        <i class="fa-solid fa-users info-icon"></i>
+                        <h3 class="text-xl font-bold">Founding Families</h3>
+                        <p>Join our growing community shaping the future of classical education in Woodbury.</p>
+                        <button onclick="showPopup()" class="mt-4 inline-block text-var(--accent) font-bold hover:underline">Get Involved →</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section bg-gray-50">
+            <div class="container">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">What Parents Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p>"Philo's classical approach has transformed my child's love for learning. The great books discussions are inspiring!"</p>
+                        <p class="mt-4 font-bold">- Sarah M., Parent</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"The focus on virtue and character sets Philo apart. Our family has grown closer through this education."</p>
+                        <p class="mt-4 font-bold">- John D., Parent</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Excellent teachers and a rigorous curriculum prepare students for success in college and life."</p>
+                        <p class="mt-4 font-bold">- Emily R., Parent</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slideshow -->
+        <section id="slideshow" class="section bg-white">
+            <div class="container text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">Timeless Ideas</h2>
+                <div class="slideshow">
+                    <div class="slide active">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Sanzio_01.jpg/1200px-Sanzio_01.jpg" alt="The School of Athens by Raphael" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Aristotle_Altemps_Inv8575.jpg/800px-Aristotle_Altemps_Inv8575.jpg" alt="Bust of Aristotle" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Plato_Silanion_Musei_Capitolini_MC1377.jpg/800px-Plato_Silanion_Musei_Capitolini_MC1377.jpg" alt="Bust of Plato" loading="lazy">
+                    </div>
+                </div>
+                <div class="dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="container max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Informed</h2>
+                <p class="mb-6">Subscribe to our newsletter for updates on admissions, events, and classical education insights.</p>
+                <form class="flex gap-2">
+                    <input type="email" placeholder="Your email" class="flex-grow px-4 py-3 rounded-lg">
+                    <button type="submit" class="bg-var(--accent) text-var(--primary) px-6 py-3 rounded-lg font-bold hover:bg-white transition">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section bg-var(--light)">
+            <div class="container max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">Connect With Us</h2>
+                <p class="text-lg mb-8">Schedule a tour, ask a question, or join our mailing list.</p>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <i class="fa-solid fa-envelope text-2xl text-var(--accent) mb-3"></i>
+                        <h3 class="font-bold">Email</h3>
+                        <a href="mailto:info@philoacademy.org" class="text-var(--primary) hover:underline">info@philoacademy.org</a>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <i class="fa-solid fa-phone text-2xl text-var(--accent) mb-3"></i>
+                        <h3 class="font-bold">Phone</h3>
+                        <a href="tel:+16124054594" class="text-var(--primary) hover:underline">612-405-4594</a>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <i class="fa-solid fa-map-marker-alt text-2xl text-var(--accent) mb-3"></i>
+                        <h3 class="font-bold">Visit</h3>
+                        <p>123 Classical Way<br>Twin Cities, MN 55101</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-var(--primary) text-white py-12">
+        <div class="container grid md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-bold text-var(--accent)">Philo Classical Academy</h3>
+                <p class="mt-2 text-sm opacity-90">Virtute ad Veritatem</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Quick Links</h3>
+                <ul class="mt-2 space-y-1 text-sm">
+                    <li><a href="#home" class="hover:underline">Home</a></li>
+                    <li><a href="mission.html" class="hover:underline">About</a></li>
+                    <li><a href="academics.html" class="hover:underline">Academics</a></li>
+                    <li><a href="admissions.html" class="hover:underline">Admissions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Contact</h3>
+                <p class="mt-2 text-sm"><a href="tel:+16124054594" class="hover:underline">612-405-4594</a></p>
+                <p><a href="mailto:info@philoacademy.org" class="hover:underline">info@philoacademy.org</a></p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Follow Us</h3>
+                <div class="flex gap-4 mt-2">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f text-2xl hover:text-var(--accent)"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram text-2xl hover:text-var(--accent)"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-2xl hover:text-var(--accent)"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-8 text-center text-sm opacity-80">
+            <p>© <span id="year">2025</span> Philo Classical Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script>
+        // Dynamic Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Slideshow
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let current = 0;
+        let timer;
+
+        function showSlide(n) {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            slides[n].classList.add('active');
+            dots[n].classList.add('active');
+            current = n;
+        }
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                showSlide(i);
+                resetTimer();
+            });
+        });
+
+        function nextSlide() {
+            showSlide((current + 1) % slides.length);
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            timer = setInterval(nextSlide, 6000);
+        }
+
+        resetTimer();
+
+        // Popup
+        const popup = document.getElementById('founding-popup');
+        const closeBtn = popup.querySelector('.close-btn');
+
+        function showPopup() {
+            popup.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hidePopup() {
+            popup.classList.add('hidden');
+            document.body.style.overflow = '';
+            localStorage.setItem('philoPopup', 'seen');
+        }
+
+        closeBtn.addEventListener('click', hidePopup);
+        popup.addEventListener('click', e => {
+            if (e.target === popup) hidePopup();
+        });
+
+        // Show popup after 8s if not seen
+        if (!localStorage.getItem('philoPopup')) {
+            setTimeout(showPopup, 8000);
+        }
+
+        // Back to Top
+        const btt = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            btt.classList.toggle('visible', window.scrollY > 500);
+        });
+        btt.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Search
+        document.querySelector('form[role="search"]').addEventListener('submit', e => {
+            e.preventDefault();
+            const q = e.target.querySelector('input').value.trim();
+            if (q) {
+                location.href = `https://www.google.com/search?q=site:philoacademy.org+${encodeURIComponent(q)}`;
+            }
+        });
+
+        // Newsletter (placeholder)
+        document.querySelector('.newsletter form').addEventListener('submit', e => {
+            e.preventDefault();
+            alert('Subscribed! Thank you.');
+        });
+
+        // Reduced Motion Respect
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.style.setProperty('--transition', '0s');
+        }
+    </script>
+
+    <!-- Analytics (Placeholder) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script> -->
 </body>
 </html>
+```
