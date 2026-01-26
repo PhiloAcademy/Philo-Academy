@@ -1,230 +1,141 @@
-import React, { useState } from "react";
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Lutheran Classical Academy of St. David the King at Zion</title>
+  <meta name="description" content="Opening August 2026 at Zion Lutheran Church — Wausau, Wisconsin." />
+  <meta name="theme-color" content="#b8293c" />
 
-export default function PhiloClassicalAcademy() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  <style>
+    :root{
+      --brand:#b8293c; --text:#1f1f1f; --muted:#5b5b5b; --bg:#fff; --soft:#fcf4eb;
+      --border:#e8e8e8; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06);
+      --max:980px; --pad:20px; --font:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
+    *{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+    body{margin:0;font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.6}
+    a{color:inherit} a:focus-visible,button:focus-visible{outline:3px solid rgba(184,41,60,.35);outline-offset:2px}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+    header{
+      color:#fff;
+      background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.72)),
+        url("https://cdn.prod.website-files.com/686d7185608d926aa3ffaaf9/687abf31e21168ba812d607b_image22.webp") center/cover no-repeat;
+    }
+    .hero{padding:72px 0 42px;text-align:center}
+    .crest{width:120px;height:auto;margin:0 auto 18px;display:block;filter:drop-shadow(0 8px 24px rgba(0,0,0,.25))}
+    h1{margin:0 0 10px;font-size:clamp(28px,3.2vw,44px);line-height:1.15}
+    .tagline{margin:0 auto 18px;max-width:760px;font-size:clamp(16px,2vw,20px);opacity:.95}
+    .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+    .btn{display:inline-block;text-decoration:none;border-radius:12px;padding:12px 16px;font-weight:800;border:1px solid transparent}
+    .btn.primary{background:var(--brand);color:#fff}
+    .btn.primary:hover{filter:brightness(.95)}
+    .btn.ghost{background:rgba(255,255,255,.10);color:#fff;border-color:rgba(255,255,255,.25)}
+    .btn.ghost:hover{background:rgba(255,255,255,.16)}
+    nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--border)}
+    .navRow{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;text-decoration:none}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--brand)}
+    .navLinks{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+    .navLinks a{text-decoration:none;font-weight:700;color:#2a2a2a;padding:8px 10px;border-radius:10px}
+    .navLinks a:hover{background:var(--soft)}
+    main{padding:34px 0 70px}
+    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin:24px 0}
+    .soft{background:var(--soft)}
+    h2{margin:0 0 10px;font-size:28px;line-height:1.2}
+    h3{margin:0 0 8px;font-size:18px}
+    p{margin:0 0 12px;color:var(--muted);font-size:16px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    @media (max-width:800px){.grid{grid-template-columns:1fr}.hero{padding:56px 0 34px}}
+    footer{border-top:1px solid var(--border);padding:26px 0;color:var(--muted);font-size:14px}
+    .fine{font-size:13px;color:var(--muted)}
+  </style>
+</head>
 
-  const colors = {
-    primary: "#4b1d95", // Purple
-    accent: "#e0c45c", // Gold
-    bgLight: "#f8f5f0", // Beige
-    bgSection: "#ece7df", // Light beige
-    border: "#d9c79b", // Soft gold
-  };
-
-  const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#academics", label: "Academics" },
-    { href: "#faculty", label: "Faculty" },
-    { href: "#contact", label: "Contact" },
-  ];
-
-  const academicLevels = [
-    {
-      title: "Grammar School",
-      desc: "Foundational learning focused on memory, imitation, and joy in discovery.",
-    },
-    {
-      title: "Logic School",
-      desc: "Developing reasoning and discernment through language, argument, and wonder.",
-    },
-    {
-      title: "Rhetoric School",
-      desc: "Training in expression, persuasion, and leadership rooted in truth and beauty.",
-    },
-  ];
-
-  const faculty = [
-    {
-      name: "Dr. Elizabeth Moore",
-      role: "Head of School",
-      img: "https://randomuser.me/api/portraits/women/65.jpg",
-      alt: "Portrait of Dr. Elizabeth Moore",
-    },
-    {
-      name: "Mr. Thomas Reed",
-      role: "Logic & Philosophy",
-      img: "https://randomuser.me/api/portraits/men/43.jpg",
-      alt: "Portrait of Mr. Thomas Reed",
-    },
-    {
-      name: "Mrs. Anna Clarke",
-      role: "Latin & Literature",
-      img: "https://randomuser.me/api/portraits/women/68.jpg",
-      alt: "Portrait of Mrs. Anna Clarke",
-    },
-  ];
-
-  return (
-    <div className="font-serif bg-[#f8f5f0] text-gray-800 scroll-smooth">
-      {/* Header */}
-      <header
-        className="bg-[#4b1d95] text-white shadow-lg sticky top-0 z-50 border-b-2 border-[#e0c45c]"
-        style={{ borderColor: colors.accent, backgroundColor: colors.primary }}
-      >
-        <nav className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-wide text-[#e0c45c]">
-            Philo Classical Academy
-          </h1>
-          {/* Desktop Nav */}
-          <ul className="hidden md:flex space-x-8 text-lg">
-            {navLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  className="hover:text-[#e0c45c] transition-colors"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white text-3xl focus:outline-none"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle navigation menu"
-          >
-            {isMenuOpen ? "✕" : "☰"}
-          </button>
-        </nav>
-        {/* Mobile Nav */}
-        {isMenuOpen && (
-          <ul className="md:hidden flex flex-col items-center space-y-4 pb-4 bg-[#4b1d95]">
-            {navLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  className="text-lg hover:text-[#e0c45c] transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        )}
-      </header>
-
-      {/* Hero Section with School of Athens */}
-      <section
-        id="home"
-        className="relative h-[80vh] flex items-center justify-center border-b-2 border-[#e0c45c] bg-cover bg-center"
-        style={{
-          backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Sanzio_01.jpg/1200px-Sanzio_01.jpg')",
-          borderColor: colors.accent,
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative text-center text-white max-w-3xl px-6">
-          <h2 className="text-5xl md:text-7xl font-bold mb-4">
-            Wisdom. Virtue. Eloquence.
-          </h2>
-          <p className="text-lg md:text-xl italic">
-            Forming minds and hearts through the riches of classical education.
-          </p>
-        </div>
-      </section>
-
-      {/* Mission Section */}
-      <section
-        className="py-16 px-6 max-w-5xl mx-auto text-center border-b-2 border-[#e0c45c]"
-        style={{ borderColor: colors.accent }}
-      >
-        <h3 className="text-3xl font-semibold text-[#4b1d95] mb-6">
-          Our Mission
-        </h3>
-        <p className="text-lg leading-relaxed">
-          At Philo Classical Academy, we are devoted to nurturing wisdom and
-          virtue through a time-honored liberal arts education rooted in the
-          Christian tradition. Our curriculum cultivates a love of truth,
-          goodness, and beauty — shaping students to think deeply, speak
-          eloquently, and live faithfully.
-        </p>
-      </section>
-
-      {/* Academics Section */}
-      <section
-        id="academics"
-        className="bg-[#ece7df] py-16 px-6 border-b-2 border-[#e0c45c]"
-        style={{ backgroundColor: colors.bgSection, borderColor: colors.accent }}
-      >
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl font-semibold text-center text-[#4b1d95] mb-10">
-            Academics
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {academicLevels.map((level) => (
-              <div
-                key={level.title}
-                className="bg-white shadow-lg rounded-2xl p-6 border border-[#d9c79b] hover:shadow-xl transition-shadow"
-                style={{ borderColor: colors.border }}
-              >
-                <h4 className="text-2xl font-semibold text-[#4b1d95] mb-3">
-                  {level.title}
-                </h4>
-                <p>{level.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Faculty Section */}
-      <section id="faculty" className="py-16 px-6 max-w-6xl mx-auto text-center">
-        <h3 className="text-3xl font-semibold text-[#4b1d95] mb-10">Faculty</h3>
-        <div className="grid md:grid-cols-3 gap-8">
-          {faculty.map((person) => (
-            <div
-              key={person.name}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden border border-[#d9c79b]"
-              style={{ borderColor: colors.border }}
-            >
-              <img
-                src={person.img}
-                alt={person.alt}
-                className="w-full h-64 object-cover"
-                loading="lazy"
-              />
-              <div className="p-6">
-                <h4 className="text-xl font-semibold text-[#4b1d95]">
-                  {person.name}
-                </h4>
-                <p className="italic">{person.role}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section
-        id="contact"
-        className="bg-[#4b1d95] text-white py-16 px-6 border-t-2 border-[#e0c45c]"
-        style={{ backgroundColor: colors.primary, borderColor: colors.accent }}
-      >
-        <div className="max-w-5xl mx-auto text-center pt-10">
-          <h3 className="text-3xl font-semibold text-[#e0c45c] mb-6">
-            Contact Us
-          </h3>
-          <p className="mb-4 text-lg">
-            We welcome inquiries from families seeking a classical Christian
-            education.
-          </p>
-          <p>Email: info@philoclassical.org</p>
-          <p>Phone: (715) 555-1234</p>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer
-        className="bg-[#3a166e] text-[#e0c45c] text-center py-6 border-t-2 border-[#e0c45c]"
-        style={{ borderColor: colors.accent }}
-      >
-        <p>
-          © {new Date().getFullYear()} Philo Classical Academy — All Rights
-          Reserved.
-        </p>
-      </footer>
+<body id="top">
+  <header>
+    <div class="wrap hero">
+      <img class="crest"
+        src="https://cdn.prod.website-files.com/686d7185608d926aa3ffaaf9/686d7a0674e852b8e261de65_academy-crest-color.svg"
+        alt="Academy crest" loading="eager" fetchpriority="high" decoding="async">
+      <h1>The Lutheran Classical Academy of St. David the King at Zion</h1>
+      <p class="tagline"><em>Wisdom. Stature. Grace. Bearing the Cross, Wearing the Crown.</em></p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Get in Touch</a>
+        <a class="btn ghost" href="#timeline">Timeline</a>
+      </div>
     </div>
-  );
-}
+  </header>
+
+  <nav aria-label="Primary">
+    <div class="wrap navRow">
+      <a class="brand" href="#top"><span class="dot" aria-hidden="true"></span><span>St. David’s Academy</span></a>
+      <div class="navLinks">
+        <a href="#welcome">Welcome</a>
+        <a href="#lamps">Guiding Lamps</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="welcome" class="card soft">
+      <h2>Welcome</h2>
+      <p>
+        At St. David’s, we believe God has a royal calling for every child: to grow in wisdom, stature,
+        and the grace of God and man (Luke 2:52).
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Our Mission</h3>
+          <p>Provide an education rooted in Holy Scripture, the Western heritage, and the pursuit of excellence.</p>
+        </div>
+        <div class="card">
+          <h3>Our Vision</h3>
+          <p>Raise learned disciples of Jesus who confess the faith with joy and serve with competence, humility, and virtue.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="lamps" class="card">
+      <h2>Four Guiding Lamps</h2>
+      <div class="grid">
+        <div class="card"><h3>Christ-centered</h3><p>Christ is the lens through which all knowledge is understood and made complete.</p></div>
+        <div class="card"><h3>Classical</h3><p>The liberal arts form wisdom, eloquence, and love for what is good, true, and beautiful.</p></div>
+        <div class="card"><h3>Lutheran</h3><p>Doctrinal clarity forms students to stand firm on biblical truth in a wavering world.</p></div>
+        <div class="card"><h3>Vocational</h3><p>Parents, church, and civil order harmonize for whole-person formation.</p></div>
+      </div>
+    </section>
+
+    <section id="timeline" class="card soft">
+      <h2>Progress &amp; Timeline</h2>
+      <p><strong>Planned Opening:</strong> August 2026</p>
+      <p><strong>Starting Grades:</strong> Kindergarten through Third Grade</p>
+      <p><strong>Growth Plan:</strong> Add one grade each year through 8th grade</p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Get in Touch</h2>
+      <p>Email is best for GitHub Pages (static hosting).</p>
+      <!-- Replace with your actual email -->
+      <p><a class="btn primary" href="mailto:EMAIL_HERE?subject=St%20David%E2%80%99s%20Academy%20Inquiry">Email the Academy</a></p>
+
+      <p class="fine">
+        Zion Lutheran Church • 709 N Sixth Street • Wausau, WI 54403 •
+        <a href="tel:+17158487286">715-848-7286</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> St. David’s Academy.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
